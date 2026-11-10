@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self'; worker-src 'self'; manifest-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline'; script-src 'self' https://www.youtube.com; connect-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; font-src 'self'; worker-src 'self'; manifest-src 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#000000">
 <link rel="manifest" href="manifest.webmanifest">
@@ -40,38 +40,38 @@
   <button type="button" class="nav-search" id="navSearch" aria-label="Search (Ctrl K)"><span>Search views, terms, notes</span><kbd>Ctrl K</kbd></button>
   <div class="nav-links" id="nav" role="navigation" aria-label="Sections">
     <div class="nav-group" data-group="today">
-      <a class="nav-item" href="#/today" data-v="today"><span class="ni-ic" aria-hidden="true">▪</span>Today</a>
+      <a class="nav-item" href="#/today" data-v="today"><span class="ni-ic" aria-hidden="true">â–ª</span>Today</a>
     </div>
     <div class="nav-group" data-group="learn">
       <div class="nav-group-label">Learn</div>
-      <a class="nav-item" href="#/curriculum" data-v="curriculum"><span class="ni-ic" aria-hidden="true">▪</span>Curriculum</a>
-      <a class="nav-item" href="#/views" data-v="views"><span class="ni-ic" aria-hidden="true">▪</span>Architecture views</a>
-      <a class="nav-item" href="#/shorts" data-v="shorts"><span class="ni-ic" aria-hidden="true">▪</span>Shorts</a>
-      <a class="nav-item" href="#/deck" data-v="deck"><span class="ni-ic" aria-hidden="true">▪</span>Deck and deep-dive cut</a>
-      <a class="nav-item" href="#/library" data-v="library"><span class="ni-ic" aria-hidden="true">▪</span>Library (all notes)</a>
+      <a class="nav-item" href="#/curriculum" data-v="curriculum"><span class="ni-ic" aria-hidden="true">â–ª</span>Curriculum</a>
+      <a class="nav-item" href="#/views" data-v="views"><span class="ni-ic" aria-hidden="true">â–ª</span>Architecture views</a>
+      <a class="nav-item" href="#/shorts" data-v="shorts"><span class="ni-ic" aria-hidden="true">â–ª</span>Shorts</a>
+      <a class="nav-item" href="#/deck" data-v="deck"><span class="ni-ic" aria-hidden="true">â–ª</span>Deck and deep-dive cut</a>
+      <a class="nav-item" href="#/library" data-v="library"><span class="ni-ic" aria-hidden="true">â–ª</span>Library (all notes)</a>
     </div>
     <div class="nav-group" data-group="practice">
       <div class="nav-group-label">Practice</div>
-      <a class="nav-item" href="#/flash" data-v="flash"><span class="ni-ic" aria-hidden="true">▪</span>Flashcards</a>
-      <a class="nav-item" href="#/quiz" data-v="quiz"><span class="ni-ic" aria-hidden="true">▪</span>Quiz</a>
-      <a class="nav-item" href="#/failures" data-v="failures"><span class="ni-ic" aria-hidden="true">▪</span>Failure modes</a>
-      <a class="nav-item" href="#/prompts" data-v="prompts"><span class="ni-ic" aria-hidden="true">▪</span>Prompts</a>
+      <a class="nav-item" href="#/flash" data-v="flash"><span class="ni-ic" aria-hidden="true">â–ª</span>Flashcards</a>
+      <a class="nav-item" href="#/quiz" data-v="quiz"><span class="ni-ic" aria-hidden="true">â–ª</span>Quiz</a>
+      <a class="nav-item" href="#/failures" data-v="failures"><span class="ni-ic" aria-hidden="true">â–ª</span>Failure modes</a>
+      <a class="nav-item" href="#/prompts" data-v="prompts"><span class="ni-ic" aria-hidden="true">â–ª</span>Prompts</a>
     </div>
     <div class="nav-group" data-group="reference">
       <div class="nav-group-label">Reference</div>
-      <a class="nav-item" href="#/cheat" data-v="cheat"><span class="ni-ic" aria-hidden="true">▪</span>Decision rules</a>
-      <a class="nav-item" href="#/map" data-v="map"><span class="ni-ic" aria-hidden="true">▪</span>Progress map</a>
-      <a class="nav-item" href="#/glossary" data-v="glossary"><span class="ni-ic" aria-hidden="true">▪</span>Glossary</a>
-      <a class="nav-item" href="#/ea" data-v="ea"><span class="ni-ic" aria-hidden="true">▪</span>EA mapping</a>
-      <a class="nav-item" href="#/debates" data-v="debates"><span class="ni-ic" aria-hidden="true">▪</span>Debates</a>
-      <a class="nav-item" href="#/refs" data-v="refs"><span class="ni-ic" aria-hidden="true">▪</span>Source ledger</a>
-      <a class="nav-item" href="#/dashboard" data-v="dashboard"><span class="ni-ic" aria-hidden="true">▪</span>Overview</a>
+      <a class="nav-item" href="#/cheat" data-v="cheat"><span class="ni-ic" aria-hidden="true">â–ª</span>Decision rules</a>
+      <a class="nav-item" href="#/map" data-v="map"><span class="ni-ic" aria-hidden="true">â–ª</span>Progress map</a>
+      <a class="nav-item" href="#/glossary" data-v="glossary"><span class="ni-ic" aria-hidden="true">â–ª</span>Glossary</a>
+      <a class="nav-item" href="#/ea" data-v="ea"><span class="ni-ic" aria-hidden="true">â–ª</span>EA mapping</a>
+      <a class="nav-item" href="#/debates" data-v="debates"><span class="ni-ic" aria-hidden="true">â–ª</span>Debates</a>
+      <a class="nav-item" href="#/refs" data-v="refs"><span class="ni-ic" aria-hidden="true">â–ª</span>Source ledger</a>
+      <a class="nav-item" href="#/dashboard" data-v="dashboard"><span class="ni-ic" aria-hidden="true">â–ª</span>Overview</a>
     </div>
   </div>
   <div class="sidebar-foot">
     <div style="display:flex;align-items:center;gap:6px;margin-bottom:.85rem">
       <button id="themeToggleBtn" aria-label="Toggle light or dark theme" style="flex:1;background:var(--card-bg);border:1px solid var(--border-color);color:var(--text-primary);padding:.35rem .5rem;border-radius:6px;font-size:.74rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px">
-        <span id="themeToggleIcon">🌙</span> <span id="themeToggleText">Dark</span>
+        <span id="themeToggleIcon">ðŸŒ™</span> <span id="themeToggleText">Dark</span>
       </button>
     </div>
     Vault-first study console for AI TRiSM (AI Trust, Risk and Security Management). No tenant data, passwords, or API keys on this site.<br><br>
@@ -101,9 +101,9 @@
 
 <div class="palette-backdrop" id="palette" hidden>
   <div class="palette" role="dialog" aria-modal="true" aria-label="Search">
-    <input type="search" id="paletteInput" placeholder="Search views, terms, failure modes, notes, sources…" autocomplete="off" aria-controls="paletteList">
+    <input type="search" id="paletteInput" placeholder="Search views, terms, failure modes, notes, sourcesâ€¦" autocomplete="off" aria-controls="paletteList">
     <ul id="paletteList" role="listbox"></ul>
-    <div class="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</div>
+    <div class="palette-hint"><kbd>â†‘</kbd><kbd>â†“</kbd> move Â· <kbd>Enter</kbd> open Â· <kbd>Esc</kbd> close</div>
   </div>
 </div>
 
@@ -129,7 +129,7 @@
     Personal study material for AI TRiSM (AI Trust, Risk and Security Management). Gartner layer/pillar <em>names</em> in this pack are secondary unless a Gartner-owned page is cited. Vault views and the source ledger win over NotebookLM. This is study material, not Gartner or NIST official guidance, and not legal advice. Every claim should trace to a row in the source ledger (<span class="cite">S#</span> links open the source).
   </div>
   <div class="print-footer">
-    <div>Learning tool only · AI TRiSM one-day mastery and tech deep dive · not legal advice</div>
+    <div>Learning tool only Â· AI TRiSM one-day mastery and tech deep dive Â· not legal advice</div>
     <div>Obsidian packs: <code>Learning/one-day-mastery/ai-trism/</code> and <code>Learning/tech-deep-dive/ai-trism/</code></div>
   </div>
 </main>
