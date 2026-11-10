@@ -1,4 +1,4 @@
-﻿window.SHORTS = {
+window.SHORTS = {
     "notebook_alias":  "tdd-ai-trism",
     "title":  "Learn AI TRiSM - NotebookLM shorts",
     "deep_dive":  {
