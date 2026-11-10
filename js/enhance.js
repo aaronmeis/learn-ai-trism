@@ -366,7 +366,7 @@ window.renderShorts = function(){
   const w=Store.watched(); const nW=shortItems.filter(s=>w[s.id]).length;
   const list=filteredShorts();
   el.innerHTML=h`<h2 class="vh">Shorts <span class="vh-sub">${nW} of ${shortItems.length} watched</span></h2>
-  <div class="note danger" style="margin-bottom:1rem"><b>Secondary source.</b> NotebookLM reports and shorts can overclaim. Vault views and the source ledger win. Gartner layer/pillar names are secondary unless a Gartner-owned page is cited. Not Gartner or NIST official guidance, and not legal advice.</div>
+  <div class="note danger" style="margin-bottom:1rem"><b>Secondary source.</b> NotebookLM reports and shorts can overclaim. Vault views and the source ledger win. Learning tool only — not an endorsement of any vendor or analyst firm, and not legal advice.</div>
   <div class="sx-layout">
     <div class="sx-main">
       <div class="sx-player" id="sxPlayer"></div>
@@ -609,7 +609,7 @@ function navSheet(group){
     html+=h`<div class="sheet-section"><h3>Appearance</h3><div class="seg" role="group" aria-label="Mode">
       <button type="button" data-mode="light" aria-pressed="${mode==="light"}" class="${mode==="light"?"on":""}">Light</button><button type="button" data-mode="dark" aria-pressed="${mode==="dark"}" class="${mode==="dark"?"on":""}">Dark</button></div>
       <div class="seg" role="group" aria-label="Palette">${[["github","GitHub"],["geist","Geist"],["catppuccin","Catppuccin"]].map(([k,l])=>`<button type="button" data-pal="${k}" aria-pressed="${pal===k}" class="${pal===k?"on":""}">${l}</button>`).join("")}</div></div>
-      <p class="muted sheet-disc">Personal study material for AI TRiSM. Gartner layer/pillar names are secondary unless a Gartner-owned page is cited. Vault and source ledger win over NotebookLM. Not Gartner or NIST official guidance, and not legal advice.</p>`;
+      <p class="muted sheet-disc">Personal study material for AI TRiSM. Vault and source ledger win over NotebookLM. Learning tool only — not an endorsement of any vendor or analyst firm, and not legal advice.</p>`;
   }
   openSheet(title,html,body=>{
     $$("[data-mode]",body).forEach(b=>b.onclick=()=>{applyTheme(LS.get("appPalette","github"),b.dataset.mode);navSheet(group);});

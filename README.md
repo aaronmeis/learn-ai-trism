@@ -10,6 +10,6 @@ Dual ODM+TDD study console for AI Trust, Risk and Security Management (AI TRiSM)
 
 Storage prefix `lat:` (shared `aaronmeis.github.io` origin). Theme keys `appMode` / `appPalette` stay shared.
 
-Personal study material for AI TRiSM (AI Trust, Risk and Security Management). Gartner layer/pillar *names* in this pack are secondary unless a Gartner-owned page is cited. Vault views and the source ledger win over NotebookLM. This is study material, not Gartner or NIST official guidance, and not legal advice.
+Personal study material for AI Trust, Risk and Security Management (AI TRiSM). Every claim should trace to a row in the source ledger. NotebookLM media is secondary. This site is a learning tool only — not an endorsement of any vendor or analyst firm, and not legal advice.
 
 No Python, operator scripts, or credentials in this public repo. Finish holes: see `AGENT-HANDOFF.md`.

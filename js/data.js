@@ -24,7 +24,7 @@ const SOURCES = [
 
 const DATA = {
   checked:"Checked against ODM+TDD vault packs (glossaries, quiz banks, CLAIMS-AND-DEBATES evidence tracker, ea-framework-crosswalk, source-ledger [S1]–[S18] with 7b→71 / 7c→72 / 7d→73), diagram assets, and YouTube unlisted IDs on 2026-11-09. Vault views and ledger win; NotebookLM reports are secondary. Honesty: Gartner layer and pillar *names* remain secondary / UNVERIFIED from Gartner-owned pages — [S1] confirms four layers without naming them; Market Guide PDF still paywalled. SKU / region / gov-cloud rows stay UNVERIFIED.",
-  disclaimer:"Study console only. AI TRiSM is a market category, not a certification scheme. Do not invent primary Gartner layer names. Do not treat vendor explainers as Gartner primary. ISO/IEC 42001 certification is via independent bodies; NIST AI RMF is voluntary.",
+  disclaimer:"Personal study material for AI TRiSM. Learning tool only — not an endorsement of any vendor or analyst firm, and not legal advice. Vault views and the source ledger win over NotebookLM.",
   weeks:[
     {n:1,title:"Core concepts — four authorities",time:"60 min",rungs:"100",lib:"odm-block-01-core-concepts",
      opener:"AI TRiSM is Gartner's market name for technical capabilities that support trust, risk, and security of AI [S1][S8]. The 2025 Hype Cycle PR confirms four layers without naming them. Hold four authorities apart: TRiSM (market), NIST AI RMF (voluntary), ISO/IEC 42001 (certifiable AIMS), EU AI Act (law) [S2][S5][S6][S14].",

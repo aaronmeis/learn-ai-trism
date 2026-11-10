@@ -146,7 +146,7 @@ function renderViews(){
     return;
   }
   h+=`<div class="note"><b>Altitude rule.</b> ${ec(V.rule)} ${lib(V.lib,"Full view note")}</div>`;
-  if(tab==="govcloud") h+=`<div class="note good"><b>Not official guidance.</b> ${ec("This study console is not Gartner or NIST official guidance and not legal advice. Layer and pillar names stay secondary unless a primary page is cited.")}</div>`;
+  if(tab==="govcloud") h+=`<div class="note good"><b>Learning tool only.</b> ${ec("This study console is not an endorsement of any vendor or analyst firm, and not legal advice. Layer and pillar names stay secondary unless a primary page is cited.")}</div>`;
   V.img.forEach(f=>h+=`<img class="diagram" src="assets/diagrams/${f}" alt="${esc(f)}" loading="lazy">`);
   V.tables.forEach(t=>h+=tableHTML(t));
   if(tab==="integration") h+=`<div class="note"><b>Integration note.</b> ${ec("Name the system boundary before you name a tool. An integration is not a clearance and not an authorization.")}</div>`;
