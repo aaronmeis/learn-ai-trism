@@ -2,7 +2,7 @@
 
 **Site:** `C:\projects\claude\learn-ai-trism`
 **Live:** https://aaronmeis.github.io/learn-ai-trism/
-**Prefix:** `lat:` · **SW cache:** `learn-ai-trism-v9`
+**Prefix:** `lat:` · **SW cache:** `learn-ai-trism-v10`
 **Packs (source of truth):**
 - `Learning/one-day-mastery/ai-trism/` (odm-ai-trism)
 - `Learning/tech-deep-dive/ai-trism/` (tdd-ai-trism)
