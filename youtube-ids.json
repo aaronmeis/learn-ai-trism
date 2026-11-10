@@ -5,7 +5,7 @@
                   {
                       "key":  "01-what-it-is-and-is-not",
                       "title":  "What it is, and what it is not | AI TRiSM #Shorts",
-                      "file":  "What AI TRiSM Actually Is.mp4",
+                      "file":  "C:\\output\\obsidian\\notebooklm\\tdd-ai-trism\\NEXUS _ tdd-ai-trism _ 2026-11-09 _ tech-deep-dive\\What AI TRiSM Actually Is.mp4",
                       "id":  "OPHS-5QhVS8",
                       "url":  "https://youtu.be/OPHS-5QhVS8",
                       "format":  "Short",
@@ -14,7 +14,7 @@
                   {
                       "key":  "02-pillars-or-layers",
                       "title":  "Four pillars or four layers? | AI TRiSM #Shorts",
-                      "file":  "How to Structure the AI TRiSM Framework.mp4",
+                      "file":  "C:\\output\\obsidian\\notebooklm\\tdd-ai-trism\\NEXUS _ tdd-ai-trism _ 2026-11-09 _ tech-deep-dive\\How to Structure the AI TRiSM Framework.mp4",
                       "id":  "jgtyx0bj19w",
                       "url":  "https://youtu.be/jgtyx0bj19w",
                       "format":  "Short",
@@ -23,7 +23,7 @@
                   {
                       "key":  "03-one-request",
                       "title":  "One prompt, end to end through the controls | AI TRiSM #Shorts",
-                      "file":  "How AI TRiSM Secures AI Prompts.mp4",
+                      "file":  "C:\\output\\obsidian\\notebooklm\\tdd-ai-trism\\NEXUS _ tdd-ai-trism _ 2026-11-09 _ tech-deep-dive\\How AI TRiSM Secures AI Prompts.mp4",
                       "id":  "lh0J0iicKJg",
                       "url":  "https://youtu.be/lh0J0iicKJg",
                       "format":  "Short",
@@ -32,7 +32,7 @@
                   {
                       "key":  "04-agent-identity",
                       "title":  "Who is my agent? Identity and least privilege | AI TRiSM #Shorts",
-                      "file":  "Why AI Agents Need Strict Least Privilege.mp4",
+                      "file":  "C:\\output\\obsidian\\notebooklm\\tdd-ai-trism\\NEXUS _ tdd-ai-trism _ 2026-11-09 _ tech-deep-dive\\Why AI Agents Need Strict Least Privilege.mp4",
                       "id":  "E0HFgj8dRlQ",
                       "url":  "https://youtu.be/E0HFgj8dRlQ",
                       "format":  "Short",
@@ -41,7 +41,7 @@
                   {
                       "key":  "05-guardrails-one-layer",
                       "title":  "Guardrails are one layer, not the whole defense | AI TRiSM #Shorts",
-                      "file":  "Why AI Guardrails Aren\u0027t Enough.mp4",
+                      "file":  "C:\\output\\obsidian\\notebooklm\\tdd-ai-trism\\NEXUS _ tdd-ai-trism _ 2026-11-09 _ tech-deep-dive\\Why AI Guardrails Aren\u0027t Enough.mp4",
                       "id":  "asFh09LMpSo",
                       "url":  "https://youtu.be/asFh09LMpSo",
                       "format":  "Short",
@@ -50,7 +50,7 @@
                   {
                       "key":  "06-map-to-nist",
                       "title":  "Map it to NIST AI RMF: Govern, Map, Measure, Manage | AI TRiSM #Shorts",
-                      "file":  "How AI TRiSM Executes the NIST Framework.mp4",
+                      "file":  "C:\\output\\obsidian\\notebooklm\\tdd-ai-trism\\NEXUS _ tdd-ai-trism _ 2026-11-09 _ tech-deep-dive\\How AI TRiSM Executes the NIST Framework.mp4",
                       "id":  "IgFX10Z1CEA",
                       "url":  "https://youtu.be/IgFX10Z1CEA",
                       "format":  "Short",
@@ -60,8 +60,8 @@
                       "key":  "deep-dive",
                       "title":  "AI TRiSM deep dive: a vendor-neutral architecture for enterprise AI",
                       "file":  "tdd-ai-trism-remotion.mp4",
-                      "id":  "At1KmXSHCI8",
-                      "url":  "https://youtu.be/At1KmXSHCI8",
+                      "id":  "uSYTN0udnL8",
+                      "url":  "https://youtu.be/uSYTN0udnL8",
                       "format":  "Regular",
                       "date":  "2026-11-09"
                   }

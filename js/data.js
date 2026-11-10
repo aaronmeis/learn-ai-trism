@@ -395,7 +395,7 @@ const DATA = {
       {question:"Ray five pillars — primary?",detail:"No. Scholarly TechXiv synthesis [S13], not Gartner primary.",why:"Debate 1 extension E1R.",example:"Useful control checklist beside the four-pillar vendor set."},
       {question:"Gov-cloud on inventory rows?",detail:"UNVERIFIED on every row until product docs are read.",why:"Physical/integration honesty.",example:"Named vendor ≠ recommendation."}
     ],
-    deepDive:{file:"",youtube:"At1KmXSHCI8"}
+    deepDive:{file:"",youtube:"uSYTN0udnL8"}
   }
 };
 
