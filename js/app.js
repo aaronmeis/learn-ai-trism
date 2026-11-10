@@ -486,9 +486,16 @@ function renderReferences(){
       <div class="ref-url">${esc(v.who)} · ${esc(v.min)}</div><div class="ref-sources">${esc(v.why)}</div></div>
       <a class="b" href="${esc(v.url)}" target="_blank" rel="noopener" style="font-size:.76rem;flex-shrink:0">Watch ↗</a></div>`;
   });
-  h+=`<h2 class="vh" style="margin-top:1.6rem">O'Reilly <span style="font-size:1rem;color:var(--text-dim)">${(DATA.books||DATA.oreilly||[]).length}</span></h2>
-  <p class="lead">These need an O'Reilly login. They are practice material, not a higher source than the pack ledger.</p>`;
-  (DATA.books||DATA.oreilly||[]).forEach(b=>{
+  const oreillyShelf=(DATA.books||DATA.oreilly||[]).filter(b=>{
+    const u=(b.url||"").toLowerCase();
+    return u.includes("learning.oreilly.com")||u.includes("oreilly.com/library")||u.includes("oreilly.com/videos");
+  });
+  h+=`<h2 class="vh" style="margin-top:1.6rem">O'Reilly <span style="font-size:1rem;color:var(--text-dim)">${oreillyShelf.length}</span></h2>
+  <p class="lead">These need an O'Reilly login. Practice material only — the source ledger below outranks a book when they disagree.</p>`;
+  if(!oreillyShelf.length){
+    h+=`<div class="note" style="margin:.6rem 0 1rem">No learning.oreilly.com titles in <code>DATA.books</code> yet. Primary standards stay in the ledger, not this shelf.</div>`;
+  }
+  oreillyShelf.forEach(b=>{
     h+=`<div class="ref-card"><div class="ref-info"><a class="ref-anchor" href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.title)}</a>
       <div class="ref-url">${esc(b.kind)} · ${esc(b.who)}</div></div>
       <a class="b" href="${esc(b.url)}" target="_blank" rel="noopener" style="font-size:.76rem;flex-shrink:0">Open ↗</a></div>`;

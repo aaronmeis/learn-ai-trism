@@ -415,16 +415,18 @@ DATA.watch = [
   {who:"CSA AI Security Summit / Darktrace keynote",title:"When Guardrails Break — Runtime Trust",url:"https://www.youtube.com/watch?v=LBxiK0ALZvY",why:"Filters insufficient; agent identity / over-permissioning. Vendor interest — label it. Ledger S12.",min:"keynote"}
 ];
 
+/* O'Reilly shelf only — learning.oreilly.com URLs. Primary NIST/ISO/OWASP/etc. stay in SOURCES. */
 DATA.books = [
-  {kind:"Standard",title:"NIST AI RMF 1.0 (AI 100-1)",who:"NIST",url:"https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10"},
-  {kind:"Profile",title:"NIST AI 600-1 Generative AI Profile",who:"NIST",url:"https://doi.org/10.6028/NIST.AI.600-1"},
-  {kind:"Crosswalk",title:"NIST AI RMF to ISO/IEC 42001",who:"NIST AIRC",url:"https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf"},
-  {kind:"Standard",title:"ISO/IEC 42001:2023 catalogue",who:"ISO",url:"https://www.iso.org/standard/81230.html"},
-  {kind:"Regulation",title:"EU AI Act Regulation 2024/1689",who:"EUR-Lex",url:"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"},
-  {kind:"Community",title:"OWASP Top 10 for LLM Applications 2025",who:"OWASP",url:"https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/"},
-  {kind:"Framework",title:"OMG UAF 1.3",who:"OMG",url:"https://www.omg.org/spec/UAF/1.3"},
-  {kind:"Guidance",title:"OUSD(R&E) Mission Architecture Style Guide v1.0",who:"DoD",url:"https://ac.cto.mil/wp-content/uploads/2025/01/U-Mission-Architecture-Style-Guide-Final_07Jan2025.pdf"},
-  {kind:"Review",title:"Ray — Review of TRiSM Frameworks in AI Systems (TechXiv)",who:"Ray",url:"https://doi.org/10.36227/techrxiv.174913612.20443736/v1"}
+  {kind:"Book",title:"Managing AI Risk — A practical approach with ISO 42001",who:"Andrew Pattison",url:"https://learning.oreilly.com/library/view/-/9781787785878/"},
+  {kind:"Book",title:"ISO 42001 and Legal Compliance",who:"Matthew Seet",url:"https://learning.oreilly.com/library/view/-/9798868820991/"},
+  {kind:"Book",title:"The Developer's Playbook for Large Language Model Security",who:"Steve Wilson",url:"https://learning.oreilly.com/library/view/-/9781098162191/"},
+  {kind:"Book",title:"AI-Native LLM Security",who:"Vaibhav Malik, Ken Huang, Ads Dawson",url:"https://learning.oreilly.com/library/view/-/9781836203759/"},
+  {kind:"Book",title:"Practical AI Security",who:"Harriet Farlow",url:"https://learning.oreilly.com/library/view/-/0642572230326/"},
+  {kind:"Book",title:"Trustworthy AI",who:"Beena Ammanath",url:"https://learning.oreilly.com/library/view/-/9781119867920/"},
+  {kind:"Book",title:"AI Governance in Practice",who:"Hemang Doshi",url:"https://learning.oreilly.com/library/view/-/9781807300814/"},
+  {kind:"Book",title:"Enterprise Guide for Implementing Generative AI and Agentic AI",who:"Shakuntala Gupta Edward, Rahul Bhattacharya, Vikas Sinha",url:"https://learning.oreilly.com/library/view/-/9798868816031/"},
+  {kind:"Video",title:"Navigating AI Regulations: EU, NIST, ISO & Frameworks",who:"Tyler Wall",url:"https://learning.oreilly.com/videos/-/9781808086496/"},
+  {kind:"Video",title:"What Is the EU AI Act?",who:"Larysa Visengeriyeva",url:"https://learning.oreilly.com/videos/-/0642572018820/"}
 ];
 
 DATA.packPages = [
