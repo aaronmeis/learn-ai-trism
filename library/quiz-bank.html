@@ -57,13 +57,13 @@
 <li>After Debate 2, what is the design anchored to, and what role does TRiSM keep?</li>
 </ol>
 <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Anchor requirements to ISO/IEC 42001 and risk language to NIST AI RMF. TRiSM remains the capability and tool-placement map. E2A found no design that uses TRiSM as the sole auditable anchor. "Auditable" fits the ISO certification-body route better than NIST, which is voluntary <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code>.</p>
-<p><strong>Why it matters.</strong> An auditor can only test against something certifiable. ISO/IEC 42001 gives the requirements, NIST gives the risk language, and TRiSM keeps the placement-map job <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code>.</p>
+<p><strong>Why it matters.</strong> "Auditable" fits the ISO certification-body route better than NIST, which is voluntary. ISO/IEC 42001 gives the requirements, NIST gives the risk language, and TRiSM keeps the placement-map job <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code>.</p>
 <p><strong>Trap.</strong> Anchoring the design to TRiSM alone. E2A found no design that uses TRiSM as the sole auditable anchor.</p></div> <!-- id: tdd-4-4 -->
 <ol start="3">
 <li>Of the seven OWASP LLM01:2025 mitigations, about how many are filtering, and what does that do to a gateway-only design?</li>
 </ol>
 <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>About two are filtering or output validation. About five are privilege, architecture, or process <code>[S7b]</code>. A gateway stays on the design; it does not replace least privilege, human approval, segregation of external content, or adversarial testing.</p>
-<p><strong>Why it matters.</strong> A sponsor who thinks the gateway covers prompt injection may cut the identity broker from the budget. About five of the seven LLM01 mitigations are privilege, architecture, or process, so the cut removes most of the defense <code>[S7b]</code>.</p>
+<p><strong>Why it matters.</strong> A design that leans on the gateway alone overlooks that about five of the seven LLM01 mitigations are privilege, architecture, or process <code>[S7b]</code>. That is the case for keeping the identity broker.</p>
 <p><strong>Trap.</strong> Quoting a detection rate for the gateway. E3W has not been run and no ledger source measures one.</p></div> <h2>Block 3: Active practice</h2>
 <!-- id: odm-3-1 -->
 <ol>
@@ -75,7 +75,7 @@
 <ol start="2">
 <li>Which OWASP LLM 2025 entry's mitigation list does this pack quote in full, and what does block 3 still say that the ledger has moved past?</li>
 </ol>
-<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>LLM01 Prompt Injection, seven mitigations <code>[S7b]</code>. The ledger now marks the other entries as read too (<code>[S7c]</code>, <code>[S7d]</code>), but the pack quotes no mitigation list for them. Block 3 still says only LLM01 was read in full, which is older than those ledger rows.</p>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>LLM01 Prompt Injection, seven mitigations <code>[S7b]</code>. The ledger now marks the other entries as read too (<code>[S7c]</code>, <code>[S7d]</code>), but the desk passes record only one-line control themes for them, not full mitigation lists. Block 3 still says only LLM01 was read in full, which is older than those ledger rows.</p>
 <p><strong>Why it matters.</strong> Know exactly what you read before you say "OWASP says". LLM01 is the entry the pack can walk mitigation by mitigation <code>[S7b]</code>.</p>
 <p><strong>Trap.</strong> Inventing mitigations for entries you only know by name, or repeating block 3's older count without checking the ledger.</p></div> <!-- id: odm-3-3 -->
 <ol start="3">
@@ -139,7 +139,7 @@
 </ol>
 <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Any three from the claims note: Gartner-owned names for the four layers, Gartner-owned names for the four pillars, a Gartner-owned pillar definition set (E4A), a measured guardrail detection rate (E3W is unrun), or a certification path for TRiSM itself <a href="claims-debates.html">CLAIMS-AND-DEBATES</a>.</p>
 <p><strong>Why it matters.</strong> Knowing what the pack cannot claim is the other half of defending it. Each refusal pairs with an over-claim a reviewer would otherwise let through.</p>
-<p><strong>Trap.</strong> Using an older list. The claims note shrank after the desk passes, so check its current "still cannot claim" section.</p></div> <!-- id: odm-5-4 -->
+<p><strong>Trap.</strong> Using an older list. The claims note was rewritten after the desk passes, so check its current "still cannot claim" section.</p></div> <!-- id: odm-5-4 -->
 <ol start="4">
 <li>What order does Bo Li give for adding an outer AI firewall?</li>
 </ol>
@@ -172,11 +172,11 @@
 <p><strong>Why it matters.</strong> Dates are what a reviewer checks against EUR-Lex. Phased application means "in force" needs a date and an article <code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code>.</p>
 <p><strong>Trap.</strong> Saying the Act is fully in force for every high-risk system. Art. 6(1) is a later date, and this use case is not classified under an annex.</p></div> <!-- id: odm-6-3 -->
 <ol start="3">
-<li>Which debate is still only partial, and what evidence is missing?</li>
+<li>Which debate does the pack leave open on pillar coverage, and what evidence is still missing?</li>
 </ol>
-<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Debate 4, whether the pillars cover NIST's seven characteristics. Missing pieces are Gartner's own pillar definitions, the full AI 600-1 risk tables, and E4W on whether NIST requires a separate control per characteristic <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>.</p>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Debate 4, whether the pillars cover NIST's seven characteristics. E4A is partial: there are no Gartner-owned pillar definitions. The AI 600-1 suggested-action tables are only partly used. E4W has run: NIST does not require one separate control per characteristic <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>.</p>
 <p><strong>Why it matters.</strong> Naming the open debate shows you know where the evidence ends <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>.</p>
-<p><strong>Trap.</strong> Saying the pillars cover fairness and safety. Gartner's press-release outcomes name them, but the map from outcomes to pillars is unfinished.</p></div> <!-- id: odm-6-4 -->
+<p><strong>Trap.</strong> Saying E4W is still unrun. It ran on 2026-11-09, though older block notes still say otherwise. Also avoid saying the pillars cover fairness and safety: the press-release outcomes name them, but the map from outcomes to pillars is unfinished.</p></div> <!-- id: odm-6-4 -->
 <ol start="4">
 <li>Which date does the desk pass record for general application of Regulation (EU) 2024/1689?</li>
 </ol>
@@ -232,6 +232,11 @@
 <td>2026-11-09</td>
 <td>claude</td>
 <td>Added a why and a trap to every item and stable ids. Added 3 multiple-choice items. Rewrote block 3 item 2 and block 5 item 3 to match the current ledger and claims note.</td>
+</tr>
+<tr>
+<td>2026-11-10</td>
+<td>claude</td>
+<td>Independent audit applied: block 2 item 3 wording, block 3 item 2 wording, block 6 item 3 rewritten (E4W has run), block 5 item 3 trap.</td>
 </tr>
 </tbody>
 </table></article>
