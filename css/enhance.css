@@ -275,3 +275,53 @@ a.nav-item:hover{text-decoration:none}
 .ch-sum a.b{display:inline-flex;align-items:center}
 .ch-sum a.b:hover{text-decoration:none}
 @media (max-width:1100px){.ch-rounds{grid-template-columns:1fr}}
+
+/* ---------- Quiz refresh: attempt, confidence, why block, sets ---------- */
+.qrow{display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0}
+.qstat{font-size:.82rem;margin:.2rem 0 .6rem}
+.qconf{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin:.2rem 0 .6rem;font-size:.82rem}
+.qlabel{display:block;font-size:.82rem;color:var(--text-secondary);margin:.5rem 0 .25rem}
+.qatt{width:100%;box-sizing:border-box;background:var(--card-bg2,var(--card-bg));color:var(--text-primary);border:1px solid var(--border-color);border-radius:8px;padding:.6rem .7rem;font:inherit;font-size:.9rem;resize:vertical;min-height:4.2rem}
+.qatt:focus{outline:2px solid var(--accent-color);outline-offset:1px}
+.qmine{margin:.6rem 0;padding:.6rem .8rem;border-left:3px solid var(--border-color);color:var(--text-secondary);font-size:.86rem;white-space:pre-wrap}
+.qopts.q2{display:flex;flex-direction:column;gap:.4rem;margin:.4rem 0}
+.qo{display:block;width:100%;text-align:left;padding:.65rem .85rem;min-height:44px;border:1px solid var(--border-color);border-radius:8px;background:var(--card-bg);color:var(--text-primary);font:inherit;font-size:.9rem;cursor:pointer}
+.qo:hover:not(:disabled){border-color:var(--accent-color);background:var(--hover-bg)}
+.qo:disabled{cursor:default}
+.qo.correct{border-color:var(--good);background:var(--good-bg)}
+.qo.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.qfb{margin:.6rem 0;font-size:.88rem}
+.qfb p{margin:.3rem 0}
+.qfb .ok,.qres.ok,p.ok{color:var(--good)}
+.qfb .no,.qres.no,p.no{color:var(--bad)}
+.qres.part{color:var(--text-secondary)}
+.qwhy{margin-top:.8rem;padding:.7rem .9rem;border:1px solid var(--border-color);border-radius:10px;background:var(--card-bg2,var(--card-bg));font-size:.86rem}
+.qwhy p{margin:.35rem 0}
+.qsee{margin-top:.5rem;color:var(--text-secondary);font-size:.82rem}
+.qsee a{margin-right:.2rem}
+.qgrade{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:.8rem 0 .2rem}
+.qgrade button.b{min-height:44px}
+.qbadge{display:inline-block;margin-left:.4rem;padding:.12rem .5rem;border-radius:999px;font-size:.68rem;font-weight:600;border:1px solid var(--border-color);color:var(--text-dim);vertical-align:middle}
+.qbadge.g2{border-color:var(--good);color:var(--good)}
+.qbadge.g0{border-color:var(--bad);color:var(--bad)}
+.qimg{max-width:100%;margin:.7rem 0;border-radius:8px;cursor:zoom-in}
+.qsum{padding:1rem 1.2rem;border:1px solid var(--accent-color);border-radius:12px;margin:0 0 1rem;background:var(--hover-bg)}
+.qsum h3{margin:0 0 .4rem;font-size:1.4rem}
+.qsum ul{margin:.3rem 0 .6rem 1.1rem;padding:0;font-size:.88rem}
+#v-quiz .btnrow,#v-practice .btnrow{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:.6rem 0}
+.qcard:focus{outline:none}
+.qexp:focus{outline:2px solid var(--accent-color);outline-offset:3px}
+
+/* ---------- Practice view ---------- */
+.pcard{background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;padding:1.1rem 1.3rem;margin:0 0 1rem}
+.pcard h3{margin:0 0 .5rem;font-size:1.05rem}
+.pq{font-weight:600;margin:.6rem 0}
+.ptimer{font-size:2.6rem;font-weight:700;font-variant-numeric:tabular-nums;margin:.4rem 0;letter-spacing:.02em}
+.ptimer.sm{font-size:1.4rem}
+.ptimer.late{color:var(--bad)}
+.phead{font-size:1.15rem;font-weight:600;margin:.4rem 0;color:var(--accent-color)}
+.ptick{list-style:none;margin:.4rem 0;padding:0}
+.ptick li{padding:.35rem 0;border-bottom:1px solid var(--border-color);font-size:.88rem}
+.ptick input{margin-right:.5rem}
+@media (max-width:899px){.pcard{padding:1rem}.ptimer{font-size:2.2rem}.qgrade button.b{flex:1 1 30%}}
+@media (prefers-reduced-motion:reduce){.qo,.chip{transition:none}}

@@ -95,7 +95,7 @@ function renderCurriculum(){
   let h=`<h2 class="vh">${DATA.weeks.length}-block curriculum</h2>
   <p class="lead">${DATA.weeks.length} blocks from the packs. Each block has an action and a reason. ${lib("odm-day-plan","Timed day plan")}</p>
   <div class="timeline" style="margin-bottom:1.2rem">${DATA.weeks.map(w=>`<span class="t">Block ${w.n}</span><span class="b">${esc(w.title)}</span><span class="m">${esc(w.time)}</span>`).join("")}</div>
-  <details class="look-box" style="margin:0 0 1.4rem"><summary>Scope mind map</summary><p style="font-size:.8rem;color:var(--text-dim)">${lib("mindmap","Mind map as text")} · ${lib("intake-record","Intake record")}</p></details>`;
+  <details class="look-box" style="margin:0 0 1.4rem"><summary>Scope mind map</summary><p style="font-size:.8rem;color:var(--text-dim)">${lib("odm-mindmap","ODM mind map")} · ${lib("tdd-mindmap","TDD mind map")}</p></details>`;
   DATA.weeks.forEach(w=>{
     const total=w.mods.length, done=w.mods.filter((_,i)=>LS.get(moduleKey(w.n,i),false)).length;
     h+=`<div class="card">
@@ -290,34 +290,7 @@ function renderDeck(){
   el.innerHTML=h+`</div>`;
 }
 
-/* ---- Quiz ---- */
-function renderQuiz(){
-  const el=$("#v-quiz");
-  const secs=Object.keys(DATA.quizSections).map(Number);
-  const sel=LS.get(KEY+"quizSec",secs[0]);
-  let h=`<h2 class="vh">Quiz</h2>
-  <p class="lead">${DATA.quiz.length} questions. The NotebookLM set is multiple choice. The others are short answers. ${lib("quiz-bank","Quiz bank")} · ${lib("nblm-gap-quiz","Full NotebookLM quiz")}</p>
-  <div class="btnrow">${secs.map(s=>`<button class="b ${s==sel?"on":""}" data-qs="${s}">${esc(DATA.quizSections[s])} (${DATA.quiz.filter(q=>q.section==s).length})</button>`).join("")}</div>`;
-  const qs=DATA.quiz.filter(q=>q.section==sel);
-  qs.forEach((q,qi)=>{
-    h+=`<div class="qcard" data-qi="${qi}"><div class="qq">${esc(q.question)}${q.rung?` <span class="pill r${q.rung}">${q.rung}</span>`:""}${q.src?` <span class="pill">${esc(q.src)}</span>`:""}</div>`;
-    if(q.type==="mc") h+=`<div class="qopts">${q.options.map((o,oi)=>`<label data-o="${oi}"><input type="radio" name="q${qi}" style="margin-right:8px">${esc(o)}</label>`).join("")}</div>`;
-    else h+=`<button class="reveal">Show model answer</button>`;
-    h+=`<div class="qexp"><b>Answer:</b> ${ec(q.answer)}<br><br><b>Why / source:</b> ${ec(q.explanation)}</div></div>`;
-  });
-  el.innerHTML=h;
-  $$("[data-qs]",el).forEach(b=>b.onclick=()=>{LS.set(KEY+"quizSec",+b.dataset.qs);renderQuiz();});
-  $$(".qcard",el).forEach(card=>{
-    const q=qs[+card.dataset.qi];
-    $$(".qopts label",card).forEach(l=>l.onclick=()=>{
-      $$(".qopts label",card).forEach(x=>x.classList.remove("correct","wrong"));
-      const ok=$$(".qopts label",card).find(x=>q.options[+x.dataset.o]===q.answer);
-      if(l!==ok) l.classList.add("wrong"); if(ok) ok.classList.add("correct");
-      $(".qexp",card).classList.add("show");
-    });
-    const rv=$(".reveal",card); if(rv) rv.onclick=()=>$(".qexp",card).classList.add("show");
-  });
-}
+/* ---- Quiz and Practice live in js/quiz.js ---- */
 
 /* ---- Glossary ---- */
 function renderGlossary(){
@@ -325,7 +298,7 @@ function renderGlossary(){
   const q=(LS.get(KEY+"gq","")||"").toLowerCase(), cat=LS.get(KEY+"gcat","all");
   const cats=[...new Set(DATA.glossary.map(g=>g.category))];
   let h=`<h2 class="vh">Glossary <span style="font-size:1rem;color:var(--text-dim)">${DATA.glossary.length} terms</span></h2>
-  <p class="lead">Study definitions. Rows marked gap pass still need a ledger check. ${lib("glossary","Glossary note")} · ${lib("nblm-gap-table","Data table")} · ${lib("source-ledger","Source ledger")}</p>
+  <p class="lead">Study definitions. Rows marked gap pass still need a ledger check. ${lib("glossary","Glossary note")} · ${lib("source-ledger","Source ledger")}</p>
   <input class="search" id="gSearch" placeholder="filter terms…" value="${esc(q)}">
   <div class="gfilters"><button class="b ${cat==="all"?"on":""}" data-gc="all">All (${DATA.glossary.length})</button>${cats.map(c=>`<button class="b ${cat===c?"on":""}" data-gc="${esc(c)}">${esc(c)} (${DATA.glossary.filter(g=>g.category===c).length})</button>`).join("")}</div>`;
   cats.filter(c=>cat==="all"||c===cat).forEach(c=>{
@@ -365,7 +338,7 @@ function renderCounsel(){
   const views=[...new Set(DATA.checklist.map(c=>c.view))];
   const done=DATA.checklist.filter((_,i)=>LS.get(KEY+"cl:"+i,false)).length;
   let h=`<h2 class="vh">Failure modes</h2>
-  <p class="lead">What breaks in the engine and at the trust boundary. Check an item once you can name its tell and its fix without looking. ${lib("block-05-edge-cases","Edge cases")} · ${lib("nblm-failure-modes","NotebookLM failure catalog")}</p>
+  <p class="lead">What breaks in the engine and at the trust boundary. Check an item once you can name its tell and its fix without looking. ${lib("odm-block-05-edge-cases","Edge cases")} · ${lib("nblm-tdd-failure-modes","NotebookLM failure catalog")}</p>
   <div class="card" style="margin-bottom:1rem"><div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap"><h3>Failure-mode review</h3><span class="pct" style="font-weight:700;color:var(--accent-color)">${done} / ${DATA.checklist.length} reviewed</span></div></div>
   <div class="gfilters"><button class="b ${f==="all"?"on":""}" data-fv="all">All views</button>${views.map(v=>`<button class="b ${f===v?"on":""}" data-fv="${esc(v)}">${esc(v)}</button>`).join("")}</div>`;
   DATA.checklist.forEach((item,i)=>{

@@ -16,12 +16,12 @@ const APP_URL="https://aaronmeis.github.io/learn-ai-trism/";
 /* ---------- Views and groups ---------- */
 const VIEWS = {
   today:"Today", curriculum:"Curriculum", views:"Architecture views", shorts:"Shorts", deck:"Deck and deep-dive cut", library:"Library",
-  flash:"Flashcards", quiz:"Quiz", failures:"Failure modes", prompts:"Prompts",
+  flash:"Flashcards", quiz:"Quiz", practice:"Practice", failures:"Failure modes", prompts:"Prompts",
   cheat:"Decision rules", map:"Progress map", glossary:"Glossary", ea:"EA mapping", debates:"Debates", refs:"Source ledger", dashboard:"Overview"
 };
 const GROUPS = {
   learn:["curriculum","views","shorts","deck","library"],
-  practice:["flash","quiz","failures","prompts"],
+  practice:["flash","quiz","practice","failures","prompts"],
   reference:["cheat","map","glossary","ea","debates","refs","dashboard"]
 };
 const GROUP_OF = {};
@@ -58,8 +58,8 @@ const Store = {
 function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
 function challengeFor(d){
   const n=dayNum(d), r=rng(n*2654435761);
-  const cards=(DATA.cut&&DATA.cut.cards)||[], fms=DATA.checklist||[], pools=["where","auth","altitude"];
-  if(!cards.length||!fms.length||!DATA.drills) return null;
+  const cards=(DATA.cut&&DATA.cut.cards)||[], fms=DATA.checklist||[], pools=Object.keys(DATA.drills||{});
+  if(!cards.length||!fms.length||!pools.length) return null;
   const ci=((n%cards.length)+cards.length)%cards.length;
   const fi=((n*7+3)%fms.length+fms.length)%fms.length;
   const fm=fms[fi];
@@ -67,8 +67,8 @@ function challengeFor(d){
   const picks=[];
   while(picks.length<2){const i=others[Math.floor(r()*others.length)]; if(!picks.includes(i)) picks.push(i);}
   const fmOpts=[fi,...picks].map(i=>({i,t:fms[i].good})).sort(()=>r()-.5);
-  const pool=DATA.drills[pools[((n%3)+3)%3]];
-  const item=pool.items[((Math.floor(n/3))%pool.items.length+pool.items.length)%pool.items.length];
+  const pool=DATA.drills[pools[((n%pools.length)+pools.length)%pools.length]];
+  const item=pool.items[((Math.floor(n/pools.length))%pool.items.length+pool.items.length)%pool.items.length];
   return {key:dayKey(d), card:cards[ci], cardSlide:ci+2, fm, fi, fmOpts, pool, item};
 }
 function chState(k){return (LS.get(K("challenge"),{})[k])||{r:[null,null,null],revealed:false};}
@@ -116,7 +116,7 @@ function challengeHTML(){
         <div class="qopts">${optBtns(1,c.fmOpts.map(o=>o.t),fmCorrect)}</div>
         ${st.r[1]!==null?`<p class="ch-res ${st.r[1]?"ok":"no"}">${st.r[1]?"Correct.":"Not quite."} Source ${ec("["+c.fm.src+"]")} · <a href="#/failures">All failure modes →</a></p>`:""}</div>
       <div class="ch-round"><div class="ch-rk">3 · ${esc(c.pool.title)}</div>
-        <div class="ch-q">${esc(c.item.p)}</div><div class="ch-ask">${esc(c.pool.ask)}</div>
+        <div class="ch-q">${esc(c.item.p)}</div><div class="ch-ask">${ec(c.pool.ask)}</div>
         <div class="qopts">${optBtns(2,c.pool.options,c.item.a)}</div>
         ${st.r[2]!==null?`<p class="ch-res ${st.r[2]?"ok":"no"}">${st.r[2]?"Correct.":"Not quite."} ${esc(c.item.why)} ${ec("["+c.item.src+"]")}</p>`:""}</div>
     </div>
@@ -168,7 +168,7 @@ function show(v,sub){
   pauseHiddenMedia();
   if(v==="today") renderToday();
   if(v==="shorts"){ if(sub) selectShortById(sub,false); renderShorts(); }
-  const paint={glossary:renderGlossary,quiz:renderQuiz,views:renderViews,refs:renderReferences,flash:renderFlash,library:renderLibrary,cheat:renderCheat,failures:renderCounsel,prompts:renderPrompts,ea:renderEA,debates:renderDebates,map:renderMap,dashboard:renderDashboard,curriculum:renderCurriculum,deck:renderDeck};
+  const paint={glossary:renderGlossary,quiz:renderQuiz,views:renderViews,refs:renderReferences,flash:renderFlash,library:renderLibrary,cheat:renderCheat,failures:renderCounsel,prompts:renderPrompts,ea:renderEA,debates:renderDebates,practice:renderPractice,map:renderMap,dashboard:renderDashboard,curriculum:renderCurriculum,deck:renderDeck};
   if(changed && paint[v]) paint[v]();
   if(changed){
     const main=$("#main"); if(main) main.scrollTop=0;
@@ -321,7 +321,7 @@ function checkHTML(it){
     out+=`<div class="qcard sx-q" data-qidx="${idx}"><div class="qq">${esc(q.question)}</div>`;
     if(q.type==="mc"&&q.options) out+=`<div class="qopts">`+q.options.map(o=>`<button type="button" class="sx-opt" data-o="${esc(o)}">${esc(o)}</button>`).join("")+`</div>`;
     else out+=`<button type="button" class="b sx-reveal">Show model answer</button>`;
-    out+=`<div class="qexp"><b>Answer:</b> ${ec(q.answer)}<br><br><b>Why / source:</b> ${ec(q.explanation)}</div></div>`;
+    out+=`<div class="qexp"><b>Answer:</b> ${ec(q.answer)}<br><br><b>Why it matters:</b> ${ec(q.explanation)}<br><b>Trap:</b> ${ec(q.trap)}<br><a href="#/quiz">Practice this in the quiz →</a></div></div>`;
   });
   if(terms.length){
     out+=`<div class="sx-terms"><div class="sx-terms-h">Key terms</div>`+terms.map(g=>`<details class="sx-term"><summary>${esc(g.term)}</summary><p>${ec(g.definition)}</p></details>`).join("")+
@@ -347,6 +347,7 @@ function bindCheck(root){
   $$(".sx-drill",root).forEach(b=>b.onclick=()=>drillTerms(JSON.parse(b.dataset.terms)));
 }
 const sessionStamp=Date.now();
+window.Store=Store;
 function drillTerms(terms){
   const set=new Set(terms);
   const cards=DATA.glossary.filter(g=>set.has(g.term));
@@ -543,7 +544,7 @@ function renderToday(){
   </div>
   <div class="today-actions">
     <a class="action" href="#/flash"><b>${due?due+" due":fresh+" new"}</b><span>${due?"Flashcards to review":"Flashcards to learn"}</span></a>
-    <a class="action" href="#/quiz"><b>${DATA.quiz.length}</b><span>Design-review questions</span></a>
+    ${(()=>{const qs=quizStats();return `<a class="action" href="#/quiz"><b>${qs.due?qs.due+" due":qs.total}</b><span>${qs.due?"Quiz questions to review":"Design-review questions"}</span></a>`;})()}
     <a class="action" href="#/curriculum"><b>${mods.length?Math.round(doneMods/mods.length*100):0}%</b><span>${nextBlock?"Next: Block "+nextBlock.n+", "+esc(nextBlock.title):"Curriculum complete"}</span></a>
     <a class="action" href="#/failures"><b>${fmDone}/${DATA.checklist.length}</b><span>Failure modes reviewed</span></a>
   </div>
@@ -563,8 +564,7 @@ function renderToday(){
 /* ---------- Activity hooks on existing views ---------- */
 document.addEventListener("click",e=>{
   if(e.target.closest("#v-flash .fc-controls button[data-g]")) Store.bump("cards");
-  const lab=e.target.closest("#v-quiz .qopts label, #v-quiz .reveal");
-  if(lab){const card=lab.closest(".qcard"); if(card&&!card.dataset.counted){card.dataset.counted="1";Store.bump("quiz");}}
+  /* quiz reviews are counted in js/quiz.js when a question is graded */
 });
 
 /* ---------- Flashcard swipes (touch) ---------- */
@@ -674,6 +674,7 @@ $("#navSearch").onclick=openPalette; $("#mSearch").onclick=openPalette;
 if(/Mac|iPhone|iPad/.test(navigator.platform||"")) $$("kbd").forEach(k=>{if(k.textContent==="Ctrl K")k.textContent="⌘K";});
 
 function toast(msg){let t=$("#toast"); if(!t){t=document.createElement("div");t.id="toast";t.setAttribute("role","status");document.body.appendChild(t);} t.textContent=msg; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),3000);}
+window.toast=toast;
 
 /* ---------- Theme extras ---------- */
 const _applyTheme=window.applyTheme;

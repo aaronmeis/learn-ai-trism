@@ -12,4 +12,4 @@ Storage prefix `lat:` (shared `aaronmeis.github.io` origin). Theme keys `appMode
 
 Personal study material for AI Trust, Risk and Security Management (AI TRiSM). Every claim should trace to a row in the source ledger. NotebookLM media is secondary. This site is a learning tool only — not an endorsement of any vendor or analyst firm, and not legal advice.
 
-No Python, operator scripts, or credentials in this public repo. Finish holes: see `AGENT-HANDOFF.md`.
+No Python, operator scripts, or credentials in this public repo. Open work: see `AGENT-HANDOFF.md`.

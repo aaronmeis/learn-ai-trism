@@ -241,14 +241,14 @@
     "slug": "quiz-bank",
     "title": "ODM quiz bank",
     "section": "Reference",
-    "desc": "Closed-book quiz bank for the AI TRiSM one-day pack, three items per block.",
+    "desc": "Closed-book quiz bank for the AI TRiSM one-day pack, with a why and a trap for every item.",
     "nblm": false
   },
   {
     "slug": "tdd-quiz-bank",
     "title": "TDD quiz bank",
     "section": "Reference",
-    "desc": "Closed-book quiz bank for AI-TRISM views 1 to 5 and the cross-cutting blocks.",
+    "desc": "Closed-book quiz bank for AI-TRISM views 1 to 5 and the cross-cutting blocks, with a why and a trap for every item.",
     "nblm": false
   },
   {

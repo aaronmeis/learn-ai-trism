@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TDD quiz bank | Learn AI TRiSM</title>
-<meta name="description" content="Closed-book quiz bank for AI-TRISM views 1 to 5 and the cross-cutting blocks.">
+<meta name="description" content="Closed-book quiz bank for AI-TRISM views 1 to 5 and the cross-cutting blocks, with a why and a trap for every item.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,76 +20,356 @@
 <main class="doc">
   <div class="kicker">Reference</div>
   <h1 class="doctitle">TDD quiz bank</h1>
-  <p class="lead">Closed-book quiz bank for AI-TRISM views 1 to 5 and the cross-cutting blocks.</p>
+  <p class="lead">Closed-book quiz bank for AI-TRISM views 1 to 5 and the cross-cutting blocks, with a why and a trap for every item.</p>
   
   <article><h1>Quiz bank: AI-TRISM</h1>
-<p>Answer closed-book. Grade after. Log the score in <em>Progress Log, multi-pass tracker</em> Quiz column.</p>
+<p>Answer closed-book. Grade after. Log the score in <em>Progress Log, multi-pass tracker</em> Quiz column. Each item has a stable id in a comment before it. The study console at <code>learn-ai-trism</code> uses the same ids.</p>
 <p>Design review (block 8) should pull at least three of these items. Do not treat a high score as permission to invent SKUs or primary Gartner layer names.</p>
+<p>Every <strong>Why it matters</strong> and <strong>Trap</strong> line is drawn from pack notes and the <a href="source-ledger.html">source-ledger</a> only. Items marked <code>mc</code> are multiple choice, and their wrong options are real review mistakes taken from the failure modes.</p>
 <h2>Business Explanation</h2>
-<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>The quiz is the proof the study day worked. It asks for capabilities, flows, zones, control points, and the build order, and it asks what the pack must not claim. Folded answers keep the first pass honest.</p></div> <h2>View 1: Conceptual view (block 2)</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>The quiz is the proof the study day worked. It asks for capabilities, flows, zones, control points, and the build order, and it asks what the pack must not claim. Folded answers keep the first pass honest, and each answer says why a miss would hurt in a design review.</p></div> <h2>View 1: Conceptual view (block 2)</h2>
+<!-- id: tdd-1-1 -->
 <ol>
 <li>Name C1 to C4. What kind of source are they, and what must you not say about that source?</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>C1 AI catalog, C2 AI data mapping, C3 continuous assurance, C4 runtime inspection and enforcement. They are IBM's account of Gartner guidance <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>. Do not say you read those four names on a Gartner page.</p>
+<p><strong>Why it matters.</strong> C1 to C4 are the capability names this pack keeps reusing, so a reviewer will ask where they came from. A clear source grade up front keeps the rest of the slide credible <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>.</p>
+<p><strong>Trap.</strong> Presenting C1 to C4 as Gartner's own words. The pack read them on IBM's page, a vendor explainer that quotes Gartner glossary language <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>.</p></div> <!-- id: tdd-1-2 -->
+<ol start="2">
 <li>Which actors are untrusted or external, and what does the auditor want instead of access?</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>End user is untrusted input; AI agent is untrusted by default; third-party provider is supply-chain risk <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. The auditor wants evidence (C8), not an operator role.</p>
+<p><strong>Why it matters.</strong> A design that draws the agent and the provider as trusted hides its own attack surface. The conceptual view marks them untrusted before any product exists <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. The auditor gets evidence so that audit never depends on access to the operators.</p>
+<p><strong>Trap.</strong> Giving the auditor an operator role so they can look around. The view gives them evidence (C8) and nothing more.</p></div> <!-- id: tdd-1-3 -->
+<ol start="3">
 <li>Which two NIST trustworthiness characteristics have no clearly named pillar in this pack?</li>
 </ol>
-<h2>View 2: Logical view (block 3)</h2>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Safe, and fair with harmful bias managed <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>.</p>
+<p><strong>Why it matters.</strong> These two gaps are the honest answer when someone says the four pillars cover everything NIST asks for. The map from NIST characteristics to pillars is unfinished, which is why Debate 4 stays open <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>.</p>
+<p><strong>Trap.</strong> Saying the pillars cover all seven characteristics. NIST's own text does not require one separate control per characteristic (E4W), but that does not make the pillar names cover safe or fair <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>.</p></div> <!-- id: tdd-1-4 -->
+<ol start="4">
+<li>What does the August 2025 Gartner Hype Cycle press release actually say about AI TRiSM's structure?</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Four layers of technical capabilities; outcomes include governance, trustworthiness, fairness, safety, reliability, security, privacy, and data protection. The PR does not name the four layers <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code>.</p>
+<p><strong>Why it matters.</strong> This is the sentence a reviewer with the press release open will test. Four layers is confirmed. Names are not <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code>.</p>
+<p><strong>Trap.</strong> Reading "four layers" as "the four layers we use are Gartner's." The release lists outcomes (governance, trustworthiness, fairness, safety, reliability, security, privacy, data protection) and names no layer <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code>.</p></div> <!-- id: tdd-1-5 -->
+<ol start="5">
+<li>A slide says "Gartner's four layers are governance, runtime, information, and infrastructure." What is the accurate response?</li>
+</ol>
+<ul>
+<li>A. Correct. The Hype Cycle press release lists those four layers.</li>
+<li>B. The press release confirms four layers without naming them. The names come from secondary pages that cite the Market Guide.</li>
+<li>C. Wrong. Gartner describes four pillars, not layers.</li>
+<li>D. Correct, as long as the slide also cites NIST AI RMF.</li>
+</ul>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p><strong>B.</strong> The press release confirms four layers without naming them. The names come from secondary pages that cite the Market Guide.</p>
+<ul>
+<li>A. The press release does not list layer names. This is the failure mode "Primary Gartner layer names invented".</li>
+<li>B. Right. <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> confirms four layers and names none. <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> attributes the names to the Market Guide, which is paywalled.</li>
+<li>C. Gartner's release speaks of layers. The pillar names are a separate secondary list.</li>
+<li>D. NIST does not name Gartner's layers, so citing it cannot make the names primary.</li>
+</ul>
+<p><strong>Why it matters.</strong> Reviewers test this exact sentence. A correct answer separates what the free source confirms from what a secondary source reports <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>.</p>
+<p><strong>Trap.</strong> Agreeing with the slide. It sounds right because the names are widely repeated.</p></div> <h2>View 2: Logical view (block 3)</h2>
+<!-- id: tdd-2-1 -->
 <ol>
 <li>Name the request choke point and the second component that must still limit harm if that choke point is bypassed.</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Runtime gateway. The agent identity and access broker on F4, which does not depend on the gateway.</p>
+<p><strong>Why it matters.</strong> A gateway is one choke point, and a bypass sends everything past it. The broker on F4 does not depend on the gateway, so a bypass still meets a limit. A design is judged by what happens when its choke point fails <code>[S7b]</code>.</p>
+<p><strong>Trap.</strong> Answering with a second filter. It shares the gateway's blind spot. Only about two of the seven LLM01 mitigations are filtering; the rest are privilege, architecture, or process <code>[S7b]</code>.</p></div> <!-- id: tdd-2-2 -->
+<ol start="2">
 <li>Which two payloads are marked untrusted, and which flow number carries retrieved text?</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>User or agent prompt, and retrieved text. Retrieved text is F3 <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</p>
+<p><strong>Why it matters.</strong> Retrieved text is the untrusted payload people forget, because it comes from the company's own store. Drawing F3 red is what makes indirect injection visible on the diagram <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</p>
+<p><strong>Trap.</strong> Drawing the vector store arrow as a trusted gray line. That is the failure mode "Retrieved content drawn trusted" <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</p></div> <!-- id: tdd-2-3 -->
+<ol start="3">
 <li>Why does the policy engine sit outside the model, and which flow makes evidence a by-product?</li>
 </ol>
-<h2>View 3: Physical view (block 4)</h2>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>The model is treated as an untrusted user, so it must not enforce policy on itself <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. F8 captures evidence from every component.</p>
+<p><strong>Why it matters.</strong> If the model enforces its own policy, an injected prompt can argue it out of the rule. The policy engine decides allow, deny, or escalate outside the model, and F8 makes evidence a by-product of every decision <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</p>
+<p><strong>Trap.</strong> Putting the rule in the system prompt and calling it enforcement. That is the failure mode "Model enforces its own policy".</p></div> <!-- id: tdd-2-4 -->
+<ol start="4">
+<li>Where should policy enforcement for the assistant live?</li>
+</ol>
+<ul>
+<li>A. In the system prompt, because the model reads it first.</li>
+<li>B. In a policy engine outside the model, which treats the model as an untrusted user.</li>
+<li>C. In the model's fine-tuning, so every response follows the rule.</li>
+<li>D. In the retrieval index, so unsafe passages are never returned.</li>
+</ul>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p><strong>B.</strong> In a policy engine outside the model, which treats the model as an untrusted user.</p>
+<ul>
+<li>A. An injected prompt can argue the model out of its own rule. This is the failure mode "Model enforces its own policy".</li>
+<li>B. Right. The policy engine decides allow, deny, or escalate outside the model <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li>C. Fine-tuning is part of the model, which the design does not trust to enforce its own policy.</li>
+<li>D. Retrieval is itself an untrusted flow (F3). It is a place to inspect, not the place that enforces policy.</li>
+</ul>
+<p><strong>Why it matters.</strong> Where the rule lives decides whether an attacker can talk past it <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</p>
+<p><strong>Trap.</strong> Choosing the system prompt because it is the easiest place to write a rule.</p></div> <!-- id: tdd-2-5 -->
+<ol start="5">
+<li>On the logical view, how is the retrieved-text flow (F3) drawn, and why?</li>
+</ol>
+<ul>
+<li>A. Gray and trusted, because it comes from the company's own handbook.</li>
+<li>B. Red and untrusted, because retrieved text can carry hidden instructions into the prompt.</li>
+<li>C. It is not drawn, because retrieval happens inside the model.</li>
+<li>D. Drawn like the evidence flow (F8), because both are logging paths.</li>
+</ul>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p><strong>B.</strong> Red and untrusted, because retrieved text can carry hidden instructions into the prompt.</p>
+<ul>
+<li>A. This is the failure mode "Retrieved content drawn trusted". Internal text can still carry indirect injection.</li>
+<li>B. Right. Retrieved text is one of the two payloads marked untrusted <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li>C. Retrieval is a separate step that feeds the prompt, and the view draws it.</li>
+<li>D. F8 captures evidence. F3 carries untrusted content toward the model.</li>
+</ul>
+<p><strong>Why it matters.</strong> Marking F3 red is what makes indirect injection visible in a review <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</p>
+<p><strong>Trap.</strong> Trusting text because it comes from your own store.</p></div> <h2>View 3: Physical view (block 4)</h2>
+<!-- id: tdd-3-1 -->
 <ol>
 <li>Place the evaluation harness, the runtime gateway, the policy engine, and the evidence store into zones.</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Evaluation harness in TB1 build. Gateway in TB2 runtime. Policy engine and evidence store in TB4 governance.</p>
+<p><strong>Why it matters.</strong> Zones are where a physical review argues. Build, runtime, and governance are separate trust boundaries, so policy and evidence sit in governance instead of beside the thing they watch.</p>
+<p><strong>Trap.</strong> Putting the evidence store in the runtime zone next to the gateway. In the physical view it belongs to TB4 governance with the policy engine.</p></div> <!-- id: tdd-3-2 -->
+<ol start="2">
 <li>Which links are drawn red on the zone diagram, and which external link is a supply-chain risk without being one of those red links?</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Red: client prompts into the gateway, and retrieval from enterprise data into serving. Calls to a third-party model provider are supply-chain risk <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> and are not those two red links.</p>
+<p><strong>Why it matters.</strong> The two red links are the trust-boundary crossings the view calls out: client prompts into the gateway, and retrieval into serving. A reviewer reads red as "inspect here" <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</p>
+<p><strong>Trap.</strong> Counting the third-party model call as one of the two red links. It is a supply-chain risk, a different kind of exposure, and the view describes it separately <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</p></div> <!-- id: tdd-3-3 -->
+<ol start="3">
 <li>Sort NIST AI RMF, ISO/IEC 42001, the EU AI Act, and OWASP by the kind of authority they have. What belongs in a SKU cell?</li>
 </ol>
-<h2>View 4: Integration and AI elements (block 5)</h2>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>NIST AI RMF is voluntary <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>. ISO/IEC 42001 is a certification route through independent bodies <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>. The EU AI Act is law where it applies <code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code>. OWASP is an optional threat vocabulary <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. SKU cells say UNVERIFIED.</p>
+<p><strong>Why it matters.</strong> Mixing authority types is the most common over-claim in this pack: a voluntary framework briefed as a certificate, a market term briefed as law. Sorting them first keeps the rest of the defense honest <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code> <code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code> <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>.</p>
+<p><strong>Trap.</strong> Writing a product name into a SKU cell because it came up in a source. The cell says UNVERIFIED until product docs are read.</p></div> <!-- id: tdd-3-4 -->
+<ol start="4">
+<li>What kind of authority is the OWASP Top 10 for LLM Applications in this pack?</li>
+</ol>
+<ul>
+<li>A. Law where it applies.</li>
+<li>B. A certifiable standard.</li>
+<li>C. An optional threat vocabulary.</li>
+<li>D. A Gartner-owned framework.</li>
+</ul>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p><strong>C.</strong> An optional threat vocabulary.</p>
+<ul>
+<li>A. Law in this pack is Regulation (EU) 2024/1689.</li>
+<li>B. ISO/IEC 42001 is the certifiable route. OWASP has no certification body in the ledger.</li>
+<li>C. Right. OWASP is an optional threat vocabulary, with mitigations quoted in full only for LLM01 <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> <code>[S7b]</code>.</li>
+<li>D. OWASP is a community standard, and Gartner owns none of it.</li>
+</ul>
+<p><strong>Why it matters.</strong> Briefing OWASP as law or as a certificate is an authority mix-up a reviewer will catch <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</p>
+<p><strong>Trap.</strong> Choosing "certifiable" because a standard sounds like something you pass.</p></div> <h2>View 4: Integration and AI elements (block 5)</h2>
+<!-- id: tdd-4-1 -->
 <ol>
 <li>Name four inventory themes. Why is a vendor named in the table not a recommendation?</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Any four of: model supply, inspection products, identity, data catalog/DLP/vector stores, SIEM or ITSM, red-team tooling, auditor evidence. A named vendor only means a ledger source mentioned it; docs for that row were usually not read.</p>
+<p><strong>Why it matters.</strong> The inventory maps the categories around an AI system so you know what to ask about. It is a list of questions, not a shopping list.</p>
+<p><strong>Trap.</strong> Reading a named vendor as a recommendation. A named vendor only means a ledger source mentioned it, and docs for that row were usually not read.</p></div> <!-- id: tdd-4-2 -->
+<ol start="2">
 <li>Walk CP3, CP4, CP5, and CP6. Which two are red, and what combination stops oversharing?</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>CP3 inspects the prompt. CP4 treats retrieval as untrusted. CP5 scopes the tool call. CP6 inspects the output. CP3 and CP4 are red. Oversharing is stopped by C7 labeling (CP1), output inspection (CP6), and least privilege (CP5), not by a system-prompt line alone <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</p>
+<p><strong>Why it matters.</strong> These four control points are the request path in order. CP3 and CP4 are red because untrusted text enters there. Oversharing needs three controls together (labeling, output inspection, least privilege) because no single one covers it <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</p>
+<p><strong>Trap.</strong> Fixing oversharing with a line in the system prompt. The view says it takes C7 labeling (CP1), CP6 output inspection, and CP5 least privilege.</p></div> <!-- id: tdd-4-3 -->
+<ol start="3">
 <li>State the agent identity rule. What is known about government-cloud support for the inventory?</li>
 </ol>
-<h2>View 5: Detailed design (block 6)</h2>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>One identity per agent, least privilege, just-in-time scope, human approval for high-risk actions <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Government-cloud support is UNVERIFIED on every row.</p>
+<p><strong>Why it matters.</strong> Agent identity is the control that still works when filtering fails. UNVERIFIED on the government-cloud rows protects you from briefing a product as cleared when nobody read its docs <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>.</p>
+<p><strong>Trap.</strong> Giving every agent one powerful account and expecting the gateway to refuse bad calls. That is the failure mode "Shared agent service account". Also label the <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> speaker's vendor interest.</p></div> <!-- id: tdd-4-4 -->
+<ol start="4">
+<li>Of the seven OWASP LLM01:2025 mitigations, about how many are filtering, and what does that do to a gateway-only design?</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>About two are filtering or output validation. About five are privilege, architecture, or process <code>[S7b]</code>. A gateway stays on the design; it does not replace least privilege, human approval, segregation of external content, or adversarial testing.</p>
+<p><strong>Why it matters.</strong> A sponsor who thinks the gateway covers prompt injection may cut the identity broker from the budget. About five of the seven LLM01 mitigations are privilege, architecture, or process, so the cut removes most of the defense <code>[S7b]</code>.</p>
+<p><strong>Trap.</strong> Quoting a detection rate for the gateway. E3W has not been run and no ledger source measures one.</p></div> <!-- id: tdd-4-5 -->
+<ol start="5">
+<li>Three agents share one service account for tool calls. What does the pack say to do?</li>
+</ol>
+<ul>
+<li>A. Keep the shared account and let the gateway refuse bad tool calls.</li>
+<li>B. Give each agent its own identity with least privilege, just-in-time scope, and human approval for high-risk actions.</li>
+<li>C. Raise the model's refusal threshold so risky calls are never attempted.</li>
+<li>D. Keep the shared account and review the logs every month.</li>
+</ul>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p><strong>B.</strong> Give each agent its own identity with least privilege, just-in-time scope, and human approval for high-risk actions.</p>
+<ul>
+<li>A. This is the failure mode "Shared agent service account". The gateway is not the only limit that should apply.</li>
+<li>B. Right. One identity per agent, least privilege, just-in-time scope, human approval for high-risk actions <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li>C. That is a model setting, and the design does not rely on the model to limit its own actions.</li>
+<li>D. Logs help afterward. They do not limit what a shared account can do.</li>
+</ul>
+<p><strong>Why it matters.</strong> Identity is the control that still limits harm when filtering fails <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</p>
+<p><strong>Trap.</strong> Picking the gateway option. It feels like a control and leaves every agent with the same power.</p></div> <!-- id: tdd-4-6 -->
+<ol start="6">
+<li>What does the integration inventory say about government-cloud support for the listed products?</li>
+</ol>
+<ul>
+<li>A. Supported on every row.</li>
+<li>B. Supported on rows that carry a FedRAMP mention in the source.</li>
+<li>C. UNVERIFIED on every row.</li>
+<li>D. Not supported on any row.</li>
+</ul>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p><strong>C.</strong> UNVERIFIED on every row.</p>
+<ul>
+<li>A. Nothing in the ledger shows government-cloud support. Briefing it would be the failure mode "SKU / gov-cloud invented".</li>
+<li>B. A mention in a source is not proof of support for a product row.</li>
+<li>C. Right. Government-cloud support is UNVERIFIED on every row.</li>
+<li>D. "Not supported" is also a claim. The honest status is that nobody read the docs.</li>
+</ul>
+<p><strong>Why it matters.</strong> UNVERIFIED keeps a briefing from implying a clearance nobody checked.</p>
+<p><strong>Trap.</strong> Reading a named vendor as proof the product is cleared.</p></div> <h2>View 5: Detailed design (block 6)</h2>
+<!-- id: tdd-5-1 -->
 <ol>
 <li>Why is the evidence store step 1 and the asset registry step 2?</li>
-<li>What is monitor-only for, and what remains <code>UNVERIFIED</code> about enforce mode?</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Evidence must exist before discovery is worth showing later. The registry must exist before policy or blocking has an asset to attach to <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>.</p>
+<p><strong>Why it matters.</strong> Build order is an argument. You cannot enforce on assets nobody listed, and discovery has nothing to show if no evidence is being kept <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>.</p>
+<p><strong>Trap.</strong> Starting with the gateway because it is the visible control. The view puts evidence first and the registry second, before policy has anything to attach to.</p></div> <!-- id: tdd-5-2 -->
+<ol start="2">
+<li>What is monitor-only for, and what remains UNVERIFIED about enforce mode?</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Monitor-only learns real traffic before blocking. Latency and false positives of enforce mode are UNVERIFIED. Fail-closed versus fail-open is per use case.</p>
+<p><strong>Why it matters.</strong> Monitor-only gives you real traffic before anything is blocked. Latency and false-positive effects of enforce mode are UNVERIFIED, so "no impact" is a claim without a source.</p>
+<p><strong>Trap.</strong> Blocking production traffic on day one. See the failure mode "Enforce mode on day one".</p></div> <!-- id: tdd-5-3 -->
+<ol start="3">
 <li>Which designed test is still unrun, and what kind of GO does it need? Name one artifact this pack refused to draw.</li>
 </ol>
-<h2>Cross-cutting (blocks 1, 7, and 8)</h2>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>E3W, the guardrail comparison, needs an install GO. The pack refused to author 05-detailed-design.drawio without a chosen realization.</p>
+<p><strong>Why it matters.</strong> E3W is the designed test that would put a number on guardrails against a plain least-privilege setup, and it needs an install GO. Until it runs, the pack refuses detection rates and the final drawing.</p>
+<p><strong>Trap.</strong> Saying E3W was run, or that the missing drawing is an oversight. The pack declined to author 05-detailed-design.drawio until a realization is chosen.</p></div> <!-- id: tdd-5-4 -->
+<ol start="4">
+<li>A team wants to block production traffic on day one. What does the pack recommend?</li>
+</ol>
+<ul>
+<li>A. Enable enforce mode now, because blocking is the point of a gateway.</li>
+<li>B. Run monitor-only first to learn real traffic. Latency and false positives in enforce mode are UNVERIFIED.</li>
+<li>C. Enable enforce mode only for the EU region.</li>
+<li>D. Skip monitoring, because the red team already covers it.</li>
+</ul>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p><strong>B.</strong> Run monitor-only first to learn real traffic. Latency and false positives in enforce mode are UNVERIFIED.</p>
+<ul>
+<li>A. This is the failure mode "Enforce mode on day one". Nobody has baseline traffic yet.</li>
+<li>B. Right. Monitor-only learns real traffic before blocking. Fail-closed versus fail-open is per use case.</li>
+<li>C. The pack gives no region-based rollout rule. Nothing in the ledger supports it.</li>
+<li>D. A red team is a test before release. It does not replace learning production traffic.</li>
+</ul>
+<p><strong>Why it matters.</strong> Blocking without a baseline turns unknown false positives into outages.</p>
+<p><strong>Trap.</strong> Assuming enforce mode has no cost. Its latency and false-positive rates are UNVERIFIED.</p></div> <!-- id: tdd-5-5 -->
+<ol start="5">
+<li>Why is the evidence store step 1 in the build order?</li>
+</ol>
+<ul>
+<li>A. The gateway cannot start without it.</li>
+<li>B. Evidence must exist before discovery is worth showing later.</li>
+<li>C. NIST requires it before any other component.</li>
+<li>D. It is the cheapest component to buy.</li>
+</ul>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p><strong>B.</strong> Evidence must exist before discovery is worth showing later.</p>
+<ul>
+<li>A. The answer key gives a different reason, and names no such dependency for the gateway.</li>
+<li>B. Right. Evidence first, then the registry, then policy and blocking have something to attach to <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>.</li>
+<li>C. AI RMF is voluntary guidance <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>. The build order comes from the pack's own detailed design view.</li>
+<li>D. Cost is not part of the view, and no SKUs are named.</li>
+</ul>
+<p><strong>Why it matters.</strong> Build order is an argument about what must exist before the next step means anything <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>.</p>
+<p><strong>Trap.</strong> Starting with the gateway because it is the visible control.</p></div> <h2>Cross-cutting (blocks 1, 7, and 8)</h2>
+<!-- id: tdd-6-1 -->
 <ol>
 <li>Give one sentence each for conceptual, logical, and physical altitude.</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Conceptual: outcomes and actors, no products. Logical: parts, records, and flows, no hosts. Physical: zones and standards, SKUs unknown on purpose.</p>
+<p><strong>Why it matters.</strong> Altitude keeps a product name out of a conceptual slide and a vague claim out of a physical one. One sentence per altitude is the oral test in design review.</p>
+<p><strong>Trap.</strong> Putting SKUs on the physical view. They stay unknown on purpose, and filling them from memory is a named failure mode.</p></div> <!-- id: tdd-6-2 -->
+<ol start="2">
 <li>When do you use the layer names, when do you use the pillar names, and how do you attribute both?</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Use secondary layer names when you place enforcement <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>, and say <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> did not name them. Use pillar names as the application crosswalk <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code>. Never present either list as a primary Gartner quotation.</p>
+<p><strong>Why it matters.</strong> Layers place enforcement. Pillars crosswalk application concerns. Using the wrong word for the job confuses the room, and presenting either list as primary Gartner text is the one claim the pack forbids <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code>.</p>
+<p><strong>Trap.</strong> Quoting layer or pillar names as Gartner's own words. Both lists are secondary.</p></div> <!-- id: tdd-6-3 -->
+<ol start="3">
 <li>A sponsor says the AI firewall covers prompt injection. What do you concede, what do you add from LLM01, and what do you refuse to claim?</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Concede that an outer inspection layer is a serious proposal if the model cannot be fixed <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>, and that LLM01 includes filtering <code>[S7b]</code>. Add least privilege, human approval, segregation of external content, and per-agent identity <code>[S7b]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>. Refuse a detection rate, and note the <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> speaker's vendor interest. E3W is unrun.</p>
+<p><strong>Why it matters.</strong> This is the sponsor conversation the pack prepares you for. Conceding what is true keeps you credible, and the non-filter mitigations do the persuading <code>[S7b]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>.</p>
+<p><strong>Trap.</strong> Refusing to concede that an outer inspection layer is useful. Bo Li's order is risk assessment and red team first, then an outer firewall if the model cannot be fixed <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>.</p></div> <!-- id: tdd-6-4 -->
+<ol start="4">
 <li>Name the three architecture languages in the EA crosswalk. Give one UAF 1.3 cell for the conceptual view. How does that crosswalk differ from the NIST-to-ISO table?</li>
 </ol>
-<h2>Answers</h2>
-<div class="callout success" markdown="0"><div class="callout-title">View 1 answers</div><ol>
-<li>C1 AI catalog, C2 AI data mapping, C3 continuous assurance, C4 runtime inspection and enforcement. They are IBM's account of Gartner guidance <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>. Do not say you read those four names on a Gartner page.</li>
-<li>The end user is an untrusted input. The AI agent is untrusted by default. The third-party provider is supply-chain risk <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. The auditor wants evidence (C8), not an operator role.</li>
-<li>Safe, and fair with harmful bias managed <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>.</li>
-</ol></div> <div class="callout success" markdown="0"><div class="callout-title">View 2 answers</div><ol>
-<li>Runtime gateway. The agent identity and access broker on F4, which does not depend on the gateway.</li>
-<li>The user or agent prompt, and retrieved text. Retrieved text is F3 <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
-<li>The model is treated as an untrusted user, so it must not enforce policy on itself <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. F8 captures evidence from every component.</li>
-</ol></div> <div class="callout success" markdown="0"><div class="callout-title">View 3 answers</div><ol>
-<li>Evaluation harness in TB1 build. Gateway in TB2 runtime. Policy engine and evidence store in TB4 governance.</li>
-<li>Red: client prompts into the gateway, and retrieval from enterprise data into serving. Calls to a third-party model provider are supply-chain risk <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> and are not those two red links.</li>
-<li>NIST AI RMF is voluntary <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>. ISO/IEC 42001 is a certification route through independent bodies <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>. The EU AI Act is law where it applies <code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code>. OWASP is an optional threat vocabulary <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. SKU cells say <code>UNVERIFIED</code>.</li>
-</ol></div> <div class="callout success" markdown="0"><div class="callout-title">View 4 answers</div><ol>
-<li>Any four of: model supply, inspection products, identity, data catalog and DLP and vector stores, SIEM or ITSM, red-team tooling, auditor evidence. A named vendor only means a ledger source mentioned it. Docs for that row were usually not read.</li>
-<li>CP3 inspects the prompt. CP4 treats retrieval as untrusted. CP5 scopes the tool call. CP6 inspects the output. CP3 and CP4 are red. Oversharing is stopped by C7 through labeling (CP1), output inspection (CP6), and least privilege (CP5), not by a system-prompt line alone <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
-<li>One identity per agent, least privilege, just-in-time scope, human approval for high-risk actions <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Government-cloud support is <code>UNVERIFIED</code> on every row.</li>
-</ol></div> <div class="callout success" markdown="0"><div class="callout-title">View 5 answers</div><ol>
-<li>Evidence must exist before discovery is worth showing later. The registry must exist before policy or blocking has an asset to attach to <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>. See <a href="tdd-view-05-detailed-design.html">Detailed design</a>.</li>
-<li>Monitor-only learns real traffic before blocking. Latency and false positives of enforce mode are <code>UNVERIFIED</code>. Fail-closed versus fail-open is per use case.</li>
-<li>E3W, the guardrail comparison, needs an install GO. The pack refused to author <code>05-detailed-design.drawio</code> without a chosen realization.</li>
-</ol></div> <div class="callout success" markdown="0"><div class="callout-title">Cross-cutting answers</div><ol>
-<li>Conceptual: outcomes and actors, no products. Logical: parts, records, and flows, no hosts. Physical: zones and standards, SKUs unknown on purpose.</li>
-<li>Use secondary layer names when you place enforcement <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>, and say <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> did not name them. Use pillar names as the application crosswalk <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code>. Never present either list as a primary Gartner quotation.</li>
-<li>Concede that an outer inspection layer is a serious proposal if the model cannot be fixed <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>, and that LLM01 includes filtering <code>[S7b]</code>. Add least privilege, human approval, segregation of external content, and per-agent identity <code>[S7b]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>. Refuse a detection rate, and note the <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> speaker's vendor interest. E3W is unrun.</li>
-<li>TOGAF ADM, DoDAF viewpoints, and UAF 1.3. Conceptual UAF cells include Sm-Ov, St-Tx, St-Mv, or Op-Sr <code>[<a class="cite" href="https://www.omg.org/spec/UAF/1.3" target="_blank" rel="noopener" title="OMG Unified Architecture Framework (UAF) 1.3">S17</a>]</code>. The EA crosswalk places architecture elements; the NIST-to-ISO table <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code> maps control ids. Keep DoDAF alongside UAF <code>[<a class="cite" href="https://ac.cto.mil/wp-content/uploads/2025/01/U-Mission-Architecture-Style-Guide-Final_07Jan2025.pdf" target="_blank" rel="noopener" title="OUSD(R&amp;E) Mission Architecture Style Guide v1.0 (6 Jan 2025)">S18</a>]</code>. See <a href="ea-framework-crosswalk.html">ea-framework-crosswalk</a>.</li>
-</ol></div> <h2>Changelog</h2>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>TOGAF ADM, DoDAF viewpoints, and UAF 1.3. Conceptual UAF cells include Sm-Ov, St-Tx, St-Mv, or Op-Sr <code>[<a class="cite" href="https://www.omg.org/spec/UAF/1.3" target="_blank" rel="noopener" title="OMG Unified Architecture Framework (UAF) 1.3">S17</a>]</code>. The EA crosswalk places architecture elements; the NIST-to-ISO table <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code> maps control ids. Keep DoDAF alongside UAF <code>[<a class="cite" href="https://ac.cto.mil/wp-content/uploads/2025/01/U-Mission-Architecture-Style-Guide-Final_07Jan2025.pdf" target="_blank" rel="noopener" title="OUSD(R&amp;E) Mission Architecture Style Guide v1.0 (6 Jan 2025)">S18</a>]</code>.</p>
+<p><strong>Why it matters.</strong> TOGAF ADM, DoDAF, and UAF 1.3 place architecture elements. The NIST-to-ISO table maps control ids. Merging them produces one certificate story that neither table supports <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code> <code>[<a class="cite" href="https://www.omg.org/spec/UAF/1.3" target="_blank" rel="noopener" title="OMG Unified Architecture Framework (UAF) 1.3">S17</a>]</code> <code>[<a class="cite" href="https://ac.cto.mil/wp-content/uploads/2025/01/U-Mission-Architecture-Style-Guide-Final_07Jan2025.pdf" target="_blank" rel="noopener" title="OUSD(R&amp;E) Mission Architecture Style Guide v1.0 (6 Jan 2025)">S18</a>]</code>.</p>
+<p><strong>Trap.</strong> Saying DoDAF is retired and only UAF remains. Keep DoDAF alongside UAF until a CIO mandate retires it.</p></div> <!-- id: tdd-6-5 -->
+<ol start="5">
+<li>Who certifies an organization to ISO/IEC 42001, and what certification route did the desk pass find for NIST?</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Independent certification bodies certify the AIMS; ISO does not. ANAB accredits the bodies <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>. No NIST certification scheme was found for AI RMF 1.0 or AI 600-1; both are voluntary <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>.</p>
+<p><strong>Why it matters.</strong> A sponsor who says "ISO certified us" will repeat it to an auditor, and the first follow-up is which accredited certification body issued the certificate <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>.</p>
+<p><strong>Trap.</strong> Saying ISO or NIST certifies. ISO does not certify organizations, and no NIST certification scheme was found for AI RMF 1.0 or AI 600-1 <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>.</p></div> <!-- id: tdd-6-6 -->
+<ol start="6">
+<li>State today's falsifier in one sentence.</li>
+</ol>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Still treating secondary pillar/layer names as primary Gartner quotes, or believing TRiSM itself has a certification path.</p>
+<p><strong>Why it matters.</strong> The falsifier is the day's check on yourself. If you still brief secondary names as Gartner quotes, or believe TRiSM can be certified, the day did not change what you would say.</p>
+<p><strong>Trap.</strong> Passing the quiz and still using the slide with named layers in a review.</p></div> <!-- id: tdd-6-7 -->
+<ol start="7">
+<li>Which statement about certification is supported by the ledger?</li>
+</ol>
+<ul>
+<li>A. Gartner certifies organizations to AI TRiSM.</li>
+<li>B. NIST certifies organizations to AI RMF 1.0.</li>
+<li>C. Independent certification bodies certify an organization's AIMS to ISO/IEC 42001. ISO does not certify organizations.</li>
+<li>D. ISO issues the ISO/IEC 42001 certificate directly after an application.</li>
+</ul>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p><strong>C.</strong> Independent certification bodies certify an organization's AIMS to ISO/IEC 42001. ISO does not certify organizations.</p>
+<ul>
+<li>A. The ledger shows no TRiSM certification path. This is the failure mode "TRiSM treated as certifiable".</li>
+<li>B. No NIST certification scheme was found for AI RMF 1.0 or AI 600-1. Both are voluntary.</li>
+<li>C. Right. <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> says ISO does not certify, and <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code> shows ANAB accrediting the certification bodies.</li>
+<li>D. ISO publishes the standard and does not certify organizations <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code>.</li>
+</ul>
+<p><strong>Why it matters.</strong> A sponsor who says "we are certified" will be asked which accredited body issued it. Knowing the route lets you check the claim <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>.</p>
+<p><strong>Trap.</strong> Choosing the NIST or ISO option because both organizations sound like certifiers.</p></div> <!-- id: tdd-6-8 -->
+<ol start="8">
+<li>A sponsor says the AI firewall covers prompt injection. Which addition comes from OWASP LLM01?</li>
+</ol>
+<ul>
+<li>A. A higher detection-rate threshold on the firewall.</li>
+<li>B. A second firewall from another vendor.</li>
+<li>C. Least privilege, human approval for high-risk actions, and segregation of external content.</li>
+<li>D. A longer system prompt that forbids injected instructions.</li>
+</ul>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p><strong>C.</strong> Least privilege, human approval for high-risk actions, and segregation of external content.</p>
+<ul>
+<li>A. No source in the ledger measures a detection rate, and E3W is unrun.</li>
+<li>B. A second filter shares the first one's blind spot. About two of seven LLM01 mitigations are filtering.</li>
+<li>C. Right. These are privilege, architecture, and process mitigations, about five of the seven <code>[S7b]</code>.</li>
+<li>D. That is model-side enforcement, the failure mode "Model enforces its own policy".</li>
+</ul>
+<p><strong>Why it matters.</strong> The non-filter mitigations are most of LLM01. They are what makes a gateway-only design incomplete <code>[S7b]</code>.</p>
+<p><strong>Trap.</strong> Treating more filtering as the answer to filtering's limits.</p></div> <!-- id: tdd-6-9 -->
+<ol start="9">
+<li>A slide shows a gateway, a policy engine, and a vector store with arrows and no hostnames or zones. Which altitude is it?</li>
+</ol>
+<ul>
+<li>A. Conceptual</li>
+<li>B. Logical</li>
+<li>C. Physical</li>
+<li>D. Detailed design</li>
+</ul>
+<div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p><strong>B.</strong> Logical</p>
+<ul>
+<li>A. Conceptual shows outcomes and actors, with no products or parts.</li>
+<li>B. Right. Logical shows parts, records, and flows with no hosts.</li>
+<li>C. Physical shows zones and a standards profile, with SKUs left unknown.</li>
+<li>D. Detailed design is a dependency order for standing the reference up.</li>
+</ul>
+<p><strong>Why it matters.</strong> Naming the altitude keeps a slide from carrying more precision than the evidence has.</p>
+<p><strong>Trap.</strong> Calling it physical because boxes and arrows look like infrastructure.</p></div> <h2>Changelog</h2>
 <table>
 <thead>
 <tr>
@@ -113,6 +393,11 @@
 <td>2026-11-09</td>
 <td>grok</td>
 <td>Added cross-cutting item 4 on TOGAF/DoDAF/UAF vs NIST-to-ISO.</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>claude</td>
+<td>Added a why and a trap to every item, stable ids, 4 items from the ODM bank and the falsifier (23 total), and 11 multiple-choice items. Answers moved into per-item folds.</td>
 </tr>
 </tbody>
 </table></article>

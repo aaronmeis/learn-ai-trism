@@ -1,10 +1,10 @@
 /* Offline support for the study console (pattern from learn-ai-law).
    Pages, scripts and data: network first, cache as fallback.
    Images: cache first. Video and audio are never cached. */
-const CACHE = "learn-ai-trism-v8";
+const CACHE = "learn-ai-trism-v9";
 const SHELL = [
   "./", "index.html", "css/base.css", "css/enhance.css",
-  "js/data.js", "js/app.js", "js/enhance.js",
+  "js/data.js", "js/quiz.js", "js/app.js", "js/enhance.js",
   "shorts-catalog.js", "shorts-catalog.json",
   "library/manifest.js", "library/library.css",
   "manifest.webmanifest", "assets/hero.jpg",
