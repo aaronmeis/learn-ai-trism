@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 1: Context and scope | Learn AI TRiSM</title>
+<meta name="description" content="Block 1 study guide: scope, naming caution, and the four open debates before any diagram.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ TDD day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">TDD day blocks</div>
+  <h1 class="doctitle">Block 1: Context and scope</h1>
+  <p class="lead">Block 1 study guide: scope, naming caution, and the four open debates before any diagram.</p>
+  
+  <article>
+<p><strong>Time:</strong> 45 minutes</p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>Leaders hear "AI TRiSM" and assume there is a checklist they can audit. There is a useful checklist, and there is no certification against the phrase itself. This block teaches the boundary of the study day: which controls are in, which product tours are out, and which four arguments you must be able to state before you draw a box.</p></div> <h2>Goal</h2>
+<p>State what this architecture day will defend, what it will refuse to claim, and which debate each later view is allowed to settle.</p>
+<h2>Required reading</h2>
+<ul>
+<li><a href="odm-mission.html">MISSION</a> for the success tests.</li>
+<li><a href="claims-debates.html">CLAIMS-AND-DEBATES</a> Debates 1 to 4 and the "cannot claim" list. Do not reread the whole evidence log.</li>
+<li><a href="source-ledger.html">source-ledger</a> rows S1, S2, S8, S9 only, so you know which sentences are primary.</li>
+<li><a href="odm-mindmap.html">mindmap</a> context branch.</li>
+<li>Park <a href="tdd-view-01-conceptual.html">Conceptual view</a> until the retrieval check. The altitude rule on that note is the exit, not the warm-up.</li>
+</ul>
+<h2>What to learn</h2>
+<p>AI TRiSM is Gartner's name for a set of technical capabilities that support governance, trustworthiness, fairness, safety, reliability, security, privacy, and data protection <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code>. IBM's explainer quotes a glossary definition and is a secondary source <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>. It is a market category. It is not ISO/IEC 42001 and it is not the NIST AI Risk Management Framework.</p>
+<p>The intake said "four layers" and then listed explainability and model monitoring, ModelOps, application security, and privacy. That list is the <strong>pillar</strong> crosswalk vendors publish <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code>. A Gartner press release says the framework "comprises four layers" and does not name them <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code>. Secondary sources, citing a Market Guide this pack could not open, name those layers as AI governance, runtime inspection and enforcement, information governance, and infrastructure and stack <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>. Say "secondary" every time you repeat those four names.</p>
+<p>The day designs a <strong>vendor-neutral reference</strong>. No cloud, no SKU, no install. Vendors appear only in the integration inventory, and government-cloud support stays <code>UNVERIFIED</code>.</p>
+<p>Out of scope: training a model, a product tutorial, certification cramming, and any claim that TRiSM itself has a conformance path. In scope: capabilities, a proposed component set, deployment zones, external systems, the AI data path, and failure names from OWASP and two talks.</p>
+<p>Four debates travel with you. You do not need to win them in this block. You need to know the pack's working stance:</p>
+<table>
+<thead>
+<tr>
+<th>Debate</th>
+<th>Working stance for this day</th>
+<th>Do not upgrade it to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Pillars or layers</td>
+<td>Use layers to place controls. Keep pillars as a crosswalk. Both namings are secondary except the bare phrase "four layers" <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>.</td>
+<td>"Gartner defines the layers as..."</td>
+</tr>
+<tr>
+<td>2 What to design against</td>
+<td>Anchor conformance talk to ISO/IEC 42001 <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>. Use NIST AI RMF for risk language <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>. Use TRiSM as the capability map. NIST is voluntary <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>.</td>
+<td>"We are certified to TRiSM."</td>
+</tr>
+<tr>
+<td>3 Guardrails</td>
+<td>Runtime inspection is necessary and not sufficient <code>[S7b]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>.</td>
+<td>A detection-rate claim. E3W is unrun.</td>
+</tr>
+<tr>
+<td>4 Trustworthiness coverage</td>
+<td>NIST names seven characteristics <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>. Safe, and fair with harmful bias managed, have no clearly named pillar.</td>
+<td>A finished map of NIST AI 600-1 risks.</td>
+</tr>
+</tbody>
+</table>
+<h2>Actions</h2>
+<ol>
+<li>Write a two-sentence boundary in <em>NOTES</em> or in the margin of this note: what is inside the architecture, what is outside.</li>
+<li>Copy the four working stances into your own words. Attach one <code>[S#]</code> to each.</li>
+<li>Mark three sentences you will not say in a design review. Suggested bans: a primary list of Gartner layer names, a government-cloud claim, a measured guardrail catch rate.</li>
+<li>Skim the actor table in <a href="tdd-view-01-conceptual.html">Conceptual view</a> only after the retrieval check, and confirm you still have not written a product name.</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">Closed book</div><p>In two sentences, what is inside this architecture day and what is outside it? Which structure will you draw with, and why is that not a Gartner quote?</p></div> <div class="callout success" markdown="0"><div class="callout-title">Answer</div><p>Inside: capabilities and controls for trust, risk, and security of AI systems across catalog, data mapping, assurance, runtime enforcement, monitoring, lifecycle, privacy, and evidence. Outside: building models, single-vendor tutorials, and any certification against the TRiSM name. Draw with the four-layer placement because it names enforcement points, and label those names as secondary <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> because <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> says "four layers" without naming them. Keep the four pillars as the crosswalk <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code>.</p></div> <h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Boundary statement written, with in-scope controls and out-of-scope product work.</li>
+<li class="task"><input type="checkbox" disabled> Four debates named, each with a working stance and an <code>[S#]</code>.</li>
+<li class="task"><input type="checkbox" disabled> You can state the altitude rule you are about to follow in <a href="tdd-view-01-conceptual.html">Conceptual view</a>: capabilities and actors, no products.</li>
+<li class="task"><input type="checkbox" disabled> You have not filled a SKU, a region, or a government-cloud cell.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>claude</td>
+<td>Stub pointing at the blocks generator.</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Study guide for scope, secondary naming, and Debates 1 to 4.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/blocks/01-context-and-scope.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><span></span><a href="tdd-block-02-conceptual-view.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

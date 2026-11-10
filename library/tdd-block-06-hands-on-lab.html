@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 6: Hands-on lab | Learn AI TRiSM</title>
+<meta name="description" content="Block 6 desk-only lab: walk the proposed build order and one public source. No installs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ TDD day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">TDD day blocks</div>
+  <h1 class="doctitle">Block 6: Hands-on lab</h1>
+  <p class="lead">Block 6 desk-only lab: walk the proposed build order and one public source. No installs.</p>
+  
+  <article>
+<p><strong>Time:</strong> 60 minutes</p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>There is no product to click. The useful hands-on work is to sequence the build so evidence and inventory exist before anyone blocks traffic, and to read one primary page so the design review cites a document instead of a memory. Installing a guardrail to "see what happens" is a different project and is out of bounds today.</p></div> <h2>Goal</h2>
+<p>Restate the ten-step build order from the detailed design, say which dependency each early step satisfies, and capture one sentence from a public ledger page. Do not install anything. Do not run E3W.</p>
+<h2>Required reading</h2>
+<ul>
+<li><a href="tdd-view-05-detailed-design.html">Detailed design</a>, especially the startup table and the <code>UNVERIFIED</code> open items.</li>
+<li>One public page from <a href="source-ledger.html">source-ledger</a>, chosen in the actions. Preferred: NIST AI RMF publication page <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> or the OWASP LLM01:2025 entry <code>[S7b]</code>.</li>
+<li><a href="desk-research-pass-2026-11-09.html">desk-research-pass-2026-11-09</a> section E3W, only to confirm the lab compare stays unrun.</li>
+</ul>
+<h2>What to learn</h2>
+<p>Detailed design normally names packages, paths, and commands. This pack has none. AI TRiSM is not a product, the reference is vendor-neutral, and lab access is docs and desk. The view therefore offers a <strong>proposed order</strong>. Every row is a proposal. The diagram file <code>05-detailed-design.drawio</code> was not authored, on purpose, until a realization is chosen.</p>
+<p>The order is dependency order, not a project plan with dates:</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What stands up</th>
+<th>Dependency it satisfies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Evidence and audit store</td>
+<td>Later controls have somewhere tamper-evident to write. Retention is <code>UNVERIFIED</code>.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AI asset registry, then discovery</td>
+<td>You cannot govern systems you have not listed. Catalog-first matches the secondary feature list <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Data map and classifier</td>
+<td>Assets gain datasets and labels <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Policy engine, small starter set</td>
+<td>Decisions need rules grounded in NIST Govern and the organization's risk tolerance <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Agent identity broker</td>
+<td>Agents get identities before they get tools <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Runtime gateway in <strong>monitor-only</strong></td>
+<td>Learn real traffic before you block it. Monitor-only is a proposal.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Evaluation harness on the release pipeline</td>
+<td>No version goes live without results. Red teaming first matches the academic talk <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Monitoring, then incident hand-off into existing SOC tools</td>
+<td>Drift and behavior alerts need a case path <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Enforce mode, per use case</td>
+<td>Fail-closed or fail-open is a decision, not a default. Latency and false positives are <code>UNVERIFIED</code> until E3W or a real pilot.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>First evidence pack using the NIST to ISO/IEC 42001 crosswalk</td>
+<td>C8 is exercised, not slides <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Why evidence before the catalog: a discovery scan that is not recorded cannot be shown later. Why catalog before policy: a policy with no asset scope is a slogan. Why monitor-only before enforce: you do not yet know the false-positive cost. Why step 9 is not "turn it all on": Debate 3 says a gateway that fails, or fails open, must not be the only control. The broker from step 5 is already in place.</p>
+<p>Interfaces you may describe and must not pretend to have run: gateway policy query (logical flow F2), asset registration (F7), evidence export (F8), evaluation run. There is no CLI in this pack.</p>
+<p>Desk trace, not a lab: open exactly one URL. Copy one sentence into <em>NOTES</em> with the <code>[S#]</code>, the title, and the date you opened it. If the page disagrees with a view line, write the disagreement. Do not silently "fix" the view in your head. Known tension: <a href="tdd-view-03-physical.html">Physical view</a> still says some primary pages were not read. The desk pass later read <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code>, <code>[<a class="cite" href="https://www.iso.org/standard/81230.html" target="_blank" rel="noopener" title="ISO/IEC 42001:2023 AI management systems (catalogue)">S5</a>]</code>, and <code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code>. Prefer the ledger's read status.</p>
+<p>Forbidden in this block:</p>
+<ul>
+<li>Package installs, containers, API keys, tenant changes.</li>
+<li>E3W, the prompt-injection compare against a guardrail product.</li>
+<li>Inventing config paths, ports, or SKUs to make the detailed design "look finished."</li>
+<li>Drawing <code>assets/diagrams/05-detailed-design.drawio</code> from imagination.</li>
+</ul>
+<h2>Actions</h2>
+<ol>
+<li>Write the ten steps in your own words. Next to steps 1, 2, 6, and 9, write the dependency sentence from the table above.</li>
+<li>Open one allowed URL. Record one sentence, the <code>[S#]</code>, and whether it supports catalog-first, red-team-first, or least privilege.</li>
+<li>List the five open items from <a href="tdd-view-05-detailed-design.html">Detailed design</a> as questions you would ask a sponsor. Do not answer them with guesses.</li>
+<li>In <em>Progress Log</em>, leave the block 6 day checkbox for yourself. Do not mark E3W run anywhere.</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">Closed book</div><p>Why does the evidence store come before the catalog, and why is the gateway monitor-only before it enforces? Which test is still unrun, and what would you need before running it?</p></div> <div class="callout success" markdown="0"><div class="callout-title">Answer</div><p>The store comes first so later registrations and decisions have a tamper-evident record. The catalog comes before enforcement so policy has an asset to apply to <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>. Monitor-only gathers real traffic before blocking. Enforce-mode latency and false positives are <code>UNVERIFIED</code>. E3W, the guardrail comparison, is unrun until an explicit install GO. See <a href="tdd-view-05-detailed-design.html">Detailed design</a>.</p></div> <h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Ten-step order restated from <a href="tdd-view-05-detailed-design.html">Detailed design</a>, including monitor-only before enforce.</li>
+<li class="task"><input type="checkbox" disabled> One public ledger page traced, with a quoted sentence and <code>[S#]</code> in your notes.</li>
+<li class="task"><input type="checkbox" disabled> No install, no tenant change, no invented CLI.</li>
+<li class="task"><input type="checkbox" disabled> E3W still recorded as unrun. Open items left open.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>claude</td>
+<td>Stub pointing at the blocks generator.</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Desk-only lab guide for the build order and a single public-source trace.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/blocks/06-hands-on-lab.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="tdd-block-05-integration-and-ai.html">&larr; Previous</a><a href="tdd-block-07-failure-modes-and-security.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

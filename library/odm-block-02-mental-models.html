@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 2: Mental models | Learn AI TRiSM</title>
+<meta name="description" content="Block 2 study note: pillars versus layers, standards anchoring, and runtime versus architecture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ ODM day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">ODM day blocks</div>
+  <h1 class="doctitle">Block 2: Mental models</h1>
+  <p class="lead">Block 2 study note: pillars versus layers, standards anchoring, and runtime versus architecture.</p>
+  
+  <article>
+<p><strong>Time:</strong> 45 minutes
+<strong>Goal:</strong> Hold three models you can draw in a review: pillars beside layers, standards as the anchor, runtime inspection beside identity and privilege.
+<strong>Pack:</strong> <a href="odm-hub.html">AI-TRISM hub</a></p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>A design review fails when the architect picks a vendor diagram and calls it the requirement. These three models tell you which picture is a placement aid, which document can be certified, and which controls still matter after a guardrail misses.</p></div> <h2>Sources</h2>
+<ul>
+<li>Debate 1, Debate 2, Debate 3 in <a href="claims-debates.html">CLAIMS-AND-DEBATES</a>. Evidence ids E1A, E1B, E1W, E2A, E2B, E2W, E3A, E3B.</li>
+<li><code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code> <code>[S7b]</code> <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code> <code>[<a class="cite" href="https://www.gartner.com/en/articles/ai-governance-trism" target="_blank" rel="noopener" title="Gartner: AI governance requires more than policies">S16</a>]</code>.</li>
+<li>TDD, read-only: <a href="tdd-view-01-conceptual.html">conceptual view</a>, <a href="tdd-view-02-logical.html">logical view</a>.</li>
+</ul>
+<h2>Model 1. Pillars beside layers</h2>
+<p>Pillars answer "which concern is this?" Layers answer "where does the control run?"</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Pillars <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code></th>
+<th>Layers <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>, count from <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shape</td>
+<td>Explainability, ModelOps, application security, privacy</td>
+<td>Governance, runtime inspection and enforcement, information governance, infrastructure and stack</td>
+</tr>
+<tr>
+<td>Use</td>
+<td>Crosswalk to the intake boundaries</td>
+<td>Place a component</td>
+</tr>
+<tr>
+<td>Source grade</td>
+<td>Secondary. E1A partial</td>
+<td>Names secondary. Count primary. E1B partial</td>
+</tr>
+<tr>
+<td>Risk</td>
+<td>Looks like a complete trust model. Fairness and safety are not named. Debate 4 open</td>
+<td>Sounds like Gartner's own diagram. The free Gartner page does not draw it</td>
+</tr>
+</tbody>
+</table>
+<p>IBM does not use either list as a neat set of four. It speaks of governance, data protection and classification, and runtime inspection <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>. Hold that third cut so a single vendor page cannot settle Debate 1.</p>
+<p>The pack prefers layers for architecture because they name enforcement points. <a href="claims-debates.html">CLAIMS-AND-DEBATES</a> calls that preference the architect's convenience, not a finding. E1W ran: the free press release uses "four layers" and does not publish pillars. That weakens the claim that Gartner names pillars on free pages. It does not erase the secondary pillar list.</p>
+<p>Draw this once:</p>
+<pre><code class="language-text">Concern (pillar, secondary) Place (layer, names secondary)
+explainability governance: who owns the explanation standard
+ModelOps governance + build records for release
+application security runtime inspection + infrastructure identity
+privacy information governance
+</code></pre>
+<p>A control can sit in one layer and serve two pillars. Least privilege on an agent is infrastructure, and it serves application security and privacy.</p>
+<h2>Model 2. Anchor the design to standards</h2>
+<p>Debate 2 asks whether you design against TRiSM or against auditable standards.</p>
+<table>
+<thead>
+<tr>
+<th>Side</th>
+<th>Claim</th>
+<th>Desk result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>TRiSM is enough to design against, because it organizes the lifecycle <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code></td>
+<td>E2A ran. No published design-review architecture in the search used TRiSM as the sole auditable anchor. Claim A stays weak.</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Anchor to NIST AI RMF and ISO/IEC 42001. Use TRiSM as a capability checklist <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code> <code>[<a class="cite" href="https://www.iso.org/standard/81230.html" target="_blank" rel="noopener" title="ISO/IEC 42001:2023 AI management systems (catalogue)">S5</a>]</code></td>
+<td>E2B ran. ISO/IEC 42001 is certifiable through independent bodies. ISO does not itself certify <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>E2W softens one word in Claim B. "Auditable" fits ISO better than NIST. AI RMF and AI 600-1 state voluntary use. No NIST certification path showed up <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>.</p>
+<p>Working rule for this pack:</p>
+<ol>
+<li>Requirements and evidence go to the AIMS, ISO/IEC 42001.</li>
+<li>Risk language goes to Govern, Map, Measure, Manage <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>.</li>
+<li>GenAI-specific actions wait on AI 600-1 tables you have not finished <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>.</li>
+<li>TRiSM layers tell you where a tool category sits.</li>
+<li>The crosswalk is how a control id in one document points at a control id in the other <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code>.</li>
+</ol>
+<p>The TDD conceptual view already splits the work this way. Capabilities C1 to C4 track IBM's account. C8 is compliance mapping and evidence, tied to NIST, ISO, and law. Use C8 as the slot for the anchor. Do not rename C8 to "TRiSM certification." Nothing in the ledger gives TRiSM a certification path.</p>
+<h2>Model 3. Runtime inspection beside architecture</h2>
+<p>Debate 3 is about weight, not about whether filters exist. Both sides keep an inspection point.</p>
+<p>Claim A, from Bo Li's talk: if the model cannot be fundamentally fixed, put an outer AI firewall or guard rail around it. Start with red teaming. Risk assessment cannot be skipped <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>.</p>
+<p>Claim B, from the CSA keynote: filters and rules cannot cover an infinite input and output space. Ask who the agent is and what it can access. Over-permissioning is the failure mode. The speaker works for a vendor that sells behavioral detection. Keep that interest visible <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>.</p>
+<p>E3A counted the seven LLM01:2025 mitigations <code>[S7b]</code>:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Mitigation</th>
+<th>Bucket</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Constrain model behavior in the system prompt</td>
+<td>Process and prompt design</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Define and validate expected output formats</td>
+<td>Filtering and inspection</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Input and output filtering</td>
+<td>Filtering and inspection</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Privilege control and least privilege</td>
+<td>Privilege and architecture</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Human approval for high-risk actions</td>
+<td>Process</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Segregate and identify external content</td>
+<td>Architecture and process</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Adversarial testing. Treat the model as an untrusted user</td>
+<td>Process</td>
+</tr>
+</tbody>
+</table>
+<p>About two items are filtering. About five are privilege, architecture, or process. That supports more weight on architecture. It leaves the runtime layer in place, because items 2 and 3 are real controls, and Bo Li still wants the outer layer when the model stays broken.</p>
+<p>The TDD logical view copies this split on purpose. The runtime gateway is the choke point for prompts, outputs, and tool calls. The agent identity broker is a separate component so a gateway failure does not become full privilege. Policy sits outside the model. Retrieval content is untrusted. Those component boundaries are a proposal. Gartner did not publish them.</p>
+<p>E3W, a lab comparison of a guardrail product against least privilege, is unrun. Do not quote detection rates.</p>
+<h2>What you leave open</h2>
+<p>Debate 4. A first mapping in the claims note sends valid and reliable toward ModelOps, secure and resilient toward application security, explainable and interpretable toward explainability, and privacy-enhanced toward privacy. Safe, and fair with harmful bias managed, have no pillar with those names. That mapping is labeled agent inference. E4A and E4B are partial. E4W is unrun. Say the gap. Do not close it.</p>
+<h2>Actions</h2>
+<ol>
+<li>10 minutes. Draw Model 1 on paper. Tag source grades in the corner.</li>
+<li>15 minutes. Write five numbered lines for Model 2 in your own words. Include the E2W softening so you do not call NIST a certificate.</li>
+<li>10 minutes. Recite the seven LLM01 mitigations and sort them into the two buckets without looking. Then check the table.</li>
+<li>10 minutes. Write one sentence you will say if a reviewer calls the layer preference "what Gartner proved."</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">Why does this pack place tools on layers and keep pillars as a crosswalk?</div></div> <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Layers name enforcement points, which is what a reference architecture has to draw. Pillars name concerns from secondary sources. The preference is recorded as convenience in Debate 1. The Gartner press release confirms the count of layers and does not confirm either set of names <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>.</p></div> <div class="callout question" markdown="0"><div class="callout-title">What is the design anchored to after Debate 2?</div></div> <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>ISO/IEC 42001 for the AIMS and conformance, NIST AI RMF for Govern, Map, Measure, and Manage. TRiSM stays the capability and tool map. NIST is voluntary, so "auditable" is the ISO side of the pair <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>.</p></div> <div class="callout question" markdown="0"><div class="callout-title">What order does Debate 3 support?</div></div> <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Red team and risk assessment first <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>. Outer inspection for prompts, outputs, and tool calls. Privilege, human approval, segregated external content, and a separate agent identity so the gateway is not the only control <code>[S7b]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>.</p></div> <h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Three models are on one page.</li>
+<li class="task"><input type="checkbox" disabled> Debate 4 is marked open.</li>
+<li class="task"><input type="checkbox" disabled> You can sort the seven LLM01 mitigations from memory.</li>
+<li class="task"><input type="checkbox" disabled> You can say E3W is unrun, so there is no detection-rate claim.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Filled mental models from Debates 1 to 3 and the TDD logical split.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/one-day-mastery/ai-trism/blocks/02-mental-models.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="odm-block-01-core-concepts.html">&larr; Previous</a><a href="odm-block-03-active-practice.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

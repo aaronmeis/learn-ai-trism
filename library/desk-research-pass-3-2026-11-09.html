@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desk research pass 3 — AI-TRISM (2026-11-09) | Learn AI TRiSM</title>
+<meta name="description" content="Third desk research pass: Ray 2026 TechXiv open PDF (five pillars + three taxonomies), remaining OWASP LLM 2025 entries, mindmap PNG already regenerated.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Reference</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Reference</div>
+  <h1 class="doctitle">Desk research pass 3 — AI-TRISM (2026-11-09)</h1>
+  <p class="lead">Third desk research pass: Ray 2026 TechXiv open PDF (five pillars + three taxonomies), remaining OWASP LLM 2025 entries, mindmap PNG already regenerated.</p>
+  
+  <article>
+<p>Follow-on to <a href="desk-research-pass-2-2026-11-09.html">desk-research-pass-2-2026-11-09</a>. Focus: Ray <code>[<a class="cite" href="https://doi.org/10.36227/techrxiv.174913612.20443736/v1" target="_blank" rel="noopener" title="Ray 2025/26 Review of TRiSM Frameworks in AI Systems (TechXiv open + Wiley DOI)">S13</a>]</code> open text, OWASP LLM02/04/05/07/09, pack claim updates.</p>
+<h2>Tooling used this pass</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Role</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exa (<code>web_search_exa</code> / <code>web_fetch_exa</code>)</td>
+<td>Locate open Ray copy; fetch OWASP entry pages</td>
+<td>Found TechXiv PDF DOI; PDF abstract + intro; OWASP PDF highlights for LLM02/05/07/09; LLM04 page fetch</td>
+</tr>
+<tr>
+<td>Firecrawl (<code>firecrawl_scrape</code> + PDF parser)</td>
+<td>Full open PDF parse</td>
+<td>Full markdown (~232k chars) from <code>https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.174913612.20443736/v1</code></td>
+</tr>
+<tr>
+<td>Tavily</td>
+<td>Available in fleet skill tree; Grok Tavily <strong>plugin off</strong> this session</td>
+<td>Unused; Exa + Firecrawl covered discovery and PDF</td>
+</tr>
+</tbody>
+</table>
+<p>Routing note for later sittings: <strong>Exa</strong> for discovery and short pages; <strong>Firecrawl</strong> for PDFs and stubborn pages; <strong>Tavily</strong> when the plugin or Hermes path is re-enabled and Exa/Firecrawl stall.</p>
+<h2>Ray 2026 / TechXiv preprint <code>[<a class="cite" href="https://doi.org/10.36227/techrxiv.174913612.20443736/v1" target="_blank" rel="noopener" title="Ray 2025/26 Review of TRiSM Frameworks in AI Systems (TechXiv open + Wiley DOI)">S13</a>]</code> — READ</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title</td>
+<td>A Review of TRiSM Frameworks in Artificial Intelligence Systems: Fundamentals, Taxonomy, Use Cases, Key Challenges and Future Directions</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>Partha Pratim Ray (Sikkim University); Senior Member, IEEE</td>
+</tr>
+<tr>
+<td>Open copy</td>
+<td>TechXiv preprint, posted <strong>5 June 2025</strong>, CC-BY 4.0 — https://doi.org/10.36227/techrxiv.174913612.20443736/v1</td>
+</tr>
+<tr>
+<td>Peer-reviewed DOI (still gated earlier)</td>
+<td>https://doi.org/10.1111/exsy.70213 (Wiley <em>Expert Systems</em>)</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Preprint <strong>READ</strong> via Firecrawl PDF parse; Wiley full text still treated as secondary to this open copy</td>
+</tr>
+</tbody>
+</table>
+<h3>Five foundational pillars (Ray synthesis)</h3>
+<p>Ray unites <strong>five</strong> pillars (not the four-pillar vendor set in <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>/<code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code>):</p>
+<ol>
+<li><strong>Explainability with real-time drift monitoring</strong> — SHAP, LIME, saliency; PSI / KS / JS drift; CI/CD XAI gates</li>
+<li><strong>ModelOps governance</strong> — versioning (Git/DVC), containers, IaC, canary/blue-green, policy-as-code (OPA), retirement/registry</li>
+<li><strong>AI application security</strong> — prompt injection and poisoning defenses, SAST/DAST/SCA, API gateway auth/rate limits/ABAC, RASP, red team</li>
+<li><strong>Data protection and privacy</strong> — minimization, k-anonymity / DP, federated learning, SMPC/HE, consent, lineage</li>
+<li><strong>Adversarial resilience</strong> — FGSM/PGD adversarial training, distillation, ensembling, feature squeezing, runtime detectors</li>
+</ol>
+<p><strong>Debate 1 implication:</strong> Ray is a scholarly <strong>synthesis</strong>, not a Gartner primary. It expands the secondary pillar set by adding <strong>adversarial resilience</strong> as a first-class pillar. Pack still prefers Gartner <strong>layers</strong> for architecture placement; Ray’s five pillars are useful as a control checklist that names fairness-adjacent work under trust taxonomy and hardens AppSec with an explicit adversarial pillar.</p>
+<p>Related-work note inside Ray: IBM/Gomstyn–Jonker are cited for a <em>different</em> five-item list (governance, trustworthiness, fairness, reliability, data protection). Do not conflate that IBM framing with Ray’s five technical pillars above.</p>
+<h3>Three aligned taxonomies (Section IV)</h3>
+<table>
+<thead>
+<tr>
+<th>Taxonomy</th>
+<th>Dimensions / categories (as named in Ray)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Trust</strong></td>
+<td>Fairness, explainability, transparency, accountability, ethical alignment, inclusiveness, human oversight, trust calibration, sustainability</td>
+</tr>
+<tr>
+<td><strong>Risk</strong></td>
+<td>Model, data, legal, operational, reputational, ethical, societal, cognitive, emergent, third-party (abstract also lists legal/operational/societal/cognitive/emergent/third-party)</td>
+</tr>
+<tr>
+<td><strong>Security controls</strong></td>
+<td>Access management, infrastructure hardening, runtime enforcement, privacy-enhancing techniques (plus AppSec practices surveyed in §III)</td>
+</tr>
+</tbody>
+</table>
+<p>Trust taxonomy <strong>names fairness</strong> explicitly. That strengthens Debate 4 room language: scholarly TRiSM synthesis treats fairness as a trust dimension even when vendor <em>pillar titles</em> omit it.</p>
+<h3>Toxicity taxonomy (Section V) — generative AI</h3>
+<p>Hate/harassment, violent content, self-harm, sexual content, illicit behavior, extremist content, advice misuse, personal data leakage, mis/disinformation, bias-oriented discrimination, profanity/obscenity, jailbreak/prompt-engineering attacks, multimodal toxicity, model-amplified dataset-driven toxicity — each mapped to TRiSM safeguards in the paper.</p>
+<h3>Adoption challenges (Section VII) — architect-relevant</h3>
+<p>Fragmented tooling; late integration into the lifecycle; ethical gaps; weak algorithmic transparency; hosted-LLM handling; human skill erosion; evolving threat landscape; cross-functional coordination; scalability; lifecycle governance controls; dynamic regulatory compliance; insufficient stakeholder understanding.</p>
+<h3>Future roadmap (Section VIII) — headline items</h3>
+<p>Adaptive AI-driven policy engines; causal explainability; privacy-by-design pipelines; continuous real-time assurance; federated governance; quantum-safe architectures; sustainable “green AI.”</p>
+<h2>OWASP LLM Top 10 2025 — remaining entries READ</h2>
+<p>Canonical list PDF: https://genai.owasp.org/download/43299/. Entry URLs use the <code>llmNN2025-…</code> slug form.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Architecture control theme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM02</td>
+<td>Sensitive Information Disclosure</td>
+<td>Sanitize training/user data; least privilege; Terms of Use / opt-out; do not rely on system-prompt “don’t reveal” alone</td>
+</tr>
+<tr>
+<td>LLM04</td>
+<td>Data and Model Poisoning</td>
+<td>Provenance / ML-BOM; vendor vetting; sandbox unverified data; DVC; anomaly detection; red team; watch for pickle/backdoor models</td>
+</tr>
+<tr>
+<td>LLM05</td>
+<td>Improper Output Handling</td>
+<td>Zero-trust on model outputs; ASVS validation/encoding; parameterized queries; CSP; treat XSS/SSRF/RCE as downstream risks</td>
+</tr>
+<tr>
+<td>LLM07</td>
+<td>System Prompt Leakage</td>
+<td>System prompt is <strong>not</strong> a secret or security control; externalize credentials/roles; enforce authz <strong>outside</strong> the LLM; external guardrails</td>
+</tr>
+<tr>
+<td>LLM09</td>
+<td>Misinformation</td>
+<td>RAG grounding; fine-tuning/PET; human oversight and cross-check; reduce overreliance (links to NIST confabulation / Air Canada-class liability examples)</td>
+</tr>
+</tbody>
+</table>
+<p>Prior pass already covered LLM01, LLM03, LLM06, LLM08, LLM10. <strong>Full Top 10 names now have entry-level control themes in the pack.</strong></p>
+<h3>Debate 3 cross-check</h3>
+<p>LLM05 and LLM07 both push <strong>controls outside the model</strong> (output validation; independent authz/guardrails). That reinforces Claim B (guardrails alone insufficient / filters must sit with privilege architecture) without replacing E3W lab evidence.</p>
+<h2>Mindmap PNG</h2>
+<p>TDD <code>assets/diagrams/00-mindmap.png</code> regenerated this sitting (<code>python -m tech_deep_dive mindmap --slug ai-trism</code>). Draw.io source and PNG both present under <code>Learning/tech-deep-dive/ai-trism/assets/diagrams/</code>.</p>
+<h2>Pack updates from this pass</h2>
+<ul>
+<li>Ledger <code>[<a class="cite" href="https://doi.org/10.36227/techrxiv.174913612.20443736/v1" target="_blank" rel="noopener" title="Ray 2025/26 Review of TRiSM Frameworks in AI Systems (TechXiv open + Wiley DOI)">S13</a>]</code> → TechXiv open PDF READ; peer-reviewed DOI kept as alias.</li>
+<li>Ledger OWASP row for remaining entries (<code>7d</code>).</li>
+<li>CLAIMS: Debate 1 evidence + “cannot claim” list updated for Ray; Debate 4 notes Ray trust taxonomy names fairness.</li>
+<li>This note mirrored to TDD pack <code>reference/</code>.</li>
+</ul>
+<h2>Still blocked / optional next</h2>
+<ul>
+<li>Gartner Market Guide PDF (paywall) — layer <em>names</em> still secondary.</li>
+<li>Wiley HTML for Ray (403 earlier); TechXiv is sufficient for desk claims.</li>
+<li>E3W lab (prompt-injection vs guardrail) — still needs install GO.</li>
+<li>Optional: Market Guide abstract hunt; gov-cloud mapping pass.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Pass 3: Firecrawl Ray TechXiv PDF; Exa OWASP LLM02/04/05/07/09; mindmap PNG confirmed; CLAIMS/ledger patches.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/reference/desk-research-pass-3-2026-11-09.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="desk-research-pass-2026-11-09.html">&larr; Previous</a><a href="odm-ea-framework-crosswalk.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

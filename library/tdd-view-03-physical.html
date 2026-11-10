@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical View — AI-TRISM | Learn AI TRiSM</title>
+<meta name="description" content="Physical view of AI-TRISM: deployment zones, realization options and standards for a vendor-neutral reference architecture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Architecture views</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Architecture views</div>
+  <h1 class="doctitle">Physical View — AI-TRISM</h1>
+  <p class="lead">Physical view of AI-TRISM: deployment zones, realization options and standards for a vendor-neutral reference architecture.</p>
+  
+  <article>
+<p>Pack: <a href="odm-hub.html">00 - AI-TRISM Hub</a> · Block: <a href="tdd-block-04-physical-view.html">Block 4</a> · Prev: <a href="tdd-view-02-logical.html">Logical</a> · Next: <a href="tdd-view-04-integration-ai.html">Integration and AI</a></p>
+<div class="callout info" markdown="0"><div class="callout-title">Altitude rule</div><p>Physical means <strong>what is actually deployed and where</strong>. Name the product services, portals, agents, regions, tenant boundaries, and license SKUs. Every row should trace back to a logical component.</p></div> <div class="callout warning" markdown="0"><div class="callout-title">Draft status: vendor-neutral by design</div><p>The intake chose a vendor-neutral reference architecture with no single cloud. So this view names <strong>deployment zones and realization patterns</strong>, not SKUs or regions. License, SKU and region columns say <code>UNVERIFIED</code> where a real design would fill them. No vendor product page was read in this sitting. Example vendors appear only where a ledger source names them.</p></div> <h2>Logical → physical mapping</h2>
+<table>
+<thead>
+<tr>
+<th>Logical component</th>
+<th>Physical realization (pattern)</th>
+<th>Where it runs</th>
+<th>License / SKU</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI asset registry</td>
+<td>Catalog service fed by discovery scans and CI/CD registration hooks</td>
+<td>Governance zone</td>
+<td>UNVERIFIED</td>
+<td>Proposal; <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> for the catalog capability</td>
+</tr>
+<tr>
+<td>Data map and classifier</td>
+<td>Data catalog plus classification scanner</td>
+<td>Governance zone, reads data estate</td>
+<td>UNVERIFIED</td>
+<td>Proposal; <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> for data mapping</td>
+</tr>
+<tr>
+<td>Policy engine</td>
+<td>Policy-as-code service, evaluated inline or sidecar</td>
+<td>Governance zone, called from runtime zone</td>
+<td>UNVERIFIED</td>
+<td>Proposal</td>
+</tr>
+<tr>
+<td>Evaluation and red-team harness</td>
+<td>Batch jobs in CI plus scheduled test runs</td>
+<td>Build zone</td>
+<td>UNVERIFIED</td>
+<td>Proposal; <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code> on red teaming first</td>
+</tr>
+<tr>
+<td>Runtime gateway</td>
+<td>Reverse proxy or API gateway with AI inspection, in front of model endpoints</td>
+<td>Runtime zone</td>
+<td>UNVERIFIED</td>
+<td><code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code> describes an AI firewall layer</td>
+</tr>
+<tr>
+<td>Agent identity and access broker</td>
+<td>Workload identity provider with just-in-time scoped tokens</td>
+<td>Runtime zone</td>
+<td>UNVERIFIED</td>
+<td><code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> names an identity control plane for agents</td>
+</tr>
+<tr>
+<td>Monitoring and behavior analytics</td>
+<td>Telemetry pipeline plus analytics service</td>
+<td>Observability zone</td>
+<td>UNVERIFIED</td>
+<td>Proposal</td>
+</tr>
+<tr>
+<td>Explainability service</td>
+<td>Library or service attached to model serving</td>
+<td>Runtime zone</td>
+<td>UNVERIFIED</td>
+<td>Proposal; <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> for the characteristic</td>
+</tr>
+<tr>
+<td>Model registry and release pipeline</td>
+<td>Registry plus gated deployment pipeline</td>
+<td>Build zone</td>
+<td>UNVERIFIED</td>
+<td>Proposal</td>
+</tr>
+<tr>
+<td>Evidence and audit store</td>
+<td>Append-only store with retention and access control</td>
+<td>Governance zone</td>
+<td>UNVERIFIED</td>
+<td>Proposal; <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code> for control mapping</td>
+</tr>
+<tr>
+<td>Incident handler</td>
+<td>Hand-off into the existing case management and SOC tooling</td>
+<td>Observability zone</td>
+<td>UNVERIFIED</td>
+<td>Proposal</td>
+</tr>
+</tbody>
+</table>
+<h2>Deployment topology</h2>
+<p>Five zones. Trust boundaries TB1 to TB5 are drawn around zones, not vendors. Red links cross a boundary carrying untrusted content.</p>
+<pre class="mermaid">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;themeVariables&quot;:{&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryBorderColor&quot;:&quot;#111111&quot;,&quot;lineColor&quot;:&quot;#6b6b6b&quot;,&quot;primaryTextColor&quot;:&quot;#111111&quot;,&quot;textColor&quot;:&quot;#111111&quot;,&quot;clusterBkg&quot;:&quot;#f8f8f8&quot;,&quot;clusterBorder&quot;:&quot;#6b6b6b&quot;,&quot;fontFamily&quot;:&quot;Arial, Helvetica, sans-serif&quot;,&quot;fontSize&quot;:&quot;14px&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;},&quot;flowchart&quot;:{&quot;htmlLabels&quot;:true,&quot;curve&quot;:&quot;basis&quot;}}}%%
+flowchart TB subgraph TB1[&quot;TB1 · Build zone&quot;] REG[&quot;Model registry and release pipeline&quot;] EVAL[&quot;Evaluation and red-team harness&quot;] end subgraph TB2[&quot;TB2 · Runtime zone&quot;] GW[&quot;Runtime gateway&quot;] SERVE[&quot;Model serving and AI applications&quot;] BROKER[&quot;Agent identity and access broker&quot;] EXPL[&quot;Explainability service&quot;] end subgraph TB3[&quot;TB3 · Observability and security zone&quot;] MON[&quot;Monitoring and analytics&quot;] IH[&quot;Incident handler&quot;] end subgraph TB4[&quot;TB4 · Governance zone&quot;] CAT[&quot;AI asset registry&quot;] MAP[&quot;Data map and classifier&quot;] POL[&quot;Policy engine&quot;] EVID[&quot;Evidence and audit store&quot;] end subgraph TB5[&quot;TB5 · External&quot;] CLIENT[&quot;Users and client agents&quot;] PROV[&quot;Third-party model providers&quot;] DATA[&quot;Enterprise data and retrieval stores&quot;] end CLIENT --&gt;|&quot;prompts (untrusted)&quot;| GW GW --&gt; SERVE SERVE --&gt;|&quot;model calls&quot;| PROV SERVE --&gt;|&quot;retrieval&quot;| DATA SERVE --&gt; BROKER GW --&gt;|&quot;policy query&quot;| POL GW --&gt;|&quot;interaction records&quot;| MON MON --&gt; IH EVAL --&gt;|&quot;results&quot;| REG REG --&gt;|&quot;approved release&quot;| SERVE REG --&gt;|&quot;asset records&quot;| CAT GW --&gt;|&quot;evidence&quot;| EVID linkStyle 0 stroke:#c8102e,stroke-width:2.5px,color:#c8102e linkStyle 3 stroke:#c8102e,stroke-width:2.5px,color:#c8102e
+</pre> <!-- tech_deep_dive:diagram-embed -->
+<p><a href="../assets/diagrams/03-physical-1.png" target="_blank"><img class="embed" src="../assets/diagrams/03-physical-1.png" alt="03-physical-1.png"></a></p>
+<h2>Cloud and tenant variants</h2>
+<p>Not researched in this sitting. The pack is vendor-neutral, so the useful question per row is whether each logical component has a realization available in that environment. That was not checked.</p>
+<table>
+<thead>
+<tr>
+<th>Environment</th>
+<th>Available?</th>
+<th>Feature gaps</th>
+<th>Data residency</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commercial</td>
+<td>UNVERIFIED</td>
+<td>Not researched</td>
+<td>Not researched</td>
+<td>none</td>
+</tr>
+<tr>
+<td>GCC</td>
+<td>UNVERIFIED</td>
+<td>Not researched</td>
+<td>Not researched</td>
+<td>none</td>
+</tr>
+<tr>
+<td>GCC High</td>
+<td>UNVERIFIED</td>
+<td>Not researched</td>
+<td>Not researched</td>
+<td>none</td>
+</tr>
+<tr>
+<td>DoD / Gov Secret</td>
+<td>UNVERIFIED</td>
+<td>Not researched</td>
+<td>Not researched</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2>Physical data model and storage</h2>
+<table>
+<thead>
+<tr>
+<th>Store</th>
+<th>Holds</th>
+<th>Retention</th>
+<th>Encryption / keys</th>
+<th>Region</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Registry store</td>
+<td>Asset, model version and dataset records</td>
+<td>UNVERIFIED</td>
+<td>UNVERIFIED</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Evidence store</td>
+<td>Decisions, test results, approvals</td>
+<td>Set by the strictest applicable requirement, UNVERIFIED</td>
+<td>Customer-managed keys recommended; <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code> gives one cloud example</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Interaction log store</td>
+<td>Prompts and outputs, possibly personal data</td>
+<td>UNVERIFIED</td>
+<td>UNVERIFIED</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Policy store</td>
+<td>Policy-as-code and its history</td>
+<td>Version history kept</td>
+<td>UNVERIFIED</td>
+<td>UNVERIFIED</td>
+</tr>
+</tbody>
+</table>
+<h2>Standards and protocols (StdV-1)</h2>
+<table>
+<thead>
+<tr>
+<th>Standard / protocol</th>
+<th>Used for</th>
+<th>Required or optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NIST AI RMF 1.0 (AI 100-1) <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code></td>
+<td>Organizing risk work as Govern, Map, Measure, Manage</td>
+<td>Voluntary</td>
+</tr>
+<tr>
+<td>NIST AI 600-1 <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code></td>
+<td>Generative AI risks and suggested actions</td>
+<td>Voluntary; not read</td>
+</tr>
+<tr>
+<td>ISO/IEC 42001:2023 <code>[<a class="cite" href="https://www.iso.org/standard/81230.html" target="_blank" rel="noopener" title="ISO/IEC 42001:2023 AI management systems (catalogue)">S5</a>]</code> <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code></td>
+<td>AI management system requirements</td>
+<td>Certification via independent CBs (ISO does not certify); ANAB accredits CBs</td>
+</tr>
+<tr>
+<td>EU AI Act, Regulation (EU) 2024/1689 <code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code></td>
+<td>Legal obligations for AI placed or used in the EU</td>
+<td>Law where it applies; article text not read</td>
+</tr>
+<tr>
+<td>OWASP Top 10 for LLM Applications 2025 <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code></td>
+<td>Threat vocabulary for application security</td>
+<td>Optional reference</td>
+</tr>
+<tr>
+<td>NIST to ISO 42001 crosswalk <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code></td>
+<td>Mapping controls between the two</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h2>Framework lens</h2>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Maps to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TOGAF</td>
+<td>Technology Architecture (Phase D) · Opportunities and Solutions (Phase E)</td>
+</tr>
+<tr>
+<td>DoDAF</td>
+<td>SV-1/SV-2 Systems Interface and Resource Flow · SV-4 Systems Functionality · DIV-3 Physical Data Model · StdV-1 Standards Profile</td>
+</tr>
+<tr>
+<td>UAF 1.3</td>
+<td>Rs-Cn Resources Connectivity · Ar-Sr / Ar-Cn Actual Resources · Sd-Tx Standards Taxonomy · Sc-Sr Security Structure</td>
+</tr>
+<tr>
+<td>Altitude</td>
+<td>Physical: deployment zones and realization patterns; named SKUs and regions deliberately absent</td>
+</tr>
+</tbody>
+</table>
+<p>Full EA crosswalk (TOGAF · DoDAF · UAF): <a href="ea-framework-crosswalk.html">ea-framework-crosswalk</a>.</p></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/views/03 - Physical View.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="tdd-view-02-logical.html">&larr; Previous</a><a href="tdd-view-04-integration-ai.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDD hub | Learn AI TRiSM</title>
+<meta name="description" content="Technical deep dive hub for AI-TRISM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Plan</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Plan</div>
+  <h1 class="doctitle">TDD hub</h1>
+  <p class="lead">Technical deep dive hub for AI-TRISM.</p>
+  
+  <article><h1>AI-TRISM — Tech Deep Dive Hub</h1>
+<p><strong>Slug:</strong> <code>ai-trism</code> · <strong>NBLM alias:</strong> <code>tdd-ai-trism</code> · Parent: <em>Tech Deep Dive Index</em></p>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>One long day (~7h) to understand AI-TRISM as an architect: conceptual, logical, and physical views, third-party integrations, AI elements, and a TOGAF / DoDAF / UAF lens, ending in a design review and a stitched video cut.</p></div> <h2>Architecture views</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>View</th>
+<th>Block</th>
+<th>TOGAF</th>
+<th>DoDAF</th>
+<th>UAF 1.3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="tdd-view-01-conceptual.html">Conceptual View</a></td>
+<td>2</td>
+<td>Architecture Vision (Phase A) · Business Architecture (Phase B)</td>
+<td>OV-1 · CV-2 · DIV-1</td>
+<td>Sm-Ov · St-Tx · St-Mv · Op-Sr</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="tdd-view-02-logical.html">Logical View</a></td>
+<td>3</td>
+<td>Information Systems Architectures (Phase C: Data and Application)</td>
+<td>OV-2 · OV-5b · SV-1 · DIV-2</td>
+<td>Op-Cn · Op-Pr · Sv-Sr · Rs-Sr · Op-If / Rs-If</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="tdd-view-03-physical.html">Physical View</a></td>
+<td>4</td>
+<td>Technology Architecture (Phase D) · Opportunities and Solutions (Phase E)</td>
+<td>SV-1/SV-2 · SV-4 · DIV-3 · StdV-1</td>
+<td>Rs-Cn · Ar-Sr · Ar-Cn · Sd-Tx · Sc-Sr</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="tdd-view-04-integration-ai.html">Integration and AI Elements</a></td>
+<td>5</td>
+<td>Phase C Application interfaces · Phase D Technology · Architecture Governance for AI</td>
+<td>SV-1/SV-2 · SV-6 · OV-3 · StdV-1</td>
+<td>Sv-Cn · Op-Cn · Sc-Cn · Sd-Tx · Rs-If</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="tdd-view-05-detailed-design.html">Detailed Design</a></td>
+<td>6</td>
+<td>Phase E Opportunities and Solutions · Phase F Migration Planning (build detail)</td>
+<td>SV-1/SV-4 · StdV-1 · DIV-3</td>
+<td>Pj-Sr · Pj-Rm · Rs-Rm · Ar-Sr · Sd-Tr</td>
+</tr>
+</tbody>
+</table>
+<p>EA crosswalk note: <a href="ea-framework-crosswalk.html">ea-framework-crosswalk</a>.</p>
+<h2>Day blocks</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Block</th>
+<th>Time</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Context and scope</td>
+<td>45m</td>
+<td><a href="tdd-block-01-context-and-scope.html">open</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Conceptual view</td>
+<td>60m</td>
+<td><a href="tdd-block-02-conceptual-view.html">open</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Logical view</td>
+<td>60m</td>
+<td><a href="tdd-block-03-logical-view.html">open</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Physical view</td>
+<td>60m</td>
+<td><a href="tdd-block-04-physical-view.html">open</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Integration and AI elements</td>
+<td>60m</td>
+<td><a href="tdd-block-05-integration-and-ai.html">open</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Hands-on lab</td>
+<td>60m</td>
+<td><a href="tdd-block-06-hands-on-lab.html">open</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Failure modes and security</td>
+<td>45m</td>
+<td><a href="tdd-block-07-failure-modes-and-security.html">open</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Design review and teach-back</td>
+<td>30m</td>
+<td><a href="tdd-block-08-design-review.html">open</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Focus total:</strong> 420 minutes plus breaks.</p>
+<h2>Mind map</h2>
+<p>Drawn locally from <a href="odm-mindmap.html">the reviewed mind map</a> as a draw.io tree (<code>python -m tech_deep_dive mindmap --slug ai-trism</code> — re-run after editing the mind map; not a NotebookLM artifact, which was found unreliable for this).</p>
+<p><a href="../assets/diagrams/00-mindmap.png" target="_blank"><img class="embed" src="../assets/diagrams/00-mindmap.png" alt="00-mindmap.png"></a></p>
+<p>All diagrams, including the view diagrams generated by <code>views</code>, are indexed with clickable thumbnails in <a href="diagram-index.html">the Diagram Index</a>.</p>
+<h2>Quick links</h2>
+<table>
+<thead>
+<tr>
+<th>Note</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mission</td>
+<td><a href="odm-mission.html">MISSION</a></td>
+</tr>
+<tr>
+<td>Day plan</td>
+<td><a href="odm-day-plan.html">day-plan</a></td>
+</tr>
+<tr>
+<td>Resources</td>
+<td><a href="resources.html">RESOURCES</a></td>
+</tr>
+<tr>
+<td>Source ledger</td>
+<td><a href="source-ledger.html">source-ledger</a></td>
+</tr>
+<tr>
+<td>EA crosswalk (TOGAF · DoDAF · UAF)</td>
+<td><a href="ea-framework-crosswalk.html">ea-framework-crosswalk</a></td>
+</tr>
+<tr>
+<td>Desk research pass</td>
+<td><a href="desk-research-pass-2026-11-09.html">desk-research-pass-2026-11-09</a></td>
+</tr>
+<tr>
+<td>Claims and debates</td>
+<td><a href="claims-debates.html">CLAIMS-AND-DEBATES</a></td>
+</tr>
+<tr>
+<td>YouTube Unlisted (next agent)</td>
+<td><em>AGENT-HANDOFF - YouTube unlisted</em></td>
+</tr>
+<tr>
+<td>Mind map (source)</td>
+<td><a href="odm-mindmap.html">mindmap</a></td>
+</tr>
+<tr>
+<td>Diagram index</td>
+<td><a href="diagram-index.html">00 - Diagram Index</a></td>
+</tr>
+<tr>
+<td>Progress</td>
+<td><em>Progress Log</em></td>
+</tr>
+<tr>
+<td>Multi-pass method</td>
+<td><em>03 - Multi-Pass Progress Tracker</em></td>
+</tr>
+<tr>
+<td>Quiz bank</td>
+<td><a href="quiz-bank.html">quiz-bank</a></td>
+</tr>
+<tr>
+<td>NotebookLM suite</td>
+<td><a href="pipeline-odm-suite.html">00 - Suite</a></td>
+</tr>
+<tr>
+<td>Prompt library</td>
+<td><a href="prompt-library.html">00 - Prompt Library</a></td>
+</tr>
+<tr>
+<td>Operator commands</td>
+<td><em>OPERATOR-COMMANDS</em></td>
+</tr>
+<tr>
+<td>Deep dive cut (video)</td>
+<td><a href="media-deep-dive-cut.html">Deep Dive Cut</a></td>
+</tr>
+</tbody>
+</table>
+<h2>Presentation</h2>
+<ul>
+<li><a href="media-slides.html">Presentation slides</a> — NotebookLM deck as JPG embeds (PPTX: )</li>
+</ul></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/00 - AI-TRISM Hub.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="odm-hub.html">&larr; Previous</a><a href="odm-mission.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

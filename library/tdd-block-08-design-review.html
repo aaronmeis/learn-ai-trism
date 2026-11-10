@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 8: Design review and teach-back | Learn AI TRiSM</title>
+<meta name="description" content="Block 8 study guide: design-review teach-back across the five views.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ TDD day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">TDD day blocks</div>
+  <h1 class="doctitle">Block 8: Design review and teach-back</h1>
+  <p class="lead">Block 8 study guide: design-review teach-back across the five views.</p>
+  
+  <article>
+<p><strong>Time:</strong> 30 minutes</p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>The value of the day is a person who can brief the design without notes and without over-claiming. This block is that briefing. It asks for three decisions you will defend with a source, one decision you will not defend, and a closed-book sample from the quiz bank. Passing it means the views changed what you would say in a review, not that you finished reading.</p></div> <h2>Goal</h2>
+<p>Deliver an eight-minute teach-back that moves from capabilities to zones to failure, and score at least three quiz items with the notes closed.</p>
+<h2>Required reading</h2>
+<ul>
+<li>Altitude callouts only, one each, in <a href="tdd-view-01-conceptual.html">Conceptual view</a>, <a href="tdd-view-02-logical.html">Logical view</a>, <a href="tdd-view-03-physical.html">Physical view</a>, <a href="tdd-view-04-integration-ai.html">Integration and AI</a>, and <a href="tdd-view-05-detailed-design.html">Detailed design</a>.</li>
+<li>The "can claim" and "cannot claim" lists in <a href="claims-debates.html">CLAIMS-AND-DEBATES</a>.</li>
+<li>Three items you choose from <a href="quiz-bank.html">quiz-bank</a>, after you have drafted the talk. Grade from the folded answers only when you are done.</li>
+</ul>
+<h2>What to learn</h2>
+<p>The teach-back has a fixed spine so you do not wander into a product pitch.</p>
+<ol>
+<li><strong>Term (about one minute).</strong> AI TRiSM is a market name for technical capabilities around trust, risk, and security <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>. It is not a management-system standard.</li>
+<li><strong>Structure (about one minute).</strong> You place controls on four layers whose names you attribute to secondary sources <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>. You keep four pillars as a crosswalk <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code>. You do not say Gartner's primary text listed those names. <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> confirms "four layers" unnamed.</li>
+<li><strong>Anchor (about one minute).</strong> Conformance conversations go to ISO/IEC 42001, which independent bodies can certify <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>. Risk language goes to NIST AI RMF, which is voluntary <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>. The crosswalk connects them <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code>. TRiSM tells you where tools sit. It does not certify you.</li>
+<li><strong>One request (about three minutes).</strong> Untrusted prompt, policy outside the model, untrusted retrieval, scoped tool call through a broker that survives the gateway, output check, async evidence. Point at C4, C7, and C8 as you go. This is <a href="tdd-view-02-logical.html">Logical view</a> plus CP3 to CP7.</li>
+<li><strong>What you will not defend (about two minutes).</strong> Primary Gartner layer names. Government-cloud fitness. A detection rate. That the four pillars cover safety and fairness <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>. That enforce mode is latency-free. That E3W was run.</li>
+</ol>
+<p>Altitude in one sentence each, which is the other half of the oral:</p>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th>One sentence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conceptual</td>
+<td>Outcomes and actors only.</td>
+</tr>
+<tr>
+<td>Logical</td>
+<td>Proposed parts, records, and flows. No hosts.</td>
+</tr>
+<tr>
+<td>Physical</td>
+<td>Five zones and a standards profile. SKUs left unknown.</td>
+</tr>
+<tr>
+<td>Integration</td>
+<td>Outside systems by category, and eight control points on the data path.</td>
+</tr>
+<tr>
+<td>Detailed design</td>
+<td>A dependency order for standing the reference up. No packages.</td>
+</tr>
+</tbody>
+</table>
+<p>TOGAF and DoDAF labels live in each view's framework lens. You need one example, not the whole matrix. A clean one: conceptual work is TOGAF Phase A and B and a DoDAF OV-1. Physical zones are Phase D and an SV-1 style resource picture. If you cannot remember the viewpoint number, say the altitude instead of guessing a code.</p>
+<p>Defend these three. They are sourced.</p>
+<ul>
+<li>Catalog before runtime blocking, because you cannot enforce on assets you have not listed <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>, and the build order says so.</li>
+<li>Policy is not inside the model <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li>ISO/IEC 42001 is a real certification route and TRiSM is not <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>.</li>
+</ul>
+<p>Do not defend these, even if the room wants a yes.</p>
+<ul>
+<li>"Gartner's four layers are named X, Y, Z, and W" as a primary quote.</li>
+<li>Any gov-cloud row.</li>
+<li>"The firewall stops prompt injection" without the privilege mitigations <code>[S7b]</code> and without E3W.</li>
+</ul>
+<p>Score rule for the quiz sample: closed book, then open <a href="quiz-bank.html">quiz-bank</a> answers. Log the fraction in <em>Progress Log</em> on the view rows you actually quizzed. A weak score comes back in a later study pass. Do not quiz all eighteen items in this half hour.</p>
+<h2>Actions</h2>
+<ol>
+<li>Speak the five-part spine once, timed. Cut anything that names a SKU.</li>
+<li>Write the three defensible claims and the three refusals on one card, each refusal paired with the over-claim it blocks.</li>
+<li>Answer three quiz items closed-book, at least one from view 2 or view 4 and one cross-cutting. Grade and log.</li>
+<li>If a view line still says a page was unread and the ledger says it was read, mention the tension. Do not stop to edit the view unless you meant to. This block is the talk.</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">Closed book</div><p>Give the one-sentence altitude change from conceptual to logical to physical. Name one claim you will defend with a source, and one you will not.</p></div> <div class="callout success" markdown="0"><div class="callout-title">Answer</div><p>Conceptual names outcomes and actors. Logical names proposed parts and flows without hosts. Physical names zones and standards, and leaves SKUs unknown. Defend: ISO/IEC 42001 is certifiable through independent bodies and is the conformance anchor <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>. Do not defend a primary Gartner list of layer names, or a government-cloud claim, or a measured guardrail catch rate.</p></div> <h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Teach-back delivered against <a href="tdd-view-01-conceptual.html">Conceptual view</a> through <a href="tdd-view-05-detailed-design.html">Detailed design</a>.</li>
+<li class="task"><input type="checkbox" disabled> Three sourced claims and three explicit non-claims written.</li>
+<li class="task"><input type="checkbox" disabled> At least three <a href="quiz-bank.html">quiz-bank</a> items scored closed-book and logged in <em>Progress Log</em>.</li>
+<li class="task"><input type="checkbox" disabled> No W8, NotebookLM, publish, or install started from this block.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>claude</td>
+<td>Stub pointing at the blocks generator.</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Teach-back guide with sourced claims, refusals, and a closed-book quiz sample.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/blocks/08-design-review.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="tdd-block-07-failure-modes-and-security.html">&larr; Previous</a><span></span></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

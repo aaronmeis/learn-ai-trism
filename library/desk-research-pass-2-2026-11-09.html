@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desk research pass 2 — AI-TRISM (2026-11-09) | Learn AI TRiSM</title>
+<meta name="description" content="Second desk research pass: NIST AI 600-1 GAI risks for Debate 4, more OWASP entries, Ray still blocked.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Reference</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Reference</div>
+  <h1 class="doctitle">Desk research pass 2 — AI-TRISM (2026-11-09)</h1>
+  <p class="lead">Second desk research pass: NIST AI 600-1 GAI risks for Debate 4, more OWASP entries, Ray still blocked.</p>
+  
+  <article>
+<p>Follow-on to <a href="desk-research-pass-2026-11-09.html">desk-research-pass-2026-11-09</a>. Focus: Debate 4 / E4A–E4W, OWASP depth, Ray 2026.</p>
+<h2>NIST AI 600-1 — twelve GAI risks (Section 2) <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code></h2>
+<p>Read from the PDF (Firecrawl, first ~50 pages + query). The profile is voluntary. It defines risks novel to or exacerbated by generative AI, then maps suggested actions to AI RMF functions and to the seven trustworthiness characteristics (Section 3 / Appendix tables).</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Risk name</th>
+<th>One-line meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>CBRN Information or Capabilities</td>
+<td>Easier access to or synthesis of chemical, biological, radiological, nuclear threat knowledge</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Confabulation</td>
+<td>Confidently stated false content (hallucinations / fabrications)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Dangerous, Violent, or Hateful Content</td>
+<td>Violent, radicalizing, self-harm, illegal-activity content</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Data Privacy</td>
+<td>Leakage or misuse of PII / sensitive data</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Environmental Impacts</td>
+<td>High compute and related ecosystem impacts</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Harmful Bias or Homogenization</td>
+<td>Amplified bias, subgroup disparities, undesired homogeneity</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Human-AI Configuration</td>
+<td>Over-reliance, automation bias, anthropomorphizing, emotional entanglement</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Information Integrity</td>
+<td>Dis/misinformation at scale; fact vs fiction blurred</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Information Security</td>
+<td>Offensive cyber ease; larger attack surface on models/data/weights</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Intellectual Property</td>
+<td>Unauthorized copyrighted / trade-secret content</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Obscene, Degrading, and/or Abusive Content</td>
+<td>Including synthetic CSAM and nonconsensual intimate images</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Value Chain and Component Integration</td>
+<td>Opaque third-party components, weak supplier vetting, lost accountability</td>
+</tr>
+</tbody>
+</table>
+<h3>E4W — must every characteristic have a separate control?</h3>
+<p><strong>Run 2026-11-09.</strong> AI 600-1 and AI RMF treat the seven characteristics as socio-technical properties to manage across Govern/Map/Measure/Manage. Risks are <em>mapped</em> to characteristics; the text does <strong>not</strong> require one dedicated control per characteristic. That weakens a hard reading of Claim B that "no named pillar for X" automatically means a framework failure. Gaps in pillar <em>names</em> still matter for ownership clarity in a room.</p>
+<h3>E4B — draft map of 12 GAI risks → four secondary pillars <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code></h3>
+<p>Pillar names remain secondary. This is an architect worksheet, not a Gartner finding.</p>
+<table>
+<thead>
+<tr>
+<th>GAI risk</th>
+<th>Best-fit secondary pillar</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Confabulation</td>
+<td>Explainability and model monitoring</td>
+<td>Also ModelOps evaluation gates</td>
+</tr>
+<tr>
+<td>Harmful Bias or Homogenization</td>
+<td>Explainability and model monitoring</td>
+<td>Fairness sits awkwardly; no pillar named "fairness"</td>
+</tr>
+<tr>
+<td>Human-AI Configuration</td>
+<td>Explainability and model monitoring</td>
+<td>UX / oversight; weak pillar fit</td>
+</tr>
+<tr>
+<td>Data Privacy</td>
+<td>Privacy</td>
+<td>Clear</td>
+</tr>
+<tr>
+<td>Intellectual Property</td>
+<td>Privacy</td>
+<td>Overlaps AppSec and governance</td>
+</tr>
+<tr>
+<td>Obscene / abusive content</td>
+<td>AI application security</td>
+<td>Runtime filters + policy; also safety</td>
+</tr>
+<tr>
+<td>Dangerous / violent / hateful content</td>
+<td>AI application security</td>
+<td>Runtime + evaluation</td>
+</tr>
+<tr>
+<td>Information Security</td>
+<td>AI application security</td>
+<td>Plus infrastructure layer</td>
+</tr>
+<tr>
+<td>Value Chain and Component Integration</td>
+<td>ModelOps</td>
+<td>Plus AppSec supply chain (OWASP LLM03)</td>
+</tr>
+<tr>
+<td>CBRN capabilities</td>
+<td>AI application security</td>
+<td>Plus evaluation / red team; safety gap</td>
+</tr>
+<tr>
+<td>Information Integrity</td>
+<td>AI application security</td>
+<td>Disinfo; also governance / monitoring</td>
+</tr>
+<tr>
+<td>Environmental Impacts</td>
+<td>ModelOps</td>
+<td>Weak fit; often out of TRiSM AppSec talk</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Unmapped or weak under pillar names alone:</strong> Environmental Impacts; parts of Human-AI Configuration; CBRN and safety-coded content; Information Integrity at ecosystem scale; fairness as a named property. Layer view helps more for placement (governance / runtime / information / infrastructure) than pillars alone.</p>
+<h3>E4A — fairness and safety under pillar definitions</h3>
+<p><strong>Still partial.</strong> Secondary sources name fairness in the Gartner <em>definition</em> quote (<code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>) while pillar <em>titles</em> omit fairness and safety (<code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>). No Gartner-owned pillar definitions were readable. Claim A (pillars cover trustworthiness) stays weakly supported; Claim B (named gaps vs NIST) stays useful for room rhetoric if framed as ownership gaps, not as proof Gartner forgot the topics.</p>
+<h2>OWASP entries newly read</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Control theme for architecture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM01</td>
+<td>Prompt Injection (already S7b)</td>
+<td>Filters + least privilege + human approval</td>
+</tr>
+<tr>
+<td>LLM03</td>
+<td>Supply Chain</td>
+<td>Vet suppliers, provenance, LoRA/adapters, Model Cards limits</td>
+</tr>
+<tr>
+<td>LLM06</td>
+<td>Excessive Agency</td>
+<td>Minimize extensions, permissions, autonomy; confirm high-impact actions</td>
+</tr>
+<tr>
+<td>LLM08</td>
+<td>Vector and Embedding Weaknesses</td>
+<td>Permission-aware vector stores; validate RAG sources; partition tenants</td>
+</tr>
+<tr>
+<td>LLM10</td>
+<td>Unbounded Consumption</td>
+<td>Rate limits, quotas, timeouts, input size limits, monitoring</td>
+</tr>
+</tbody>
+</table>
+<p>Still names-only for LLM02, LLM04, LLM05, LLM07, LLM09 unless a later pass opens them.</p>
+<h2>Ray 2026 <code>[<a class="cite" href="https://doi.org/10.36227/techrxiv.174913612.20443736/v1" target="_blank" rel="noopener" title="Ray 2025/26 Review of TRiSM Frameworks in AI Systems (TechXiv open + Wiley DOI)">S13</a>]</code></h2>
+<p>Still <strong>unread</strong>. DOI and Wiley pages did not yield full text this sitting (access wall). Keep as top Elicit lead.</p>
+<h2>Pack updates from this pass</h2>
+<ul>
+<li>CLAIMS Debate 4 evidence tracker: E4B/E4W advanced; E4A still partial.</li>
+<li>Ledger notes for S3 upgraded to "Section 2 twelve risks READ".</li>
+<li>Optional decision brief: see <code>reports/BLUF.md</code> if present.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Pass 2: AI 600-1 twelve risks; E4B draft map; E4W run; OWASP LLM03/06/08/10 read; Ray still blocked.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/reference/desk-research-pass-2-2026-11-09.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="elicit.html">&larr; Previous</a><a href="desk-research-pass-2026-11-09.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 5: Edge cases | Learn AI TRiSM</title>
+<meta name="description" content="Block 5: traps that make an AI TRiSM design look finished when it is not.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ ODM day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">ODM day blocks</div>
+  <h1 class="doctitle">Block 5: Edge cases</h1>
+  <p class="lead">Block 5: traps that make an AI TRiSM design look finished when it is not.</p>
+  
+  <article>
+<p><strong>Time:</strong> 45 minutes
+<strong>Goal:</strong> Catch five traps and say the room sentence that stops each one.
+<strong>Pack:</strong> <a href="odm-hub.html">AI-TRISM hub</a></p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>The expensive failure is a design that looks governed because a product name is on the diagram. These traps are the specific ways that happens with AI TRiSM: a filter standing in for architecture, invisible systems, agents with too much access, analyst terms the room has not read, and a sales talk filed as independent evidence.</p></div> <h2>Sources</h2>
+<ul>
+<li><code>[S7b]</code> LLM01 mitigations. <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> catalog and shadow AI via the TDD conceptual view. <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code> Bo Li. <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> CSA keynote, vendor interest. <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> paywall and secondary names. <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code> <code>[<a class="cite" href="https://doi.org/10.36227/techrxiv.174913612.20443736/v1" target="_blank" rel="noopener" title="Ray 2025/26 Review of TRiSM Frameworks in AI Systems (TechXiv open + Wiley DOI)">S13</a>]</code> unfinished and unread sources.</li>
+<li>TDD integration section on identity: <a href="tdd-view-04-integration-ai.html">integration view</a>.</li>
+<li>Claims list "What this pack still cannot claim": <a href="claims-debates.html">CLAIMS-AND-DEBATES</a>.</li>
+</ul>
+<h2>Trap 1. Guardrails-only designs</h2>
+<p><strong>Pattern.</strong> The diagram shows an AI firewall between users and the model. There is no identity broker, no human approval, no separation of retrieved content, and no red team.</p>
+<p><strong>Why it fails.</strong> Bo Li wants that outer layer when the model cannot be fixed, and he puts red teaming first <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>. The CSA keynote states the limit in plain language: you cannot do filters and rules on an infinite number of inputs and outputs <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>. OWASP's seven LLM01 mitigations put filtering in the minority <code>[S7b]</code>.</p>
+<p><strong>Room sentence.</strong> Inspection stays on the diagram, after a red team, and beside least privilege, human approval, and segregated retrieval content.</p>
+<p><strong>Do not add.</strong> A detection-rate percentage. E3W has not been run.</p>
+<h2>Trap 2. Shadow AI</h2>
+<p><strong>Pattern.</strong> The approved assistant is on the catalog. A team also pastes customer text into a personal chatbot, or an agent runs from a notebook the registry has never seen.</p>
+<p><strong>Why it fails.</strong> The TDD conceptual view takes the catalog from IBM's account of Gartner guidance so the risk owner can see every model, application, and agent, including shadow AI <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>. Policy on the approved path does not touch the invisible one. Information governance cannot label data it never sees.</p>
+<p><strong>Room sentence.</strong> Discovery plus registration is a control, with an owner and a risk tier. A system that is not in the catalog is outside the AIMS evidence, whatever the gateway does for the systems that are listed.</p>
+<h2>Trap 3. Agent over-permissioning</h2>
+<p><strong>Pattern.</strong> One service account can read the handbook, open tickets, read mail, and update payroll. Every agent uses it. The gateway is expected to refuse bad tool calls.</p>
+<p><strong>Why it fails.</strong> The CSA talk's starting question is who the agent is and what it can access <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>. OWASP tells you to keep the model's privileges to the task and to put extended functions in code, with a person approving high-risk actions <code>[S7b]</code>. The TDD logical view splits the access broker from the gateway so a missed filter does not equal full privilege. That split is a proposal. The privilege rule is not.</p>
+<p><strong>Room sentence.</strong> Each agent gets its own identity, scoped to draft a ticket or to answer from the handbook, and payroll is not on that identity at all.</p>
+<h2>Trap 4. Paywalled analyst terms</h2>
+<p><strong>Pattern.</strong> The slide says "per Gartner's four layers" and lists governance, runtime inspection, information governance, and infrastructure. Nobody in the room has the Market Guide. The free press release is not quoted.</p>
+<p><strong>Why it fails.</strong> <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> supports the count and the outcomes. It does not support the names. <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> supports the names as a citation to the Market Guide. E1B is partial. Treating the names as primary text is how a review adopts a paywalled claim at blog strength.</p>
+<p><strong>Room sentence.</strong> Gartner counts four layers on the 2025 press release and does not name them there. The names on this slide are the secondary Market Guide wording, and the PDF is still paywalled.</p>
+<p>Same trap, pillar edition. "Gartner's four pillars" from an AWS or Zscaler page is secondary <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>. E1A is partial.</p>
+<h2>Trap 5. Vendor interest in talks</h2>
+<p><strong>Pattern.</strong> The room treats the CSA keynote as a neutral lab result, then buys the speaker's product category as if the transcript were a controlled test.</p>
+<p><strong>Why it fails.</strong> The transcript, via auto-captions, does support a limit of filters and a focus on agent identity <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>. The speaker's employer sells behavioral detection. The claims note records that interest. Bo Li's talk is a university talk and does not carry the same interest flag <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>. Neither talk reports a measured detection rate.</p>
+<p><strong>Room sentence.</strong> Use the keynote for the limit it states. Label the commercial interest. Do not treat it as a bake-off. E3W is still the lab you have not run.</p>
+<h2>Adjacent misses</h2>
+<p>These are shorter. Fold them into the five traps if the room goes there.</p>
+<table>
+<thead>
+<tr>
+<th>Miss</th>
+<th>What you say</th>
+<th>Source grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI 600-1 cited as a finished control catalog</td>
+<td>Intro only. Risk tables not mined. Profile is voluntary.</td>
+<td><code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>, E4B partial</td>
+</tr>
+<tr>
+<td>Ray 2026 cited for "the literature"</td>
+<td>Unread. No findings.</td>
+<td><code>[<a class="cite" href="https://doi.org/10.36227/techrxiv.174913612.20443736/v1" target="_blank" rel="noopener" title="Ray 2025/26 Review of TRiSM Frameworks in AI Systems (TechXiv open + Wiley DOI)">S13</a>]</code></td>
+</tr>
+<tr>
+<td>EU tier assigned from a headline</td>
+<td>Classes and dates only. Annex not extracted.</td>
+<td><code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code></td>
+</tr>
+<tr>
+<td>Fifth pillar "compliance" treated as Gartner</td>
+<td>Zscaler notes that practitioners may add it.</td>
+<td><code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>, secondary</td>
+</tr>
+<tr>
+<td>Gov-cloud SKU assumed available</td>
+<td>TDD physical view marks gov-cloud support unverified on every row.</td>
+<td>TDD, no ledger proof</td>
+</tr>
+</tbody>
+</table>
+<h2>Actions</h2>
+<ol>
+<li>15 minutes. For each of the five traps, write the pattern in one line and the room sentence in one line, from memory after a single read.</li>
+<li>15 minutes. Take Handbook Assistant from block 3 and inject one trap. Rewrite only the broken part of the map.</li>
+<li>10 minutes. Copy the "cannot claim" list from <a href="claims-debates.html">CLAIMS-AND-DEBATES</a> onto the bottom of your sheet. Five bullets maximum, your words.</li>
+<li>5 minutes. Mark the trap you still explain badly. That is the block 5 Missed-it item.</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">What do you keep, and what do you add, when a design is guardrails-only?</div></div> <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Keep runtime inspection. Add red teaming first, least privilege, human approval for high-risk actions, and segregation of external content <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code> <code>[S7b]</code>. Quote the filter limit from <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> with the vendor-interest label.</p></div> <div class="callout question" markdown="0"><div class="callout-title">What makes shadow AI invisible to the rest of the design?</div></div> <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>It is missing from the catalog, so ownership, data mapping, and evidence never start <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>. Gateway policy on registered systems does not see it.</p></div> <div class="callout question" markdown="0"><div class="callout-title">Which three claims are still off limits after this block?</div></div> <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Named layers quoted as Gartner's own free-page text. A TRiSM certification. Any finding from Ray 2026 <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> <code>[<a class="cite" href="https://doi.org/10.36227/techrxiv.174913612.20443736/v1" target="_blank" rel="noopener" title="Ray 2025/26 Review of TRiSM Frameworks in AI Systems (TechXiv open + Wiley DOI)">S13</a>]</code> <a href="claims-debates.html">CLAIMS-AND-DEBATES</a>.</p></div> <h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Five room sentences are written.</li>
+<li class="task"><input type="checkbox" disabled> Handbook Assistant has survived one injected trap on paper.</li>
+<li class="task"><input type="checkbox" disabled> The cannot-claim list is in your words, and it matches the claims note.</li>
+<li class="task"><input type="checkbox" disabled> Vendor interest is attached to <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> and not to <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Filled five edge-case traps from the desk pass, OWASP LLM01, and the TDD identity split.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/one-day-mastery/ai-trism/blocks/05-edge-cases.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="odm-block-04-teach-it.html">&larr; Previous</a><a href="odm-block-06-spaced-review.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

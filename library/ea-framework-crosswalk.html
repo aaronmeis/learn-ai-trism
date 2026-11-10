@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EA framework crosswalk (TOGAF · DoDAF · UAF) | Learn AI TRiSM</title>
+<meta name="description" content="Architect EA crosswalk for AI-TRISM across TOGAF ADM, DoDAF viewpoints, and UAF 1.3 grid cells.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Reference</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Reference</div>
+  <h1 class="doctitle">EA framework crosswalk (TOGAF · DoDAF · UAF)</h1>
+  <p class="lead">Architect EA crosswalk for AI-TRISM across TOGAF ADM, DoDAF viewpoints, and UAF 1.3 grid cells.</p>
+  
+  <article><h1>EA framework crosswalk — AI-TRISM</h1>
+<p>Pack: <a href="odm-hub.html">Hub</a> · Views: <a href="tdd-view-01-conceptual.html">Conceptual</a> · <a href="tdd-view-02-logical.html">Logical</a> · <a href="tdd-view-03-physical.html">Physical</a> · <a href="tdd-view-04-integration-ai.html">Integration</a> · <a href="tdd-view-05-detailed-design.html">Detailed design</a> · Ledger: <a href="source-ledger.html">source-ledger</a></p>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>Review rooms speak different architecture dialects. TOGAF ADM phases name the work cycle. DoDAF viewpoints name the product set still common in U.S. defense briefs. UAF 1.3 is the OMG grid that donor frameworks (including DoDAF) feed into, and OUSD(R&amp;E) guidance already builds mission architecture on UAF. This crosswalk keeps one AI-TRISM placement map and shows the same elements in all three languages.</p></div> <h2>Grounding rules</h2>
+<ol>
+<li><strong>AI-TRISM sources do not prescribe TOGAF, DoDAF, or UAF.</strong> Placement is the architect's overlay on pack elements (capabilities, components, zones, standards). Mark that honesty in the room.</li>
+<li><strong>UAF cells use UAF 1.3 Figure 7-1 labels</strong> (domain-aspect, e.g. <code>Op-Sr</code>). Grid literacy: vault brief <code>00_Resources/Machine_Library/architecture/ARCH-20261027-0849-uaf-dodaf/uaf-dodaf-brief.md</code> and ledger <code>[<a class="cite" href="https://www.omg.org/spec/UAF/1.3" target="_blank" rel="noopener" title="OMG Unified Architecture Framework (UAF) 1.3">S17</a>]</code> <code>[<a class="cite" href="https://ac.cto.mil/wp-content/uploads/2025/01/U-Mission-Architecture-Style-Guide-Final_07Jan2025.pdf" target="_blank" rel="noopener" title="OUSD(R&amp;E) Mission Architecture Style Guide v1.0 (6 Jan 2025)">S18</a>]</code>.</li>
+<li><strong>DoDAF stays in the table.</strong> DoD direction points toward UAF; no signed CIO replacement of DoDAF 2.02 was found in the UAF brief. Teach both until policy catches up <code>[<a class="cite" href="https://ac.cto.mil/wp-content/uploads/2025/01/U-Mission-Architecture-Style-Guide-Final_07Jan2025.pdf" target="_blank" rel="noopener" title="OUSD(R&amp;E) Mission Architecture Style Guide v1.0 (6 Jan 2025)">S18</a>]</code>.</li>
+<li><strong>Silence stays silence.</strong> SKUs, regions, and gov-cloud rows that are UNVERIFIED in the views stay UNVERIFIED here.</li>
+</ol>
+<p>Companion NotebookLM export (TOGAF/DoDAF only, pre-UAF): <a href="nblm-tdd-crosswalk.html">NBLM TOGAF/DoDAF crosswalk</a>. Prefer this vault note when UAF is required.</p>
+<h2>View master table</h2>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th>Altitude</th>
+<th>TOGAF ADM</th>
+<th>DoDAF</th>
+<th>UAF 1.3 (domain-aspect)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="tdd-view-01-conceptual.html">Conceptual</a></td>
+<td>What and why</td>
+<td>Phase A Architecture Vision · Phase B Business Architecture</td>
+<td>OV-1 · CV-2 · DIV-1</td>
+<td>Sm-Ov · St-Tx · St-Mv · Op-Sr</td>
+</tr>
+<tr>
+<td><a href="tdd-view-02-logical.html">Logical</a></td>
+<td>Which parts and how they talk</td>
+<td>Phase C Information Systems (Data and Application)</td>
+<td>OV-2 · OV-5b · SV-1 (logical) · DIV-2</td>
+<td>Op-Cn · Op-Pr · Sv-Sr · Rs-Sr · Op-If / Rs-If</td>
+</tr>
+<tr>
+<td><a href="tdd-view-03-physical.html">Physical</a></td>
+<td>What runs where</td>
+<td>Phase D Technology · Phase E Opportunities and Solutions</td>
+<td>SV-1/SV-2 · SV-4 · DIV-3 · StdV-1</td>
+<td>Rs-Cn · Ar-Sr · Ar-Cn · Sd-Tx · Sc-Sr</td>
+</tr>
+<tr>
+<td><a href="tdd-view-04-integration-ai.html">Integration</a></td>
+<td>External interfaces and AI path</td>
+<td>Phase C interfaces · Phase D Technology · Architecture Governance</td>
+<td>SV-1/SV-2 · SV-6 · OV-3 · StdV-1</td>
+<td>Sv-Cn · Op-Cn · Sc-Cn · Sd-Tx · Rs-If</td>
+</tr>
+<tr>
+<td><a href="tdd-view-05-detailed-design.html">Detailed design</a></td>
+<td>Build order</td>
+<td>Phase E Opportunities and Solutions · Phase F Migration Planning</td>
+<td>SV-1/SV-4 detailed · StdV-1 · DIV-3 artifacts</td>
+<td>Pj-Sr · Pj-Rm · Rs-Rm · Ar-Sr · Sd-Tr</td>
+</tr>
+</tbody>
+</table>
+<h2>Element placements (selected)</h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Pack altitude</th>
+<th>TOGAF</th>
+<th>DoDAF</th>
+<th>UAF 1.3</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1–C8 capabilities</td>
+<td>Conceptual</td>
+<td>A/B</td>
+<td>CV-2 · OV-1</td>
+<td>St-Tx · Op-Sr</td>
+<td>Capability taxonomy; secondary layer/pillar names stay labeled secondary</td>
+</tr>
+<tr>
+<td>Actors ACT-1–ACT-9</td>
+<td>Conceptual</td>
+<td>B</td>
+<td>OV-1 · OV-4 style roles</td>
+<td>Op-Sr · Ps-Tx / Ps-Sr</td>
+<td>Personnel domain when roles are the subject</td>
+</tr>
+<tr>
+<td>CON trustworthiness / policy / evidence</td>
+<td>Conceptual</td>
+<td>B</td>
+<td>OV-1 concepts · DIV-1</td>
+<td>St-Mv · Op-If</td>
+<td>Motivation and information at concept altitude</td>
+</tr>
+<tr>
+<td>CMP-01–CMP-11 components</td>
+<td>Logical</td>
+<td>C</td>
+<td>SV-1 · OV-5b</td>
+<td>Sv-Sr · Rs-Sr · Op-Pr</td>
+<td>Services vs resources split is a proposal</td>
+</tr>
+<tr>
+<td>Flows F1–F9</td>
+<td>Logical</td>
+<td>C</td>
+<td>OV-2 · SV-1</td>
+<td>Op-Cn · Sv-Cn</td>
+<td>Red untrusted flows stay red in every language</td>
+</tr>
+<tr>
+<td>ENT data entities</td>
+<td>Logical</td>
+<td>C (Data)</td>
+<td>DIV-2</td>
+<td>Op-If · Rs-If</td>
+<td></td>
+</tr>
+<tr>
+<td>Trust boundaries TB1–TB5</td>
+<td>Physical</td>
+<td>D</td>
+<td>SV-1/SV-2</td>
+<td>Rs-Cn · Ar-Sr · Sc-Sr</td>
+<td>Zones are realization patterns; SKUs silent</td>
+</tr>
+<tr>
+<td>Standards NIST / ISO / OWASP / EU AI Act</td>
+<td>Physical</td>
+<td>D · Governance</td>
+<td>StdV-1</td>
+<td>Sd-Tx · Sd-Tr</td>
+<td>NIST↔ISO control map is <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code>, separate from this EA crosswalk</td>
+</tr>
+<tr>
+<td>Build order steps</td>
+<td>Detailed design</td>
+<td>E/F</td>
+<td>SV-4 · migration</td>
+<td>Pj-Sr · Pj-Rm · Rs-Rm</td>
+<td>Proposed sequence only</td>
+</tr>
+</tbody>
+</table>
+<h2>UAF grid literacy (minimum for the room)</h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning (UAF 1.3)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sm-Ov</td>
+<td>Summary and Overview (full-width overview row)</td>
+</tr>
+<tr>
+<td>St-Tx / St-Mv</td>
+<td>Strategic Taxonomy / Strategic Motivation</td>
+</tr>
+<tr>
+<td>Op-Sr / Op-Cn / Op-Pr / Op-If</td>
+<td>Operational Structure / Connectivity / Processes / Information</td>
+</tr>
+<tr>
+<td>Sv-Sr / Sv-Cn</td>
+<td>Services Structure / Connectivity</td>
+</tr>
+<tr>
+<td>Rs-Sr / Rs-Cn / Rs-If / Rs-Rm</td>
+<td>Resources Structure / Connectivity / Information / Roadmap</td>
+</tr>
+<tr>
+<td>Ps-Tx / Ps-Sr</td>
+<td>Personnel Taxonomy / Structure</td>
+</tr>
+<tr>
+<td>Sc-Sr / Sc-Cn</td>
+<td>Security Structure / Connectivity</td>
+</tr>
+<tr>
+<td>Sd-Tx / Sd-Tr</td>
+<td>Standards Taxonomy / Traceability</td>
+</tr>
+<tr>
+<td>Pj-Sr / Pj-Rm</td>
+<td>Projects Structure / Roadmap</td>
+</tr>
+<tr>
+<td>Ar-Sr / Ar-Cn</td>
+<td>Actual Resources Structure / Connectivity</td>
+</tr>
+</tbody>
+</table>
+<p>Full grid (domains × aspects, empty cells included): UAF brief §5 and <code>[<a class="cite" href="https://www.omg.org/spec/UAF/1.3" target="_blank" rel="noopener" title="OMG Unified Architecture Framework (UAF) 1.3">S17</a>]</code>.</p>
+<h2>Teach-back lines</h2>
+<ol>
+<li>"TRiSM is the capability map. TOGAF tells you which ADM phase you are in. DoDAF and UAF tell you which viewpoint product you owe the room."</li>
+<li>"UAF cells are domain-aspect pairs from the 1.3 grid. Op-Sr is Operational Structure, not a DoDAF OV number."</li>
+<li>"We keep DoDAF in the crosswalk because the enterprise still briefs in OV/SV language while R&amp;E points at UAF <code>[<a class="cite" href="https://ac.cto.mil/wp-content/uploads/2025/01/U-Mission-Architecture-Style-Guide-Final_07Jan2025.pdf" target="_blank" rel="noopener" title="OUSD(R&amp;E) Mission Architecture Style Guide v1.0 (6 Jan 2025)">S18</a>]</code>."</li>
+<li>"The NIST-to-ISO <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code> table is a <strong>standards</strong> crosswalk. This note is an <strong>architecture-framework</strong> crosswalk. Do not merge them into one certificate story."</li>
+</ol>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>First UAF-inclusive EA crosswalk for the pack; extends prior TOGAF/DoDAF NBLM export.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/reference/ea-framework-crosswalk.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="tdd-resources.html">&larr; Previous</a><a href="elicit.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

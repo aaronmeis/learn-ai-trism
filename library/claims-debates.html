@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claims and debates | Learn AI TRiSM</title>
+<meta name="description" content="Claims, warrants and live debates for AI TRiSM: what the framework is, what it must be checked against, and what evidence would change the picture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Plan</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Plan</div>
+  <h1 class="doctitle">Claims and debates</h1>
+  <p class="lead">Claims, warrants and live debates for AI TRiSM: what the framework is, what it must be checked against, and what evidence would change the picture.</p>
+  
+  <article><h1>Claims and debates — AI-TRISM</h1>
+<p><strong>Community of readers:</strong> an architect preparing to design and defend an AI trust, risk and security reference architecture in a design review. Self-study first.</p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>AI TRiSM (AI Trust, Risk and Security Management) is Gartner's name for the controls that keep AI systems trustworthy and secure. It is a market category, not a standard, and the sources that explain it disagree on its structure. This note refuses to treat four things as settled: how TRiSM is structured, whether to design against it or against auditable standards, whether runtime guardrails are enough, and whether its pillars cover the properties NIST says a trustworthy system needs. A desk pass on 2026-11-09 opened the Gartner press release, ISO/ANAB certification pages, the EU AI Act, OWASP LLM01, AWS Builder, and both talk captions. Layer <em>names</em> and pillar <em>names</em> from Gartner-owned pages are still secondary or unnamed; see the evidence tracker.</p></div> <h2>Research problem</h2>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Statement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Practical problem</td>
+<td>An architect must propose controls for AI systems in a room where the key term comes from a paywalled analyst firm, vendors describe it two ways, and regulations carry legal weight. A wrong frame means controls that look complete and miss a required property.</td>
+</tr>
+<tr>
+<td>Research problem</td>
+<td>The ledger does not yet show which TRiSM structure is current, how it maps to NIST AI RMF and ISO/IEC 42001, or which controls have evidence behind them rather than vendor assertion.</td>
+</tr>
+<tr>
+<td>So what?</td>
+<td>Before the design review, the architect should be able to say which structure they use, why, and what each layer's control is checked against.</td>
+</tr>
+</tbody>
+</table>
+<h2>How to read a debate</h2>
+<p>A <strong>claim</strong> is what you want a reader to accept. <strong>Evidence</strong> is the support. A <strong>warrant</strong> is the general principle that makes the evidence relevant (<em>If X, then Y</em>). <strong>Qualifications</strong> limit scope and certainty. <strong>Hidden assumptions</strong> are the unstated conditions the warrant needs. <strong>Evidence to run</strong> is designed to challenge every side, including the side this pack currently prefers.</p>
+<p><strong>Read status for the ledger</strong> (updated 2026-11-09 pass 3): READ in full or in part: S1 (Gartner PR), S2, S3 (AI 600-1 §2 twelve risks), S4, S5 (ISO catalogue), S6 (EUR-Lex), S7 list + <strong>S7b–S7d</strong> (all ten OWASP LLM 2025 entries at control-theme depth), S8, S9, S10, S11/S12 (auto-captions), <strong>S13 Ray TechXiv PDF</strong>, S14, S15, S16 (partial). Still blocked: primary Gartner Market Guide PDF (paywall); AI 600-1 full suggested-action tables only partially used. See <a href="desk-research-pass-3-2026-11-09.html">desk-research-pass-3-2026-11-09</a>.</p>
+<h2>Live debates</h2>
+<h3>Debate 1 — Pillars or layers: what is TRiSM's structure?</h3>
+<table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claim A</td>
+<td>TRiSM has four <strong>pillars</strong>: explainability and model monitoring, ModelOps, AI application security, and privacy. <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code></td>
+</tr>
+<tr>
+<td>Claim B</td>
+<td>TRiSM has four <strong>layers</strong> of technical capability: AI governance, AI runtime inspection and enforcement, information governance, and infrastructure and stack. <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> attributes this to Gartner's Market Guide.</td>
+</tr>
+<tr>
+<td>Evidence on the table</td>
+<td><code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> Zscaler states both structures on one page and links a Gartner Market Guide URL for the layers. <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> IBM quotes the Gartner glossary definition and lists governance, AI data protection and classification, and runtime inspection and enforcement as categories. It lists neither four-pillar nor four-layer sets, and its footnote for the Market Guide points to an IBM form page, not a Gartner one. <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> Gartner PR (READ) confirms "four layers" without naming them. <code>[<a class="cite" href="https://doi.org/10.36227/techrxiv.174913612.20443736/v1" target="_blank" rel="noopener" title="Ray 2025/26 Review of TRiSM Frameworks in AI Systems (TechXiv open + Wiley DOI)">S13</a>]</code> Ray TechXiv review synthesizes <strong>five</strong> technical pillars (explainability+drift, ModelOps, AppSec, data protection/privacy, adversarial resilience) plus trust/risk/security taxonomies — a scholarly synthesis, not a Gartner primary.</td>
+</tr>
+<tr>
+<td>Warrant</td>
+<td>If a vendor attributes a structure to Gartner, then the structure is Gartner's. Link type: authority. It holds only if the vendor quotes Gartner faithfully. Scholarly syntheses may extend pillar sets for engineering completeness without rewriting Gartner's market category.</td>
+</tr>
+<tr>
+<td>Hidden assumptions</td>
+<td>(1) Vendors reproduce Gartner's current wording. (2) The pillars and the layers describe the same thing at different levels, not competing models. (3) The pillars are an older framing and the layers newer. This one is unverified and favors the pack's tentative preference for layers. (4) Ray's fifth pillar (adversarial resilience) is additive engineering, not proof Gartner renamed the category.</td>
+</tr>
+<tr>
+<td>Qualifications</td>
+<td>The pack currently prefers the layer view for architecture because it names enforcement points. That preference rests on secondary sources for layer <em>names</em>. Ray's five pillars are a useful control checklist beside the four-pillar vendor set. Practitioners may also add regulatory compliance as a fifth pillar in vendor prose <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>.</td>
+</tr>
+<tr>
+<td>Evidence that would change the picture</td>
+<td><strong>E1A/E1B partial; E1W run; E1R (Ray) run.</strong> See tracker.</td>
+</tr>
+</tbody>
+</table>
+<h3>Debate 2 — Design against TRiSM, or against auditable standards?</h3>
+<table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claim A</td>
+<td>TRiSM is a usable vendor-neutral architecture to design against, because it organizes controls across the AI lifecycle. <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code></td>
+</tr>
+<tr>
+<td>Claim B</td>
+<td>TRiSM is a market category with no conformance path. A design should be anchored to NIST AI RMF and ISO/IEC 42001, which have defined requirements, and use TRiSM only as a capability checklist. <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code> <code>[<a class="cite" href="https://www.iso.org/standard/81230.html" target="_blank" rel="noopener" title="ISO/IEC 42001:2023 AI management systems (catalogue)">S5</a>]</code></td>
+</tr>
+<tr>
+<td>Evidence on the table</td>
+<td><code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> NIST AI RMF 1.0 (read) defines four functions, Govern, Map, Measure and Manage, and is voluntary and use-case agnostic. <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code> The NIST crosswalk (read) maps AI RMF subcategories to ISO/IEC 42001 clauses and Annex B controls, for example Govern 6.1 to B.10.2. <code>[<a class="cite" href="https://www.iso.org/standard/81230.html" target="_blank" rel="noopener" title="ISO/IEC 42001:2023 AI management systems (catalogue)">S5</a>]</code> The ISO page returned 403. A search excerpt says the standard specifies requirements for an AI management system. Whether it is certifiable is <em>unverified</em>. The claim that TRiSM has no certification comes from a vendor glossary that is not in the ledger and was seen only as a search excerpt: <em>unverified</em>.</td>
+</tr>
+<tr>
+<td>Warrant</td>
+<td>If a framework has defined requirements and a way to assess conformance, then it is a stronger anchor for a design that must survive an audit. Link type: definitional.</td>
+</tr>
+<tr>
+<td>Hidden assumptions</td>
+<td>(1) The reader's audience asks for conformance, not capability. (2) NIST AI RMF is not itself auditable, since it is voluntary. That weakens the "auditable" half of Claim B for NIST. (3) A design can satisfy both.</td>
+</tr>
+<tr>
+<td>Qualifications</td>
+<td>The claims are not exclusive. The likely answer is to anchor to ISO/IEC 42001 and NIST for governance, and use TRiSM layers to place tools. The ledger does not yet prove that.</td>
+</tr>
+<tr>
+<td>Evidence that would change the picture</td>
+<td><strong>E2A/E2B/E2W run.</strong> Claim B strengthened (ISO certifiable); Claim A still weak.</td>
+</tr>
+</tbody>
+</table>
+<h3>Debate 3 — Are runtime guardrails enough?</h3>
+<table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claim A</td>
+<td>A runtime inspection layer (AI firewall or guardrail) between users, agents and models is the practical control point for AI application security. <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code> <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code></td>
+</tr>
+<tr>
+<td>Claim B</td>
+<td>Guardrails are necessary but insufficient. Agent identity, least privilege and runtime behavioral monitoring must carry the load. <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code></td>
+</tr>
+<tr>
+<td>Evidence on the table</td>
+<td><code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code> In a search excerpt of the transcript, Bo Li (UIUC) proposes an AI-firewall layer because the model cannot be fundamentally fixed, and also stresses red teaming first. The video page itself gave no transcript. <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> In a search excerpt, the speaker says guardrails matter but cannot say whether an assistant behaves appropriately for its task and identity. The speaker works for a vendor that sells behavioral detection, so the claim has a commercial interest. <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> OWASP's prompt-injection entry (search excerpt) says RAG and fine-tuning do not fully mitigate injection. Its listed mitigations mix filtering with least privilege, human approval and treating the model as an untrusted user.</td>
+</tr>
+<tr>
+<td>Warrant</td>
+<td>If attacks are semantic and context-dependent, then static filters will miss some, so architectural limits on what a compromised model can do are needed. Link type: causal.</td>
+</tr>
+<tr>
+<td>Hidden assumptions</td>
+<td>(1) Filters cannot be made good enough. This is unproven and cuts against Claim B. (2) Agents have enough privilege to do harm, so least privilege matters. (3) The vendor selling the alternative layer is not selecting the framing.</td>
+</tr>
+<tr>
+<td>Qualifications</td>
+<td>Both sides agree filters are one layer. The dispute is about weight and ordering. Evidence here is from talks and excerpts, not measured detection rates.</td>
+</tr>
+<tr>
+<td>Evidence that would change the picture</td>
+<td><strong>E3A/E3B run; E3W lab unrun.</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>Debate 4 — Do the TRiSM pillars cover NIST's trustworthiness characteristics?</h3>
+<table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claim A</td>
+<td>The four pillars together cover what makes an AI system trustworthy, including fairness and safety. <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> quotes the Gartner definition: governance, trustworthiness, fairness, reliability, robustness, efficacy and data protection.</td>
+</tr>
+<tr>
+<td>Claim B</td>
+<td>The pillars leave gaps against NIST's seven characteristics: no pillar is named for fairness with harmful bias managed, or for safety. <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code></td>
+</tr>
+<tr>
+<td>Evidence on the table</td>
+<td><code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> NIST AI RMF 1.0 (read) lists seven characteristics: valid and reliable, safe, secure and resilient, accountable and transparent, explainable and interpretable, privacy-enhanced, and fair with harmful bias managed. <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> names the four pillars. <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> quotes Gartner's definition naming fairness, which the pillar names omit. <code>[<a class="cite" href="https://doi.org/10.36227/techrxiv.174913612.20443736/v1" target="_blank" rel="noopener" title="Ray 2025/26 Review of TRiSM Frameworks in AI Systems (TechXiv open + Wiley DOI)">S13</a>]</code> Ray trust taxonomy <strong>names fairness</strong> (plus transparency, accountability, inclusiveness, ethical alignment, human oversight, trust calibration, sustainability) under trust dimensions, separate from the five technical pillars. <strong>Agent inference, not from a source:</strong> a first mapping is valid and reliable → ModelOps and monitoring; secure and resilient → AI application security + Ray adversarial pillar; explainable and interpretable → explainability; privacy-enhanced → privacy; accountable and transparent → explainability plus governance; safe and fair → weak under vendor pillar <em>titles</em>, stronger under Ray trust taxonomy.</td>
+</tr>
+<tr>
+<td>Warrant</td>
+<td>If a framework claims to manage trust, then each characteristic that defines trust should map to a control owner. Link type: definitional.</td>
+</tr>
+<tr>
+<td>Hidden assumptions</td>
+<td>(1) NIST's seven characteristics are the right yardstick, which a Gartner customer may not accept. (2) Fairness and safety are covered inside ModelOps or governance without being named. (3) The pillar names in <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> are the full scope of each pillar.</td>
+</tr>
+<tr>
+<td>Qualifications</td>
+<td>The mapping is the agent's draft and must be checked against Gartner's own pillar definitions, which were not readable.</td>
+</tr>
+<tr>
+<td>Evidence that would change the picture</td>
+<td><strong>E4B draft map + E4W run; E4A still partial.</strong> See <a href="desk-research-pass-2-2026-11-09.html">desk-research-pass-2-2026-11-09</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2>Evidence tracker</h2>
+<p>Stable IDs. Kind is <code>desk</code> (docs and ledger, no binary), <code>lab-local</code>, <code>lab-compare</code> or <code>lab-net</code>. Lab kinds wait for an explicit install or capture GO. The pack's lab access is docs and desk only.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Debate</th>
+<th>Side</th>
+<th>Kind</th>
+<th>Test</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1A</td>
+<td>1</td>
+<td>A</td>
+<td>desk</td>
+<td>Find a vendor or standards page that cites the pillars to a dated Gartner source</td>
+<td><strong>partial 2026-11-09</strong> — <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code> name pillars and attribute to Gartner; no Gartner-owned page lists pillar names; <code>[<a class="cite" href="https://doi.org/10.36227/techrxiv.174913612.20443736/v1" target="_blank" rel="noopener" title="Ray 2025/26 Review of TRiSM Frameworks in AI Systems (TechXiv open + Wiley DOI)">S13</a>]</code> Ray adds a fifth scholarly pillar (adversarial resilience)</td>
+</tr>
+<tr>
+<td>E1B</td>
+<td>1</td>
+<td>B</td>
+<td>desk</td>
+<td>Obtain the Gartner Market Guide abstract or glossary text and check the four layer names</td>
+<td><strong>partial 2026-11-09</strong> — Gartner PR confirms "four layers" unnamed; Zscaler/Mindgard/PointGuard name the four layers and cite Market Guide; primary PDF still paywalled</td>
+</tr>
+<tr>
+<td>E1W</td>
+<td>1</td>
+<td>weaken</td>
+<td>desk</td>
+<td>Check whether Gartner's current page uses neither set of names</td>
+<td><strong>run 2026-11-09</strong> — free Gartner PR uses "four layers" without names; does not publish pillars on that page</td>
+</tr>
+<tr>
+<td>E1R</td>
+<td>1</td>
+<td>extend</td>
+<td>desk</td>
+<td>Read Ray open text and record whether it uses pillars, layers, or a third structure</td>
+<td><strong>run 2026-11-09</strong> — TechXiv PDF: five technical pillars + three taxonomies (trust/risk/security); not Gartner layers. See <a href="desk-research-pass-3-2026-11-09.html">desk-research-pass-3-2026-11-09</a></td>
+</tr>
+<tr>
+<td>E2A</td>
+<td>2</td>
+<td>A</td>
+<td>desk</td>
+<td>Find a published TRiSM architecture used in a design review without NIST or ISO anchoring</td>
+<td><strong>run 2026-11-09</strong> — no positive example found; Claim A remains weak</td>
+</tr>
+<tr>
+<td>E2B</td>
+<td>2</td>
+<td>B</td>
+<td>desk</td>
+<td>Read the ISO/IEC 42001 scope and certification statement from an ISO or accreditation body page</td>
+<td><strong>run 2026-11-09</strong> — ISO insights + ANAB <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>: certifiable via independent CBs; ISO itself does not certify</td>
+</tr>
+<tr>
+<td>E2W</td>
+<td>2</td>
+<td>weaken</td>
+<td>desk</td>
+<td>Check whether NIST AI RMF has any conformance route, which would break the auditable-versus-voluntary contrast</td>
+<td><strong>run 2026-11-09</strong> — AI RMF and AI 600-1 are voluntary; no NIST certification path. Softens "auditable" for NIST; ISO remains the conformance anchor</td>
+</tr>
+<tr>
+<td>E3A</td>
+<td>3</td>
+<td>A</td>
+<td>desk</td>
+<td>Count OWASP LLM01 mitigations that are filtering versus privilege or architecture</td>
+<td><strong>run 2026-11-09</strong> — 7 mitigations: ~2 filtering, ~5 privilege/architecture/process (<code>[S7b]</code>)</td>
+</tr>
+<tr>
+<td>E3B</td>
+<td>3</td>
+<td>B</td>
+<td>desk</td>
+<td>Read both talks' transcripts in full and extract each stated limit of guardrails</td>
+<td><strong>run 2026-11-09</strong> — auto-captions: Bo Li AI-firewall if model unfixed; CSA "cannot do filters and rules on an infinite number of inputs and outputs" + agent identity</td>
+</tr>
+<tr>
+<td>E3W</td>
+<td>3</td>
+<td>weaken</td>
+<td>lab-compare</td>
+<td>Run a public prompt-injection set against an open-source guardrail and a plain least-privilege setup</td>
+<td>unrun (needs install GO)</td>
+</tr>
+<tr>
+<td>E4A</td>
+<td>4</td>
+<td>A</td>
+<td>desk</td>
+<td>Read Gartner's pillar definitions and test whether fairness and safety appear under them</td>
+<td><strong>partial 2026-11-09</strong> — <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> definition quotes fairness; pillar titles in <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> omit fairness/safety; no Gartner-owned pillar defs</td>
+</tr>
+<tr>
+<td>E4B</td>
+<td>4</td>
+<td>B</td>
+<td>desk</td>
+<td>Map every NIST AI 600-1 risk to a pillar and count the unmapped</td>
+<td><strong>run 2026-11-09 (draft)</strong> — 12 GAI risks from AI 600-1 §2 mapped to secondary pillars; weak/unmapped: environmental, human-AI config, CBRN/safety, ecosystem integrity, named fairness. See desk-research-pass-2</td>
+</tr>
+<tr>
+<td>E4W</td>
+<td>4</td>
+<td>weaken</td>
+<td>desk</td>
+<td>Check whether NIST's own text says all seven characteristics must be covered by separate controls</td>
+<td><strong>run 2026-11-09</strong> — characteristics are managed properties mapped from risks/actions; no requirement for one separate control per characteristic</td>
+</tr>
+</tbody>
+</table>
+<p>When tests remain unrun after the phone console exists, write <code>AGENT-HANDOFF - Evidence sittings.md</code> in the pack from the research-craft <code>references/AGENT-HANDOFF.md</code> template. No console exists yet.</p>
+<h2>Cross-cutting hidden assumptions</h2>
+<ul>
+<li>Vendor explainers reproduce Gartner faithfully. Debates 1 and 4 depend on it.</li>
+<li>Gartner's framing is the right starting point for the architect's audience. Debates 2 and 4 depend on it.</li>
+<li>Controls described in talks and glossaries work as described. Nothing in the ledger measures detection rates.</li>
+<li>The pack's preference for layers over pillars and for standards-anchoring over TRiSM-anchoring is the architect's convenience, not a finding.</li>
+</ul>
+<h2>What this pack still cannot claim</h2>
+<ul>
+<li>Gartner's <strong>named</strong> four layers from a Gartner-owned page. The free PR confirms "four layers" without naming them; Market Guide PDF remains paywalled. Layer names still rest on secondary sources that cite the Market Guide.</li>
+<li>Gartner's <strong>named</strong> four pillars from a Gartner-owned page. Pillars remain secondary (<code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code>); Ray's five pillars are scholarly synthesis, not Gartner primary.</li>
+<li>A Gartner-owned pillar definition set (E4A). E4B has a draft secondary map of twelve AI 600-1 risks; see desk-research-pass-2.</li>
+<li>Measured detection rates for any guardrail product (E3W lab still unrun).</li>
+<li>That TRiSM itself has a certification path. No primary source supports TRiSM certification; ISO/IEC 42001 does.</li>
+</ul>
+<h2>What this pack can now claim (after desk passes 2026-11-09)</h2>
+<ul>
+<li>Gartner publicly describes AI TRiSM as four layers of technical capabilities that support governance, trustworthiness, fairness, safety, reliability, security, privacy and data protection (<code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> READ).</li>
+<li>ISO/IEC 42001:2023 is a certifiable AI management-system standard via independent certification bodies; ISO does not itself certify (<code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>).</li>
+<li>NIST AI RMF 1.0 and AI 600-1 are voluntary guidance profiles, not a NIST certification scheme (<code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>).</li>
+<li>Regulation (EU) 2024/1689 is binding EU law with phased application (general application 2 Aug 2026) (<code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code>).</li>
+<li>OWASP LLM Top 10 2025 entries have pack-level control themes for all ten risks (<code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>–<code>[S7d]</code>).</li>
+<li>Both named talks argue for limits of filters alone and for outer or identity/privilege controls (<code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> captions).</li>
+<li>NIST AI 600-1 names twelve GAI risks and maps them to trustworthiness characteristics without requiring one control per characteristic (<code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>).</li>
+<li>Ray's open TechXiv review synthesizes five TRiSM pillars and trust/risk/security taxonomies that name fairness under trust (<code>[<a class="cite" href="https://doi.org/10.36227/techrxiv.174913612.20443736/v1" target="_blank" rel="noopener" title="Ray 2025/26 Review of TRiSM Frameworks in AI Systems (TechXiv open + Wiley DOI)">S13</a>]</code> READ).</li>
+</ul>
+<p>Desk pass notes: <a href="desk-research-pass-2026-11-09.html">desk-research-pass-2026-11-09</a> · <a href="desk-research-pass-2-2026-11-09.html">desk-research-pass-2-2026-11-09</a> · <a href="desk-research-pass-3-2026-11-09.html">desk-research-pass-3-2026-11-09</a>.</p>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>claude</td>
+<td>First draft. Four debates, twelve designed tests, all unrun. Read status recorded per source.</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Desk research pass 2. E4B/E4W advanced; OWASP LLM03/06/08/10 read. Prior: E1–E3 desk tests filed (partial/run); S1/S3/S5/S6/S7b/S10–S12/S14–S16 upgraded; cannot-claim list rewritten.</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Desk research pass 3. Ray TechXiv PDF READ (<code>[<a class="cite" href="https://doi.org/10.36227/techrxiv.174913612.20443736/v1" target="_blank" rel="noopener" title="Ray 2025/26 Review of TRiSM Frameworks in AI Systems (TechXiv open + Wiley DOI)">S13</a>]</code>); E1R run; OWASP LLM02/04/05/07/09; Debate 1 evidence extended; can-claim list updated.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/one-day-mastery/ai-trism/CLAIMS-AND-DEBATES.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="tdd-mindmap.html">&larr; Previous</a><a href="tdd-claims-debates.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

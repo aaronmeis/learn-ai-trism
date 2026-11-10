@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 5: Integration and AI elements | Learn AI TRiSM</title>
+<meta name="description" content="Block 5 study guide: integration themes, agent identity, and control points CP1 to CP8.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ TDD day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">TDD day blocks</div>
+  <h1 class="doctitle">Block 5: Integration and AI elements</h1>
+  <p class="lead">Block 5 study guide: integration themes, agent identity, and control points CP1 to CP8.</p>
+  
+  <article>
+<p><strong>Time:</strong> 60 minutes</p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>The platform does not sit alone. Models are often someone else's API, documents come from stores the model did not write, and incidents have to land in the tools security already uses. This hour inventories those neighbors by job, then walks the path from training data to a monitored answer so a reviewer can point at the control that stops oversharing.</p></div> <h2>Goal</h2>
+<p>Group the external inventory by theme, state the agent identity rules, and walk control points CP1 to CP8 on one request without naming a recommended product.</p>
+<h2>Required reading</h2>
+<ul>
+<li><a href="tdd-view-04-integration-ai.html">Integration and AI</a>: the inventory table, the identity section, the AI elements table, and the data-path diagram.</li>
+<li>Do not memorize vendor spellings. Memorize the <strong>category</strong> and whether the pack read that vendor's docs (almost always no).</li>
+<li><a href="tdd-view-02-logical.html">Logical view</a> flows F1 to F6 if the control-point numbers feel unmoored. CP3 to CP6 are that runtime path.</li>
+</ul>
+<h2>What to learn</h2>
+<p>The inventory is a <strong>category list with examples</strong>, not a shortlist. A name appears only where a ledger source already used it. Zscaler is a vendor explainer for pillars and layers <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>. Darktrace is the employer of a talk speaker <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>. AWS appears in a community mapping <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code>. IBM appears as an explainer <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>. Radware and BigID were search results, not ledger sources. Gov-cloud support is <code>UNVERIFIED</code> on every row because no government-cloud product page was read. Direction matters more than logo: models are bidirectional, SIEM and ITSM are outbound, retrieval content is inbound and untrusted, auditors receive evidence out of band.</p>
+<p>Themes to be able to recite:</p>
+<ol>
+<li>Model supply (hosted model APIs, registries and MLOps).</li>
+<li>Inspection supply (guardrail or AI firewall products).</li>
+<li>Identity supply (enterprise identity provider, workload identity).</li>
+<li>Data supply (catalog, DLP, vector stores).</li>
+<li>Operations sink (SIEM and SOAR, ITSM).</li>
+<li>Assurance supply (red-team and evaluation tools).</li>
+<li>Accountability sink (auditor or regulator portals).</li>
+</ol>
+<p>Identity is architecture, not a checkbox <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>:</p>
+<ul>
+<li>Each agent has its own identity. A shared service account hides who acted.</li>
+<li>Least privilege and just-in-time scope. Extended functions belong in code, not in a broadly privileged model <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li>A person approves high-risk actions <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li>People who edit policy and evidence should not be the same people who publish models. That separation is a proposal. Mark it as one.</li>
+</ul>
+<p>The AI features in scope are an LLM application, retrieval-augmented generation, an agent that calls tools, a classical model that scores or classifies, and a third-party hosted model <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>. Classical models still need drift, bias, and explainability. Do not let the hour collapse into chat bots only.</p>
+<p>Control points are where C1 to C8 attach to the path. Learn the number and the question it asks:</p>
+<table>
+<thead>
+<tr>
+<th>CP</th>
+<th>Question</th>
+<th>Typical capability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CP1</td>
+<td>Is training or fine-tune data labeled and mapped?</td>
+<td>C2, C7</td>
+</tr>
+<tr>
+<td>CP2</td>
+<td>Did this version pass evaluation before release?</td>
+<td>C3, C6</td>
+</tr>
+<tr>
+<td>CP3</td>
+<td>Was the prompt inspected?</td>
+<td>C4</td>
+</tr>
+<tr>
+<td>CP4</td>
+<td>Was retrieval allowed, and is that content treated as untrusted?</td>
+<td>C4, C7</td>
+</tr>
+<tr>
+<td>CP5</td>
+<td>Is the tool call scoped to this agent?</td>
+<td>C4</td>
+</tr>
+<tr>
+<td>CP6</td>
+<td>Was the output inspected before the user saw it?</td>
+<td>C4, C7</td>
+</tr>
+<tr>
+<td>CP7</td>
+<td>Was the interaction logged?</td>
+<td>C8, C5</td>
+</tr>
+<tr>
+<td>CP8</td>
+<td>Is someone watching drift and behavior?</td>
+<td>C5</td>
+</tr>
+</tbody>
+</table>
+<p>Red on that diagram: CP3 and CP4. Oversharing is stopped by the combination of CP1 (do not train on what you cannot label), CP6 (do not emit it), and CP5 (do not let a tool read it), under C7. A line in the system prompt is not that control. OWASP notes that system-prompt restrictions can be bypassed <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</p>
+<p>APIs in the view are patterns: model API, policy query, registry, evidence export. Rate limits are <code>UNVERIFIED</code> except for the warning that unbounded consumption is LLM10 <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Do not invent quotas.</p>
+<h2>Actions</h2>
+<ol>
+<li>Fold the inventory into the seven themes above. One example name per theme is enough, tagged "not a recommendation."</li>
+<li>Trace one RAG-plus-tool request across CP3, CP4, CP5, CP6, and CP7. Name the logical flow beside each control point.</li>
+<li>Write the oversharing sentence: which capabilities and control points, and why a system prompt is not sufficient <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li>Confirm every gov-cloud cell you might have been tempted to fill still says <code>UNVERIFIED</code>.</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">Closed book</div><p>Name CP1 to CP8 in order. Which two are the red untrusted points? What is the identity rule for an agent, and what do you know about government-cloud support?</p></div> <div class="callout success" markdown="0"><div class="callout-title">Answer</div><p>CP1 label and map training data, CP2 evaluate before release, CP3 inspect input, CP4 check retrieval and treat it as untrusted, CP5 scope the tool call, CP6 inspect output, CP7 log the interaction, CP8 monitor drift and behavior. Red points are CP3 and CP4 <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Each agent gets its own identity and least privilege, not a shared service account <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Government-cloud support is <code>UNVERIFIED</code> on every inventory row.</p></div> <h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Inventory themes match <a href="tdd-view-04-integration-ai.html">Integration and AI</a>, with vendors demoted to examples.</li>
+<li class="task"><input type="checkbox" disabled> CP1 to CP8 drawn, and the oversharing stop tied to C7 rather than to one product.</li>
+<li class="task"><input type="checkbox" disabled> Agent identity rules stated with <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> or <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>.</li>
+<li class="task"><input type="checkbox" disabled> No gov-cloud cell upgraded from <code>UNVERIFIED</code>.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>claude</td>
+<td>Stub pointing at the blocks generator.</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Study guide for inventory themes, identity rules, and CP1 to CP8.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/blocks/05-integration-and-ai.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="tdd-block-04-physical-view.html">&larr; Previous</a><a href="tdd-block-06-hands-on-lab.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

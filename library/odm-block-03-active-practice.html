@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 3: Active practice | Learn AI TRiSM</title>
+<meta name="description" content="Block 3 desk exercises: place a use case, OWASP LLM risks, and NIST functions on the AI TRiSM map.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ ODM day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">ODM day blocks</div>
+  <h1 class="doctitle">Block 3: Active practice</h1>
+  <p class="lead">Block 3 desk exercises: place a use case, OWASP LLM risks, and NIST functions on the AI TRiSM map.</p>
+  
+  <article>
+<p><strong>Time:</strong> 90 minutes
+<strong>Goal:</strong> Produce three desk maps you can defend, each tagged with what was read and what is only a name.
+<strong>Pack:</strong> <a href="odm-hub.html">AI-TRISM hub</a></p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>Fluency here means you can place a control without opening a vendor brochure. The three exercises use one internal assistant, the 2025 OWASP LLM list, and NIST's four functions. The keys are study placements, not a Gartner crosswalk.</p></div> <h2>Sources</h2>
+<ul>
+<li><code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> NIST functions. <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> ten risk names. <code>[S7b]</code> LLM01 mitigations, read in full.</li>
+<li><code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> for catalog, layers, firewall, and agent identity.</li>
+<li>TDD logical components and flows: <a href="tdd-view-02-logical.html">logical view</a>. Integration risks: <a href="tdd-view-04-integration-ai.html">integration view</a>.</li>
+<li>Do not open the folded keys until your table exists on paper.</li>
+</ul>
+<h2>Setup</h2>
+<p>Use case for all three exercises. Call it Handbook Assistant.</p>
+<ul>
+<li>Employees ask questions about an approved employee handbook.</li>
+<li>Retrieval adds handbook passages to the prompt.</li>
+<li>The assistant may draft an IT ticket through a tool. It may not change payroll.</li>
+<li>Users and documents stay inside one company. EU tier is unclassified until Annex III is read <code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code>.</li>
+<li>Actors, from the TDD conceptual view: application owner, AI risk owner, security operations, privacy officer, end user, the agent, and an auditor.</li>
+</ul>
+<p>Write maps by hand or in a note titled <code>Handbook Assistant maps</code>. Time boxes below include checking.</p>
+<h2>Exercise A. Four layers, 25 minutes</h2>
+<p>Place Handbook Assistant on the four secondary layers <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>. For each layer name one control, the actor who owns it, and the source grade of the layer name.</p>
+<p>After your attempt, check:</p>
+<div class="callout answer" markdown="0"><div class="callout-title">Study key A</div><p>AI governance. Register the assistant, the model version, and the ticket tool in the catalog. Name an application owner and a risk tier. Owner: AI risk owner. Layer name is secondary <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>.
+AI runtime inspection and enforcement. Gateway checks the user prompt, the retrieved passage, the draft answer, and the ticket tool call. Owner: security operations with the application owner. Bo Li's outer firewall is the pattern <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>. Layer name is secondary.
+Information governance. Label handbook documents. Treat retrieved text as untrusted external content. Keep ticket text from carrying data the handbook is not allowed to reveal. Owner: privacy officer. Matches IBM's data-protection category <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> and LLM01 mitigation 6 <code>[S7b]</code>.
+Infrastructure and stack. The ticket tool runs as its own agent identity with permission to draft a ticket and no permission to payroll. Quotas cap model calls. Owner: platform team. Identity demand is from <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>, with vendor interest noted. Least privilege is LLM01 mitigation 4 <code>[S7b]</code>.</p></div> <h2>Exercise B. OWASP LLM01 to LLM10, 35 minutes</h2>
+<p>Rows are the 2025 names <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Columns: layer you would touch first, second layer if needed, mitigation text read or not.</p>
+<p>Only LLM01 has a full mitigation page in this pack. LLM02 is an excerpt in the TDD integration view: sanitize before training, and system-prompt restrictions can be bypassed. LLM03 through LLM09 are names. LLM10 is a name, with quotas discussed as a blast-radius control. Do not invent official mitigations for the unread entries.</p>
+<p>After your attempt, check:</p>
+<div class="callout answer" markdown="0"><div class="callout-title">Study key B</div><p>LLM01 Prompt Injection. Runtime first, information second. Mitigations read <code>[S7b]</code>. Retrieved handbook text is the indirect path.
+LLM02 Sensitive Information Disclosure. Information governance first, runtime output check second. Excerpt only.
+LLM03 Supply Chain. Infrastructure first, governance second for vendor acceptance. Name only.
+LLM04 Data and Model Poisoning. Information governance for training and fine-tune data. Name only. Handbook Assistant is mostly retrieval, so say whether you even fine-tune.
+LLM05 Improper Output Handling. Runtime output check, then infrastructure on the ticket tool that consumes the output. Name only.
+LLM06 Excessive Agency. Infrastructure identity and least privilege, plus governance for human approval if the tool ever posts the ticket. Name only. The analogy to LLM01 mitigations 4 and 5 is the pack's, and the claims note says so.
+LLM07 System Prompt Leakage. Runtime output inspection. Name only.
+LLM08 Vector and Embedding Weaknesses. Information governance on the retrieval store, infrastructure on who can write embeddings. Name only.
+LLM09 Misinformation. Runtime plus the Measure function's evaluation harness. Name only. Do not call this a fairness control.
+LLM10 Unbounded Consumption. Infrastructure quotas on the model API and the gateway. Name only.
+Any row you marked "official OWASP says" for LLM03 to LLM10 is wrong for this pack.</p></div> <h2>Exercise C. NIST functions to controls, 25 minutes</h2>
+<p>Map Govern, Map, Measure, and Manage onto control owners for Handbook Assistant. Use TDD logical components if you want names. Label the component split as a proposal. The functions themselves are <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>.</p>
+<p>After your attempt, check:</p>
+<div class="callout answer" markdown="0"><div class="callout-title">Study key C</div><p>Govern. Policy engine, named risk owner, catalog ownership, evidence of approvals. This is where ISO/IEC 42001 accountability will later ask for records <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code>.
+Map. Asset record plus data map: which handbook corpus, which ticket fields, which users. Context before metrics <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>.
+Measure. Evaluation harness on answer faithfulness to the handbook, red team for prompt injection <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>, monitoring for drift in refusal behavior. Explainability notes for a sample of answers. AI 600-1 tables are not the source of specific tests yet <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>.
+Manage. Release gate before a new model version, incident path when the gateway blocks a burst of injection attempts, retirement of an old index. Human approval before the agent posts a ticket, if posting is even allowed <code>[S7b]</code>.
+A function with no owner is an incomplete map. A component presented as a Gartner product name is a failed map.</p></div> <h2>Actions</h2>
+<ol>
+<li>Write Exercise A before you expand key A.</li>
+<li>Write Exercise B. Add a column <code>Read?</code> and force yourself to type <code>name only</code> nine times if that is the truth.</li>
+<li>Write Exercise C in four rows. Under the table, one sentence on what is proposal versus what is NIST.</li>
+<li>Star the two cells you would be weakest defending. Those go to the Missed-it cell in <em>Progress Log</em> during block 6.</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">For Handbook Assistant, which layer owns the ticket tool&#x27;s privilege, and which source is primary for that control idea?</div></div> <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Infrastructure and stack, as a secondary layer name. The control idea is least privilege from OWASP LLM01 <code>[S7b]</code>, reinforced by the CSA talk on agent identity <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>. The layer name is not from the Gartner press release.</p></div> <div class="callout question" markdown="0"><div class="callout-title">How many OWASP 2025 entries have full mitigation text in this pack?</div></div> <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>One. LLM01 <code>[S7b]</code>. The other nine are names from the list page <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>, with a short excerpt on LLM02 in the TDD integration view.</p></div> <div class="callout question" markdown="0"><div class="callout-title">Which NIST function owns a pre-release red team, and is the harness a NIST component?</div></div> <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Measure owns the testing. Manage owns the release decision that uses the result. The harness is a TDD proposal that realizes that function, not a box drawn in AI RMF <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>.</p></div> <h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Three maps exist, written before the keys were opened.</li>
+<li class="task"><input type="checkbox" disabled> Every layer name on your page is tagged secondary.</li>
+<li class="task"><input type="checkbox" disabled> Unread OWASP entries are marked name only.</li>
+<li class="task"><input type="checkbox" disabled> NIST functions are not relabeled as TRiSM pillars.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Added three desk exercises with folded study keys grounded in S2, S7, S7b, and the TDD views.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/one-day-mastery/ai-trism/blocks/03-active-practice.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="odm-block-02-mental-models.html">&larr; Previous</a><a href="odm-block-04-teach-it.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

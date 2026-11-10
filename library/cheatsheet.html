@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheatsheet | Learn AI TRiSM</title>
+<meta name="description" content="Architecture decision rules for AI-TRISM: altitude, pillars versus layers, standards, and red flows.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Reference</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Reference</div>
+  <h1 class="doctitle">Cheatsheet</h1>
+  <p class="lead">Architecture decision rules for AI-TRISM: altitude, pillars versus layers, standards, and red flows.</p>
+  
+  <article><h1>Cheatsheet: AI-TRISM</h1>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>When a design review moves fast, people skip from a market slogan to a product name. These rules keep the briefing at the right altitude, attribute analyst structure honestly, and mark untrusted data in red. They are decision rules, not a second copy of the views.</p></div> <p>Decision rules only. Sources: <a href="tdd-view-01-conceptual.html">Conceptual view</a> through <a href="tdd-view-05-detailed-design.html">Detailed design</a>, <a href="claims-debates.html">CLAIMS-AND-DEBATES</a>, <a href="source-ledger.html">source-ledger</a>.</p>
+<h2>Altitude</h2>
+<ul>
+<li>When the sentence names an outcome or an actor, keep it in the conceptual view, because products are not capabilities.</li>
+<li>When the sentence names a responsibility, an entity, or a payload, put it in the logical view, because hosts and SKUs are still unknown.</li>
+<li>When the sentence names a zone or a standard, put it in the physical view. In this pack, do not add a SKU, region, or government-cloud claim, because those pages were not read.</li>
+<li>When the sentence names a package, a path, or a CLI, stop. The detailed design has a build order only. Inventing commands would fake a product.</li>
+<li>When a detail from a lower view is needed to explain a higher one, move the sentence down. Do not drag the product up.</li>
+</ul>
+<h2>Pillars versus layers</h2>
+<ul>
+<li>When you are placing enforcement (governance, runtime inspection, information governance, infrastructure), use the four layer names, and attribute them to secondary Market Guide summaries <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>. <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> confirms the count and does not confirm the names.</li>
+<li>When you are talking to an application owner about explainability, ModelOps, application security, and privacy, use the four pillars <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code>, and call them a crosswalk.</li>
+<li>When someone calls the pillar list "Gartner's four layers," correct the altitude of the words. The intake made that slip. Do not repeat it in the review.</li>
+<li>When fairness or safety comes up, say they are in the Gartner outcome list <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> and not in a named pillar <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>. Do not invent a pillar to close Debate 4.</li>
+</ul>
+<h2>Standards anchors</h2>
+<ul>
+<li>When the room asks "what can we certify," choose ISO/IEC 42001 through an independent certification body <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>. ISO does not certify you itself.</li>
+<li>When the room asks "how do we talk about risk," choose NIST AI RMF Govern, Map, Measure, Manage <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>, plus AI 600-1 for generative risk names <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>. Both are voluntary. There is no NIST certificate to wave.</li>
+<li>When the room asks "where do tools sit," choose TRiSM as the capability map. Do not choose it as the audit anchor <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>.</li>
+<li>When the system is placed or used in the EU, add Regulation (EU) 2024/1689 as law <code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code>. Do not recite unread articles. General application cited in the desk pass is 2 August 2026.</li>
+<li>When you need a threat name, choose the OWASP 2025 list <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. When you need a mitigation paragraph, only LLM01 has been read in full <code>[S7b]</code>.</li>
+<li>When you need to show NIST work next to ISO clauses, use the crosswalk <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code>. Do not claim the crosswalk makes NIST certifiable.</li>
+</ul>
+<h2>EA framework crosswalk (TOGAF · DoDAF · UAF)</h2>
+<ul>
+<li>When the room asks which ADM phase you are in, answer from the view's Framework lens (A/B conceptual, C logical, D/E physical, E/F build order).</li>
+<li>When the room still briefs in OV/SV language, use the DoDAF column. When the room uses UAF, answer with domain-aspect cells (Op-Sr, Sv-Cn, Sd-Tx), not OV numbers relabeled as UAF <code>[<a class="cite" href="https://www.omg.org/spec/UAF/1.3" target="_blank" rel="noopener" title="OMG Unified Architecture Framework (UAF) 1.3">S17</a>]</code>.</li>
+<li>When someone asks whether DoDAF is dead, say R&amp;E points at UAF superseding DoDAF over time and this pack keeps both until a CIO mandate retires DoDAF <code>[<a class="cite" href="https://ac.cto.mil/wp-content/uploads/2025/01/U-Mission-Architecture-Style-Guide-Final_07Jan2025.pdf" target="_blank" rel="noopener" title="OUSD(R&amp;E) Mission Architecture Style Guide v1.0 (6 Jan 2025)">S18</a>]</code>.</li>
+<li>When someone confuses the NIST-to-ISO control table with the EA map, separate them: <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code> is standards; <a href="ea-framework-crosswalk.html">ea-framework-crosswalk</a> is architecture frameworks.</li>
+</ul>
+<h2>Red untrusted flows</h2>
+<ul>
+<li>When the payload is a user or agent prompt, draw it red into the runtime gateway (logical F1, physical client link, CP3) <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li>When the payload is retrieved or embedded content, draw it red into the application (logical F3, physical retrieval link, CP4) <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Indirect prompt injection uses this path.</li>
+<li>When the payload is a call to a third-party model, treat it as supply chain (LLM03, TB5), not as one of the two red content links, unless you have read a reason to repaint it.</li>
+<li>When a model output will be acted on by another system, do not call the gray arrow trusted. Improper output handling (LLM05) was not read. Say the downstream handler is unverified.</li>
+<li>When you are tempted to let the model enforce policy on itself, refuse. The policy engine decides. The model is an untrusted user <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+</ul>
+<h2>Control shape</h2>
+<ul>
+<li>When you add a gateway, also keep the agent identity broker outside it, because a bypassed or failed gateway must not hand out broad tools <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>.</li>
+<li>When an agent is introduced, give it its own identity and just-in-time scope <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>. A shared service account fails the "who acted" question.</li>
+<li>When a high-risk action is proposed, require a person <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Least privilege is not the same as unattended action.</li>
+<li>When compliance is described as a later project, pull evidence capture (F8) forward. The build order starts with the evidence store for that reason.</li>
+<li>When blocking is proposed on day one, choose monitor-only first. Enforce mode's latency and false positives are <code>UNVERIFIED</code>.</li>
+<li>When a vendor claims the firewall covers injection, count LLM01: filtering is the smaller half <code>[S7b]</code>. Cite the academic talk for an outer layer <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code> and the keynote for identity limits <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>, including that speaker's vendor interest. Do not cite a detection rate. E3W is unrun.</li>
+</ul>
+<h2>What not to fill in</h2>
+<ul>
+<li>When a cell is gov-cloud, SKU, region, retention, or quota, write <code>UNVERIFIED</code>.</li>
+<li>When a Gartner sentence needs the Market Guide PDF, stop. It is still paywalled.</li>
+<li>When Ray 2026 or the full AI 600-1 risk tables would settle Debate 4, say the test is partial. Do not finish the map from memory.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>claude</td>
+<td>One-line stub.</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Decision rules for altitude, pillars versus layers, standards anchors, and red flows.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/reference/cheatsheet.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="glossary.html">&larr; Previous</a><a href="quiz-bank.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

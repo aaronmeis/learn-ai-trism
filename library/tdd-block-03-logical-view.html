@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 3: Logical view | Learn AI TRiSM</title>
+<meta name="description" content="Block 3 study guide: logical components, entities, and the untrusted runtime path.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ TDD day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">TDD day blocks</div>
+  <h1 class="doctitle">Block 3: Logical view</h1>
+  <p class="lead">Block 3 study guide: logical components, entities, and the untrusted runtime path.</p>
+  
+  <article>
+<p><strong>Time:</strong> 60 minutes</p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>Capabilities do not stop an incident. Parts with responsibilities do. This hour shows the proposed parts, the records they share, and the one path a user request takes. Two links on that path carry content the organization did not write. Those links are drawn in red so a later design review cannot treat retrieved text as trusted company data.</p></div> <h2>Goal</h2>
+<p>Give every capability C1 to C8 at least one component, walk flows F1 to F6 on a single request, and state why the access broker does not sit inside the gateway.</p>
+<h2>Required reading</h2>
+<ul>
+<li><a href="tdd-view-02-logical.html">Logical view</a>: component table, the five design decisions, and flow table F1 to F9. Skim the entity list. Do not redraw the full ER diagram unless you miss a relationship in the retrieval check.</li>
+<li>The altitude callout at the top of that note. Still no regions, SKUs, or hostnames.</li>
+<li>Debate 3 in <a href="claims-debates.html">CLAIMS-AND-DEBATES</a>, claim rows only, when you hit the enforcement-point decision.</li>
+</ul>
+<h2>What to learn</h2>
+<p>Nobody in the ledger handed over this component cut. The view says so. Treat the boxes as a <strong>proposal</strong> that realizes C1 to C8, not as a standard architecture.</p>
+<p>Memory hook, not the whole table. Group the eleven components by when they work:</p>
+<table>
+<thead>
+<tr>
+<th>When</th>
+<th>Components</th>
+<th>Capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Before anyone calls the model</td>
+<td>AI asset registry, data map and classifier, policy engine, model registry and release pipeline, evaluation and red-team harness</td>
+<td>C1, C2, C6, C7, C3, C8</td>
+</tr>
+<tr>
+<td>On the request</td>
+<td>Runtime gateway, agent identity and access broker</td>
+<td>C4</td>
+</tr>
+<tr>
+<td>After the request</td>
+<td>Monitoring and behavior analytics, explainability service, evidence and audit store, incident handler</td>
+<td>C5, C8, C3</td>
+</tr>
+</tbody>
+</table>
+<p>The policy engine also serves release time (C6) and evidence mapping (C8). The incident handler listens to assurance, runtime, and monitoring. One component can realize more than one capability. A capability with no component is a hole. Check C1 through C8 against the table in the view before you leave.</p>
+<p>Five decisions are the actual lesson. The tables are the evidence for them.</p>
+<ol>
+<li><strong>One choke point, plus a second control that survives it.</strong> The runtime gateway sees prompts, outputs, and tool calls. Debate 3 says that is not enough by itself. Flow F4, the access broker, does not depend on the gateway being healthy or honest.</li>
+<li><strong>Policy stays outside the model.</strong> The engine returns allow, deny, or escalate. The model is not the enforcement point. That matches treating the model as an untrusted user <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li><strong>Evidence is a flow, not a project.</strong> F8 runs from every component into the audit store so C8 falls out of operation.</li>
+<li><strong>Retrieval is untrusted.</strong> F3 carries text the application did not author. Indirect prompt injection arrives that way <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li><strong>Component boundaries are unverified against Gartner's layers.</strong> Say that if a reviewer asks whether the Market Guide requires this exact cut.</li>
+</ol>
+<p>Red links on the runtime diagram: the prompt from the user or agent into the gateway, and the retrieved text from retrieval data into the application. Gray links are not "safe." They are simply not marked as untrusted content. A scoped tool call can still do harm if the scope is wrong. That is F4's job, and it is block 7's topic under excessive agency.</p>
+<p>Interaction records store hashes and decisions in the flow description. The entity is still classified sensitive because real prompts may contain personal data. Do not promise the logical view that raw prompts are never kept. The physical view leaves retention <code>UNVERIFIED</code>.</p>
+<h2>Actions</h2>
+<ol>
+<li>Pick one story: an employee agent retrieves a policy PDF and files a ticket. Walk F1, F2, F3, F4, F5, F6 in order. Say which step is synchronous.</li>
+<li>Mark the two red payloads on that story.</li>
+<li>On a scrap diagram, connect AI asset, policy, control, requirement, evaluation result, and evidence item. You need the chain, not every column.</li>
+<li>Write the sentence: "If the gateway fails open, the broker still limits tools." Check it against the enforcement-point decision in <a href="tdd-view-02-logical.html">Logical view</a>.</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">Closed book</div><p>Which component is the request choke point, and which component must still work if that choke point is bypassed? Why is retrieval marked untrusted? Name the flow that makes compliance a by-product.</p></div> <div class="callout success" markdown="0"><div class="callout-title">Answer</div><p>The runtime gateway is the choke point for prompts, outputs, and tool calls. The agent identity and access broker (F4) is separate so least privilege does not depend on the gateway <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Retrieval (F3) is untrusted because indirect prompt injection arrives in external content <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. F8, evidence capture, is the by-product flow for C8.</p></div> <h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Each of C1 to C8 in <a href="tdd-view-01-conceptual.html">Conceptual view</a> points at a component in <a href="tdd-view-02-logical.html">Logical view</a>.</li>
+<li class="task"><input type="checkbox" disabled> F1 to F9 can be named, and F3 plus the inbound prompt are marked untrusted.</li>
+<li class="task"><input type="checkbox" disabled> Policy-outside-the-model and broker-independence are stated as decisions, not as product features.</li>
+<li class="task"><input type="checkbox" disabled> No hostname, region, or SKU entered the drawing.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>claude</td>
+<td>Stub pointing at the blocks generator.</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Study guide for the proposed component cut, red flows, and five logical decisions.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/blocks/03-logical-view.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="tdd-block-02-conceptual-view.html">&larr; Previous</a><a href="tdd-block-04-physical-view.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

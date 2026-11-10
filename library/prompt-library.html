@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt library | Learn AI TRiSM</title>
+<meta name="description" content="Prompt library index for AI-TRISM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Prompts</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Prompts</div>
+  <h1 class="doctitle">Prompt library</h1>
+  <p class="lead">Prompt library index for AI-TRISM.</p>
+  
+  <article><h1>Prompt library — AI-TRISM</h1>
+<p><strong>Notebook alias:</strong> <code>tdd-ai-trism</code></p>
+<div class="callout info" markdown="0"><div class="callout-title">Pipeline rule</div><p>Every W8 / scoped report prompt must live under <code>prompts/</code> in this pack. Chat paste is not enough. <code>w8-prepare</code> refreshes <a href="prompts-all.html">notebooklm-all-prompts</a>.</p></div> <table>
+<thead>
+<tr>
+<th>Note</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="prompts-all.html">notebooklm-all-prompts</a></td>
+<td><strong>Canonical archive</strong> — every prompt in one file</td>
+</tr>
+<tr>
+<td><a href="prompts-notebooklm-set.html">notebooklm-prompt-set</a></td>
+<td>W8 T1–T5 + Briefing + Study Guide + data-table</td>
+</tr>
+<tr>
+<td><a href="prompts-decision-packet.html">notebooklm-room-craft-decision-packet</a></td>
+<td>T5 Create-Your-Own: first 60s + 5 slides + five killer Q&amp;As</td>
+</tr>
+<tr>
+<td><a href="prompts-tailored.html">tailored-prompts</a></td>
+<td>Pack overrides for T1–T4 (optional)</td>
+</tr>
+<tr>
+<td><a href="prompts-deep-dive-extra.html">deep-dive-extra-prompts</a></td>
+<td>Additional prompt note</td>
+</tr>
+<tr>
+<td><a href="prompts-debate.html">notebooklm-debate-prompts</a></td>
+<td>Additional prompt note</td>
+</tr>
+</tbody>
+</table>
+<h2>How to use</h2>
+<ol>
+<li>Open <a href="prompts-all.html">notebooklm-all-prompts</a> for the full text.</li>
+<li>For late-added sources, use <em>notebooklm-new-sources</em> with <code>--source-ids</code>.</li>
+<li>After adding new prompts in chat, run <code>python -m tech_deep_dive prompts-sync --slug ai-trism</code> or re-run <code>w8-prepare</code>.</li>
+</ol></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/prompts/00 - Prompt Library.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><span></span><a href="prompts-notebooklm-set.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

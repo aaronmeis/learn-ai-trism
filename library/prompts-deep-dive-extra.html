@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep-dive extra prompts | Learn AI TRiSM</title>
+<meta name="description" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Prompts</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Prompts</div>
+  <h1 class="doctitle">Deep-dive extra prompts</h1>
+  
+  
+  <article><h1>Extra deep-dive prompts — AI-TRISM</h1>
+<p>Injected into the W8 runner as additional Create Your Own reports. Paste manually into Studio → Report → Create Your Own if running by hand.</p>
+<h2>report_third_party</h2>
+<p>Using only the sources, catalog every THIRD-PARTY and EXTERNAL system that AI-TRISM integrates with. Include non-vendor clouds and SaaS data sources, SIEM and SOAR, ITSM and ticketing, on-premises file shares and databases, endpoints, identity providers, and complementary or competing governance and privacy tools. For each: vendor, direction (in, out, or both), mechanism (native connector, API, agent, SIEM feed, export), data exchanged, authentication, known limits, and government-cloud support. Present it as a table, then list integrations the sources mention but do not document. Mark silence.</p>
+<h2>report_failure_modes</h2>
+<p>Using only the sources, catalog failure modes and security weaknesses in AI-TRISM deployments. For each: symptom, root cause, which view it belongs to (conceptual, logical, physical, integration), blast radius, and the mitigation the sources support. Include misconfiguration, licensing gaps, integration breakage, and AI-specific risks such as oversharing through grounding. Mark silence.</p>
+<h2>report_framework_crosswalk</h2>
+<p>Using only the sources, build a crosswalk for AI-TRISM that places its elements into TOGAF ADM phases (A Vision, B Business, C Data and Application, D Technology), into DoDAF viewpoints (OV-1, OV-2, OV-5b, SV-1, SV-2, SV-4, SV-6, DIV-1/2/3, StdV-1), and into UAF 1.3 grid cells (domain-aspect pairs such as Sm-Ov, St-Tx, Op-Sr, Op-Cn, Sv-Sr, Rs-Sr, Sc-Sr, Sd-Tx, Pj-Rm, Ar-Sr), and shows which elements are conceptual, logical, or physical. Prefer UAF 1.3 labels from the OMG grid. Keep DoDAF in the table alongside UAF. Where the sources do not support a placement, say so rather than inferring. Do not merge this architecture-framework crosswalk with the NIST-to-ISO 42001 control crosswalk.</p></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/prompts/deep-dive-extra-prompts.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="prompts-tailored.html">&larr; Previous</a><span></span></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

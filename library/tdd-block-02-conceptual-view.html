@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 2: Conceptual view | Learn AI TRiSM</title>
+<meta name="description" content="Block 2 study guide: capabilities C1 to C8 and actors, with no product names.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ TDD day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">TDD day blocks</div>
+  <h1 class="doctitle">Block 2: Conceptual view</h1>
+  <p class="lead">Block 2 study guide: capabilities C1 to C8 and actors, with no product names.</p>
+  
+  <article>
+<p><strong>Time:</strong> 60 minutes</p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>Before a tool is bought, someone must say what "managed AI" means in outcomes: we know which systems exist, what data they touch, whether they still behave as approved, and what stops them in production. This block is that list, plus who is trusted to set it and who is not trusted to feed it. Product names wait for a later altitude.</p></div> <h2>Goal</h2>
+<p>Redraw capabilities C1 to C8 and the actor trust column from memory, and say which four capabilities are secondary analyst features rather than pack inventions.</p>
+<h2>Required reading</h2>
+<ul>
+<li><a href="tdd-view-01-conceptual.html">Conceptual view</a>. Read the altitude callout, the actor table, the capability table, and the open questions. Use the diagram as a check, not as a thing to memorize line by line.</li>
+<li>Debate 1 and Debate 4 in <a href="claims-debates.html">CLAIMS-AND-DEBATES</a>, only the claim rows.</li>
+<li>Do not open <a href="tdd-view-03-physical.html">Physical view</a> in this hour. If you need a product to explain a capability, the sentence is in the wrong block.</li>
+</ul>
+<h2>What to learn</h2>
+<p>The view's job is <strong>what and why</strong>. A capability is an outcome. An actor is someone or something with a goal and a trust level. A concept (asset, policy, control, evidence) is named only so later views have a noun.</p>
+<p>C1 to C4 are the four features IBM lists from Gartner guidance it dates to February 2025 <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>. They are not a paste from a Gartner PDF this pack opened:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Outcome in one line</th>
+<th>Who feels the pain if it is missing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1 AI catalog</td>
+<td>Every model, application, and agent is listed, including shadow AI</td>
+<td>The executive who cannot answer "what AI do we run?"</td>
+</tr>
+<tr>
+<td>C2 AI data mapping</td>
+<td>Each system has a known read, train, and emit set</td>
+<td>The privacy officer in an audit</td>
+</tr>
+<tr>
+<td>C3 Continuous assurance</td>
+<td>Behavior is retested, not blessed once at launch</td>
+<td>The model builder after drift</td>
+</tr>
+<tr>
+<td>C4 Runtime inspection and enforcement</td>
+<td>Policy hits inputs, outputs, and actions while the system runs</td>
+<td>Security operations during an incident</td>
+</tr>
+</tbody>
+</table>
+<p>C5 to C8 are the pack's bridge from the pillar language <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> and from NIST's trustworthiness characteristics <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>. They are marked that way in the view. Do not tell a reviewer they came from the same IBM list.</p>
+<ul>
+<li>C5 explainability and monitoring.</li>
+<li>C6 model lifecycle governance (ModelOps): version, release, retrain, retire.</li>
+<li>C7 information and privacy governance on training data, prompts, retrieval, and outputs.</li>
+<li>C8 compliance mapping and evidence against NIST AI RMF, ISO/IEC 42001, and applicable law <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code>.</li>
+</ul>
+<p>Trust is the other half of the picture. The end user is an untrusted input source. The AI agent is untrusted by default and gets least privilege. The third-party model provider is supply-chain risk <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. The auditor does not operate the system. The auditor demands evidence. That last distinction is why C8 is an outcome, not a person.</p>
+<p>NIST's seven characteristics are the yardstick in Debate 4 <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>: valid and reliable, safe, secure and resilient, accountable and transparent, explainable and interpretable, privacy-enhanced, and fair with harmful bias managed. A first mapping in the claims note leaves <strong>safe</strong> and <strong>fair</strong> without a named pillar. Leave that gap visible. Do not invent a fifth pillar to close it.</p>
+<p>Agency is the degree to which a system acts through tools <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. It is why C4 cannot be "a filter on text" only. You will cash that idea in the logical view.</p>
+<h2>Actions</h2>
+<ol>
+<li>Close the view. Write C1 to C8 as eight outcomes, one line each. Mark C1 to C4 <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> and C5 to C8 as derived.</li>
+<li>Draw eight boxes and nine actor arrows from memory. Check against the class diagram. Fix only the arrows you missed.</li>
+<li>Add one sentence under the drawing: which two NIST characteristics you will not pretend the pillar names cover <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>.</li>
+<li>Strike any product, cloud, or SKU that appeared. Those belong in <a href="tdd-view-03-physical.html">Physical view</a> or <a href="tdd-view-04-integration-ai.html">Integration and AI</a>.</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">Closed book</div><p>Name C1 to C4 and the kind of source they come from. Which actors are untrusted by default? Which two NIST characteristics lack a clearly named pillar?</p></div> <div class="callout success" markdown="0"><div class="callout-title">Answer</div><p>C1 catalog, C2 data mapping, C3 continuous assurance, C4 runtime inspection and enforcement. They come from IBM's account of Gartner guidance <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>, not from a Gartner page read in this pack. Untrusted by default: the end user as an input source, the AI agent, and the third-party model or tool provider <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Safe, and fair with harmful bias managed, have no clearly named pillar <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>.</p></div> <h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> C1 to C8 redrawn with no product names, matching <a href="tdd-view-01-conceptual.html">Conceptual view</a>.</li>
+<li class="task"><input type="checkbox" disabled> C1 to C4 attributed as secondary <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>. C5 to C8 not quietly moved into that citation.</li>
+<li class="task"><input type="checkbox" disabled> Actor trust column includes user, agent, provider, and auditor.</li>
+<li class="task"><input type="checkbox" disabled> Debate 4 gap (safety and fairness) is still visible.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>claude</td>
+<td>Stub pointing at the blocks generator.</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Study guide for C1 to C8, actors, and the fairness and safety gap.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/blocks/02-conceptual-view.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="tdd-block-01-context-and-scope.html">&larr; Previous</a><a href="tdd-block-03-logical-view.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

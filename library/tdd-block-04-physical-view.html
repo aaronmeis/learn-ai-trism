@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 4: Physical view | Learn AI TRiSM</title>
+<meta name="description" content="Block 4 study guide: five deployment zones, honest gaps, and the standards profile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ TDD day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">TDD day blocks</div>
+  <h1 class="doctitle">Block 4: Physical view</h1>
+  <p class="lead">Block 4 study guide: five deployment zones, honest gaps, and the standards profile.</p>
+  
+  <article>
+<p><strong>Time:</strong> 60 minutes</p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>A logical box still has to live somewhere, next to someone else's network. This hour places each proposed part in a zone and names the standards a reviewer can actually cite. It deliberately does not name a product SKU or a government region. Filling those cells from memory would be a false design.</p></div> <h2>Goal</h2>
+<p>Place every logical component in one of five zones, name the two red cross-boundary links, and sort the standards profile into voluntary guidance, certification route, and law.</p>
+<h2>Required reading</h2>
+<ul>
+<li><a href="tdd-view-03-physical.html">Physical view</a>: the logical-to-physical table, the zone diagram, the standards table, and the cloud-variant table.</li>
+<li>Keep <a href="tdd-view-02-logical.html">Logical view</a> open only as the list of components you must place.</li>
+<li><a href="desk-research-pass-2026-11-09.html">desk-research-pass-2026-11-09</a> only if the view's "article text not read" line confuses you. The desk pass later read EUR-Lex metadata and the application timing <code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code>. The view was not rewritten. Do not invent article-by-article obligations.</li>
+</ul>
+<h2>What to learn</h2>
+<p>Physical altitude is <strong>where it runs</strong>. In a normal product pack that means services and SKUs. This pack refused a single cloud, and no vendor page was read for licenses. The honest physical view is <strong>zones and patterns</strong>. <code>UNVERIFIED</code> in the license, region, and government-cloud columns is the correct content.</p>
+<p>Five trust boundaries. Memorize the zone job, not every icon:</p>
+<table>
+<thead>
+<tr>
+<th>Boundary</th>
+<th>Zone</th>
+<th>What must live here</th>
+<th>Why the split exists</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TB1</td>
+<td>Build</td>
+<td>Model registry, release pipeline, evaluation and red-team harness</td>
+<td>Tests and releases are not production traffic</td>
+</tr>
+<tr>
+<td>TB2</td>
+<td>Runtime</td>
+<td>Gateway, model serving and applications, agent identity broker, explainability</td>
+<td>This is where untrusted input arrives</td>
+</tr>
+<tr>
+<td>TB3</td>
+<td>Observability and security</td>
+<td>Monitoring, incident handler</td>
+<td>Detection is not the same team as the model release</td>
+</tr>
+<tr>
+<td>TB4</td>
+<td>Governance</td>
+<td>Asset registry, data map, policy engine, evidence store</td>
+<td>Policy and evidence outlive one application team</td>
+</tr>
+<tr>
+<td>TB5</td>
+<td>External</td>
+<td>Users and client agents, third-party model providers, enterprise retrieval stores</td>
+<td>Outside the platform boundary</td>
+</tr>
+</tbody>
+</table>
+<p>The policy engine sits in governance and is <strong>called</strong> from the runtime zone. Do not move it into TB2 just because the gateway queries it. The evidence store stays in governance even though the gateway writes to it.</p>
+<p>Red links, matching the diagram's link styles: client prompts into the gateway, and serving's retrieval from enterprise data. Model calls to a third-party provider are a supply-chain risk <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> but they are not the two links the figure paints red. Say that distinction out loud so you do not "remember" every external arrow as red.</p>
+<p>Standards to be able to sort without the table in front of you:</p>
+<ul>
+<li>Voluntary risk vocabulary: NIST AI RMF 1.0, functions Govern, Map, Measure, Manage <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>. NIST AI 600-1 is the voluntary generative profile <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>. Neither is a NIST certification.</li>
+<li>Certification route: ISO/IEC 42001:2023, through independent certification bodies. ISO does not itself certify <code>[<a class="cite" href="https://www.iso.org/standard/81230.html" target="_blank" rel="noopener" title="ISO/IEC 42001:2023 AI management systems (catalogue)">S5</a>]</code> <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>.</li>
+<li>Law where it applies: Regulation (EU) 2024/1689 <code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code>. General application 2 August 2026. Do not recite articles you have not read.</li>
+<li>Threat vocabulary, optional: OWASP Top 10 for LLM Applications 2025 <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li>Mapping aid, optional: the NIST to ISO/IEC 42001 crosswalk <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code>.</li>
+</ul>
+<p>Customer-managed keys for the evidence store are a recommendation. The only cloud illustration in the ledger is an AWS community mapping <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code>. That does not select AWS.</p>
+<p>Commercial, GCC, GCC High, and DoD rows are not researched. The right written answer is <code>UNVERIFIED</code>, not a guess from another project.</p>
+<h2>Actions</h2>
+<ol>
+<li>List the eleven logical components down the page. Write a zone next to each. Check against the mapping table in <a href="tdd-view-03-physical.html">Physical view</a>.</li>
+<li>Draw TB1 to TB5 as five labeled bands. Add only the two red links, labeled with their payload.</li>
+<li>Write a four-row standards card: voluntary, certifiable, law, optional threat list. One <code>[S#]</code> per row.</li>
+<li>Leave license, region, retention, and government-cloud blank on purpose. Write <code>UNVERIFIED</code> so a later reader does not "helpfully" fill them.</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">Closed book</div><p>Where do the gateway, the policy engine, and the evaluation harness run? Which two links are red? What do you write in a SKU cell in this pack, and why?</p></div> <div class="callout success" markdown="0"><div class="callout-title">Answer</div><p>Gateway in the runtime zone (TB2). Policy engine in the governance zone (TB4), called from runtime. Evaluation harness in the build zone (TB1). Red links are untrusted prompts into the gateway and retrieval from enterprise data. SKU cells say <code>UNVERIFIED</code> because the pack is vendor-neutral and no license page was read.</p></div> <h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Every component from <a href="tdd-view-02-logical.html">Logical view</a> maps to a zone in <a href="tdd-view-03-physical.html">Physical view</a> or is explicitly <code>UNVERIFIED</code>.</li>
+<li class="task"><input type="checkbox" disabled> TB1 to TB5 named, with the two red payloads correct.</li>
+<li class="task"><input type="checkbox" disabled> NIST, ISO/IEC 42001, the EU AI Act, and OWASP sorted by the kind of authority they have.</li>
+<li class="task"><input type="checkbox" disabled> No government-cloud cell filled from memory.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>claude</td>
+<td>Stub pointing at the blocks generator.</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Study guide for zones TB1 to TB5, red links, and the standards profile.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/blocks/04-physical-view.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="tdd-block-03-logical-view.html">&larr; Previous</a><a href="tdd-block-05-integration-and-ai.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

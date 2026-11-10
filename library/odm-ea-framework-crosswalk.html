@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ODM EA crosswalk pointer | Learn AI TRiSM</title>
+<meta name="description" content="ODM pointer to the AI-TRISM EA crosswalk (TOGAF · DoDAF · UAF 1.3). Canonical detail lives in the TDD sibling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Reference</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Reference</div>
+  <h1 class="doctitle">ODM EA crosswalk pointer</h1>
+  <p class="lead">ODM pointer to the AI-TRISM EA crosswalk (TOGAF · DoDAF · UAF 1.3). Canonical detail lives in the TDD sibling.</p>
+  
+  <article><h1>EA framework crosswalk — AI-TRISM (ODM)</h1>
+<p><strong>Canonical detail:</strong> <a href="ea-framework-crosswalk.html">TDD ea-framework-crosswalk</a></p>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>The one-day plan teaches placement and standards. When a reviewer asks for TOGAF, DoDAF, or UAF, use this compact table, then open the TDD crosswalk for element-level rows.</p></div> <h2>Grounding (same as TDD)</h2>
+<ul>
+<li>AI-TRISM sources do not prescribe TOGAF, DoDAF, or UAF. Placement is an architect overlay.</li>
+<li>UAF cells use <strong>UAF 1.3</strong> domain-aspect labels (<code>Op-Sr</code>, <code>Sd-Tx</code>, …) <code>[<a class="cite" href="https://www.omg.org/spec/UAF/1.3" target="_blank" rel="noopener" title="OMG Unified Architecture Framework (UAF) 1.3">S17</a>]</code>.</li>
+<li>Keep <strong>DoDAF</strong> in the brief; R&amp;E points at UAF superseding DoDAF over time without a found CIO retirement <code>[<a class="cite" href="https://ac.cto.mil/wp-content/uploads/2025/01/U-Mission-Architecture-Style-Guide-Final_07Jan2025.pdf" target="_blank" rel="noopener" title="OUSD(R&amp;E) Mission Architecture Style Guide v1.0 (6 Jan 2025)">S18</a>]</code>.</li>
+<li>The NIST-to-ISO table <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code> is a <strong>standards</strong> crosswalk. This note is an <strong>architecture-framework</strong> crosswalk.</li>
+</ul>
+<h2>Compact view table</h2>
+<table>
+<thead>
+<tr>
+<th>Altitude</th>
+<th>TOGAF ADM</th>
+<th>DoDAF</th>
+<th>UAF 1.3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conceptual (what / why)</td>
+<td>A · B</td>
+<td>OV-1 · CV-2 · DIV-1</td>
+<td>Sm-Ov · St-Tx · St-Mv · Op-Sr</td>
+</tr>
+<tr>
+<td>Logical (parts / flows)</td>
+<td>C</td>
+<td>OV-2 · OV-5b · SV-1 · DIV-2</td>
+<td>Op-Cn · Op-Pr · Sv-Sr · Rs-Sr · Op-If / Rs-If</td>
+</tr>
+<tr>
+<td>Physical (zones / standards)</td>
+<td>D · E</td>
+<td>SV-1/2 · SV-4 · DIV-3 · StdV-1</td>
+<td>Rs-Cn · Ar-Sr · Ar-Cn · Sd-Tx · Sc-Sr</td>
+</tr>
+<tr>
+<td>Integration (external / AI path)</td>
+<td>C · D · Governance</td>
+<td>SV-1/2 · SV-6 · OV-3 · StdV-1</td>
+<td>Sv-Cn · Op-Cn · Sc-Cn · Sd-Tx · Rs-If</td>
+</tr>
+<tr>
+<td>Build order</td>
+<td>E · F</td>
+<td>SV-1/4 · StdV-1 · DIV-3</td>
+<td>Pj-Sr · Pj-Rm · Rs-Rm · Ar-Sr · Sd-Tr</td>
+</tr>
+</tbody>
+</table>
+<h2>Teach-back line</h2>
+<p>"TRiSM is the capability map. TOGAF names the ADM phase. DoDAF and UAF name the viewpoint product. UAF answers use domain-aspect cells, not OV numbers under a UAF sticker."</p>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>ODM pointer + compact table; canonical rows in TDD sibling.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/one-day-mastery/ai-trism/reference/ea-framework-crosswalk.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="desk-research-pass-3-2026-11-09.html">&larr; Previous</a><span></span></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

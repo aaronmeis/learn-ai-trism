@@ -1,0 +1,569 @@
+[
+  {
+    "slug": "odm-hub",
+    "title": "ODM hub",
+    "section": "Plan",
+    "desc": "One-day mastery hub for AI-TRISM.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-hub",
+    "title": "TDD hub",
+    "section": "Plan",
+    "desc": "Technical deep dive hub for AI-TRISM.",
+    "nblm": false
+  },
+  {
+    "slug": "odm-mission",
+    "title": "ODM mission",
+    "section": "Plan",
+    "desc": "Mission for one-day mastery of AI TRiSM: defend a vendor-neutral reference architecture.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-mission",
+    "title": "TDD mission",
+    "section": "Plan",
+    "desc": "Mission for the technical deep dive on AI-TRISM.",
+    "nblm": false
+  },
+  {
+    "slug": "odm-day-plan",
+    "title": "ODM day plan",
+    "section": "Plan",
+    "desc": "Timed one-day schedule for AI TRiSM with an exit check after each block.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-day-plan",
+    "title": "TDD day plan",
+    "section": "Plan",
+    "desc": "Eight-block, about seven hour study day for the AI-TRISM architecture views.",
+    "nblm": false
+  },
+  {
+    "slug": "odm-mindmap",
+    "title": "ODM mind map",
+    "section": "Plan",
+    "desc": "Mode B mind map for AI TRiSM, filled after the 2026-11-09 desk pass.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-mindmap",
+    "title": "TDD mind map",
+    "section": "Plan",
+    "desc": "Research mind map for the AI-TRISM tech deep dive, filled from the five architecture views.",
+    "nblm": false
+  },
+  {
+    "slug": "claims-debates",
+    "title": "Claims and debates",
+    "section": "Plan",
+    "desc": "Claims, warrants and live debates for AI TRiSM: what the framework is, what it must be checked against, and what evidence would change the picture.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-claims-debates",
+    "title": "TDD claims and debates",
+    "section": "Plan",
+    "desc": "Claims, warrants and live debates for AI TRiSM: what the framework is, what it must be checked against, and what evidence would change the picture.",
+    "nblm": false
+  },
+  {
+    "slug": "odm-block-01-core-concepts",
+    "title": "Block 1: Core concepts",
+    "section": "ODM day blocks",
+    "desc": "Block 1 study note: what AI TRiSM is, and how it sits beside NIST, ISO/IEC 42001, and the EU AI Act.",
+    "nblm": false
+  },
+  {
+    "slug": "odm-block-02-mental-models",
+    "title": "Block 2: Mental models",
+    "section": "ODM day blocks",
+    "desc": "Block 2 study note: pillars versus layers, standards anchoring, and runtime versus architecture.",
+    "nblm": false
+  },
+  {
+    "slug": "odm-block-03-active-practice",
+    "title": "Block 3: Active practice",
+    "section": "ODM day blocks",
+    "desc": "Block 3 desk exercises: place a use case, OWASP LLM risks, and NIST functions on the AI TRiSM map.",
+    "nblm": false
+  },
+  {
+    "slug": "odm-block-04-teach-it",
+    "title": "Block 4: Teach it",
+    "section": "ODM day blocks",
+    "desc": "Block 4: a five-minute teach-back and the reviewer questions that follow it.",
+    "nblm": false
+  },
+  {
+    "slug": "odm-block-05-edge-cases",
+    "title": "Block 5: Edge cases",
+    "section": "ODM day blocks",
+    "desc": "Block 5: traps that make an AI TRiSM design look finished when it is not.",
+    "nblm": false
+  },
+  {
+    "slug": "odm-block-06-spaced-review",
+    "title": "Block 6: Spaced review",
+    "section": "ODM day blocks",
+    "desc": "Block 6: closed-book retrieval and the multi-pass log for AI TRiSM.",
+    "nblm": false
+  },
+  {
+    "slug": "odm-block-07-application",
+    "title": "Block 7: Application",
+    "section": "ODM day blocks",
+    "desc": "Block 7: design and defend a vendor-neutral AI TRiSM one-pager.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-block-01-context-and-scope",
+    "title": "Block 1: Context and scope",
+    "section": "TDD day blocks",
+    "desc": "Block 1 study guide: scope, naming caution, and the four open debates before any diagram.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-block-02-conceptual-view",
+    "title": "Block 2: Conceptual view",
+    "section": "TDD day blocks",
+    "desc": "Block 2 study guide: capabilities C1 to C8 and actors, with no product names.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-block-03-logical-view",
+    "title": "Block 3: Logical view",
+    "section": "TDD day blocks",
+    "desc": "Block 3 study guide: logical components, entities, and the untrusted runtime path.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-block-04-physical-view",
+    "title": "Block 4: Physical view",
+    "section": "TDD day blocks",
+    "desc": "Block 4 study guide: five deployment zones, honest gaps, and the standards profile.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-block-05-integration-and-ai",
+    "title": "Block 5: Integration and AI elements",
+    "section": "TDD day blocks",
+    "desc": "Block 5 study guide: integration themes, agent identity, and control points CP1 to CP8.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-block-06-hands-on-lab",
+    "title": "Block 6: Hands-on lab",
+    "section": "TDD day blocks",
+    "desc": "Block 6 desk-only lab: walk the proposed build order and one public source. No installs.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-block-07-failure-modes-and-security",
+    "title": "Block 7: Failure modes and security",
+    "section": "TDD day blocks",
+    "desc": "Block 7 study guide: OWASP LLM risks and talk limits, mapped to flows and control points.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-block-08-design-review",
+    "title": "Block 8: Design review and teach-back",
+    "section": "TDD day blocks",
+    "desc": "Block 8 study guide: design-review teach-back across the five views.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-view-01-conceptual",
+    "title": "Conceptual View \u2014 AI-TRISM",
+    "section": "Architecture views",
+    "desc": "Conceptual view of AI-TRISM: capabilities, actors, and value with no products named.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-view-02-logical",
+    "title": "Logical View \u2014 AI-TRISM",
+    "section": "Architecture views",
+    "desc": "Logical view of AI-TRISM: components, data entities, and flows, still vendor-neutral.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-view-03-physical",
+    "title": "Physical View \u2014 AI-TRISM",
+    "section": "Architecture views",
+    "desc": "Physical view of AI-TRISM: deployment zones, realization options and standards for a vendor-neutral reference architecture.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-view-04-integration-ai",
+    "title": "Integration and AI Elements \u2014 AI-TRISM",
+    "section": "Architecture views",
+    "desc": "Integration and AI elements of AI-TRISM: third-party and external systems, APIs, identity, AI features and AI data paths.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-view-05-detailed-design",
+    "title": "Detailed Design \u2014 AI-TRISM",
+    "section": "Architecture views",
+    "desc": "Detailed design of AI-TRISM: a proposed build order for a vendor-neutral reference implementation, with every unconfirmed item marked.",
+    "nblm": false
+  },
+  {
+    "slug": "diagram-index",
+    "title": "Diagram index",
+    "section": "Architecture views",
+    "desc": "Diagram index for AI-TRISM \u2014 tech-diagram-pack levels 01\u201305.",
+    "nblm": false
+  },
+  {
+    "slug": "diagram-sources",
+    "title": "Diagram sources (draw.io and Mermaid)",
+    "section": "Architecture views",
+    "desc": "Rendered diagrams with their editable draw.io and Mermaid sources.",
+    "nblm": false
+  },
+  {
+    "slug": "glossary",
+    "title": "Glossary",
+    "section": "Reference",
+    "desc": "Architecture terms for the AI-TRISM deep dive, each tied to a view.",
+    "nblm": false
+  },
+  {
+    "slug": "cheatsheet",
+    "title": "Cheatsheet",
+    "section": "Reference",
+    "desc": "Architecture decision rules for AI-TRISM: altitude, pillars versus layers, standards, and red flows.",
+    "nblm": false
+  },
+  {
+    "slug": "quiz-bank",
+    "title": "ODM quiz bank",
+    "section": "Reference",
+    "desc": "Closed-book quiz bank for the AI TRiSM one-day pack, three items per block.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-quiz-bank",
+    "title": "TDD quiz bank",
+    "section": "Reference",
+    "desc": "Closed-book quiz bank for AI-TRISM views 1 to 5 and the cross-cutting blocks.",
+    "nblm": false
+  },
+  {
+    "slug": "source-ledger",
+    "title": "Source ledger",
+    "section": "Reference",
+    "desc": "Source ledger \u2014 minimum 3 high-trust URLs before W8. Updated after desk research pass 2026-11-09.",
+    "nblm": false
+  },
+  {
+    "slug": "resources",
+    "title": "ODM resources",
+    "section": "Reference",
+    "desc": "High-trust sources for this one-day pack. Points at the source ledger.",
+    "nblm": false
+  },
+  {
+    "slug": "tdd-resources",
+    "title": "TDD resources",
+    "section": "Reference",
+    "desc": "High-trust sources for this deep-dive pack. Points at the source ledger.",
+    "nblm": false
+  },
+  {
+    "slug": "ea-framework-crosswalk",
+    "title": "EA framework crosswalk (TOGAF \u00b7 DoDAF \u00b7 UAF)",
+    "section": "Reference",
+    "desc": "Architect EA crosswalk for AI-TRISM across TOGAF ADM, DoDAF viewpoints, and UAF 1.3 grid cells.",
+    "nblm": false
+  },
+  {
+    "slug": "elicit",
+    "title": "Elicit light research",
+    "section": "Reference",
+    "desc": "",
+    "nblm": false
+  },
+  {
+    "slug": "desk-research-pass-2-2026-11-09",
+    "title": "Desk research pass 2 \u2014 AI-TRISM (2026-11-09)",
+    "section": "Reference",
+    "desc": "Second desk research pass: NIST AI 600-1 GAI risks for Debate 4, more OWASP entries, Ray still blocked.",
+    "nblm": false
+  },
+  {
+    "slug": "desk-research-pass-2026-11-09",
+    "title": "Desk research pass \u2014 AI-TRISM (2026-11-09)",
+    "section": "Reference",
+    "desc": "Desk research pass that unblocks unread ledger rows and runs designed evidence tests E1-E4 where possible without installs.",
+    "nblm": false
+  },
+  {
+    "slug": "desk-research-pass-3-2026-11-09",
+    "title": "Desk research pass 3 \u2014 AI-TRISM (2026-11-09)",
+    "section": "Reference",
+    "desc": "Third desk research pass: Ray 2026 TechXiv open PDF (five pillars + three taxonomies), remaining OWASP LLM 2025 entries, mindmap PNG already regenerated.",
+    "nblm": false
+  },
+  {
+    "slug": "odm-ea-framework-crosswalk",
+    "title": "ODM EA crosswalk pointer",
+    "section": "Reference",
+    "desc": "ODM pointer to the AI-TRISM EA crosswalk (TOGAF \u00b7 DoDAF \u00b7 UAF 1.3). Canonical detail lives in the TDD sibling.",
+    "nblm": false
+  },
+  {
+    "slug": "prompt-library",
+    "title": "Prompt library",
+    "section": "Prompts",
+    "desc": "Prompt library index for AI-TRISM.",
+    "nblm": false
+  },
+  {
+    "slug": "prompts-notebooklm-set",
+    "title": "NotebookLM prompt set",
+    "section": "Prompts",
+    "desc": "",
+    "nblm": false
+  },
+  {
+    "slug": "prompts-decision-packet",
+    "title": "Room-craft decision packet",
+    "section": "Prompts",
+    "desc": "Room-craft Executive Decision Packet Create-Your-Own prompt for AI-TRISM.",
+    "nblm": false
+  },
+  {
+    "slug": "prompts-all",
+    "title": "All NotebookLM prompts (archive)",
+    "section": "Prompts",
+    "desc": "Full prompt archive for AI-TRISM tech deep dive NotebookLM suite.",
+    "nblm": false
+  },
+  {
+    "slug": "prompts-debate",
+    "title": "Debate prompts",
+    "section": "Prompts",
+    "desc": "",
+    "nblm": false
+  },
+  {
+    "slug": "prompts-tailored",
+    "title": "Tailored prompts",
+    "section": "Prompts",
+    "desc": "",
+    "nblm": false
+  },
+  {
+    "slug": "prompts-deep-dive-extra",
+    "title": "Deep-dive extra prompts",
+    "section": "Prompts",
+    "desc": "",
+    "nblm": false
+  },
+  {
+    "slug": "nblm-odm-briefing",
+    "title": "ODM executive briefing",
+    "section": "NotebookLM ODM",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-odm-study-guide",
+    "title": "ODM study guide",
+    "section": "NotebookLM ODM",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-odm-working-brief",
+    "title": "ODM working briefing",
+    "section": "NotebookLM ODM",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-odm-mental-models",
+    "title": "ODM mental models",
+    "section": "NotebookLM ODM",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-odm-edge-cases",
+    "title": "ODM edge cases catalog",
+    "section": "NotebookLM ODM",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-odm-playbook",
+    "title": "ODM practice playbook",
+    "section": "NotebookLM ODM",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-odm-decision-packet",
+    "title": "ODM executive decision packet",
+    "section": "NotebookLM ODM",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-odm-claims-csv",
+    "title": "ODM claims analysis CSV",
+    "section": "NotebookLM ODM",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-odm-mindmap",
+    "title": "ODM NotebookLM mind map",
+    "section": "NotebookLM ODM",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-tdd-conceptual",
+    "title": "TDD conceptual architecture report",
+    "section": "NotebookLM TDD",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-tdd-logical",
+    "title": "TDD logical architecture report",
+    "section": "NotebookLM TDD",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-tdd-physical",
+    "title": "TDD physical / realization report",
+    "section": "NotebookLM TDD",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-tdd-ai-report",
+    "title": "TDD AI and integration report",
+    "section": "NotebookLM TDD",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-tdd-third-party",
+    "title": "TDD third-party inventory",
+    "section": "NotebookLM TDD",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-tdd-failure-modes",
+    "title": "TDD failure modes catalog",
+    "section": "NotebookLM TDD",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-tdd-crosswalk",
+    "title": "TDD TOGAF/DoDAF/UAF crosswalk",
+    "section": "NotebookLM TDD",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-tdd-decision-packet",
+    "title": "TDD executive decision packet",
+    "section": "NotebookLM TDD",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-tdd-study-guide",
+    "title": "TDD study guide",
+    "section": "NotebookLM TDD",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-tdd-briefing",
+    "title": "TDD briefing document",
+    "section": "NotebookLM TDD",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-tdd-claims-csv",
+    "title": "TDD claims CSV",
+    "section": "NotebookLM TDD",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "media-deep-dive-cut",
+    "title": "Deep dive cut",
+    "section": "Media",
+    "desc": "Pointer to the AI-TRISM explainer script and the silent render. Voice is not done.",
+    "nblm": false
+  },
+  {
+    "slug": "media-slides",
+    "title": "Presentation slides",
+    "section": "Media",
+    "desc": "Slide image gallery for AI-TRISM NotebookLM deck. JPG only; PPTX stays under C:\\output.",
+    "nblm": false
+  },
+  {
+    "slug": "media-cut-script",
+    "title": "Deep dive cut script",
+    "section": "Media",
+    "desc": "Every narration line and question card from the deep-dive cut, with the slide it belongs to.",
+    "nblm": false
+  },
+  {
+    "slug": "media-shorts-plan",
+    "title": "Shorts plan",
+    "section": "Media",
+    "desc": "The six planned shorts with their one-job prompts, and the published videos.",
+    "nblm": false
+  },
+  {
+    "slug": "media-explainer-script",
+    "title": "Explainer script",
+    "section": "Media",
+    "desc": "Script, fact table and shot list for the AI-TRISM architect explainer (about 75 s). Skill explainer-film. Not rendered.",
+    "nblm": false
+  },
+  {
+    "slug": "pipeline-odm-suite",
+    "title": "ODM NotebookLM suite",
+    "section": "Pipeline",
+    "desc": "NotebookLM W8 suite stub for AI-TRISM.",
+    "nblm": false
+  },
+  {
+    "slug": "pipeline-tdd-suite",
+    "title": "TDD NotebookLM suite",
+    "section": "Pipeline",
+    "desc": "NotebookLM W8 suite stub for AI-TRISM.",
+    "nblm": false
+  },
+  {
+    "slug": "pipeline-odm-inventory",
+    "title": "ODM download inventory",
+    "section": "Pipeline",
+    "desc": "Local download status for odm-ai-trism NotebookLM suite.",
+    "nblm": false
+  },
+  {
+    "slug": "pipeline-tdd-inventory",
+    "title": "TDD download inventory",
+    "section": "Pipeline",
+    "desc": "Local download status for tdd-ai-trism NotebookLM suite.",
+    "nblm": false
+  }
+]

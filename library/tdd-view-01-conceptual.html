@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conceptual View — AI-TRISM | Learn AI TRiSM</title>
+<meta name="description" content="Conceptual view of AI-TRISM: capabilities, actors, and value with no products named.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Architecture views</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Architecture views</div>
+  <h1 class="doctitle">Conceptual View — AI-TRISM</h1>
+  <p class="lead">Conceptual view of AI-TRISM: capabilities, actors, and value with no products named.</p>
+  
+  <article>
+<p>Pack: <a href="odm-hub.html">00 - AI-TRISM Hub</a> · Block: <a href="tdd-block-02-conceptual-view.html">Block 2</a> · Next: <a href="tdd-view-02-logical.html">Logical view</a> · Argument: <a href="claims-debates.html">CLAIMS-AND-DEBATES</a></p>
+<div class="callout info" markdown="0"><div class="callout-title">Altitude rule</div><p>Conceptual means <strong>what and why</strong>, not how. Name capabilities and actors. Do not name products, SKUs, services, or regions here. If a sentence needs a product name, it belongs in the physical view.</p></div> <div class="callout warning" markdown="0"><div class="callout-title">Draft status</div><p>Written 2026-11-09 from the source ledger. Only S2, S4, S8, S9 and the OWASP list in S7 were read. Capabilities C1 to C4 come from IBM's account of Gartner guidance (S8). The structure used here follows the four-layer view and keeps the four pillars as a crosswalk. That choice is the architect's convenience, not a finding. See Debate 1 in <a href="claims-debates.html">CLAIMS-AND-DEBATES</a>.</p></div> <h2>Problem and purpose</h2>
+<ul>
+<li>AI systems fail in ways conventional controls do not cover: they behave non-deterministically, depend on data that drifts, and accept natural-language input that can carry attacks <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. AI TRiSM exists to give an organization one set of controls for the trust, risk and security of those systems across their lifecycle <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>.</li>
+<li>Without it, nobody can say which AI systems exist, what data they touch, whether they still behave as approved, or what stops them acting outside their remit. The loser is whoever is accountable when an AI system leaks data, causes harm, or fails an audit: the executive owner, the security team, and the people affected.</li>
+</ul>
+<h2>Actors</h2>
+<table>
+<thead>
+<tr>
+<th>Actor</th>
+<th>Role</th>
+<th>Goal</th>
+<th>Trust level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI risk owner</td>
+<td>Accountable executive or governance board</td>
+<td>Set risk tolerance, approve AI use cases</td>
+<td>Trusted, policy-setting</td>
+</tr>
+<tr>
+<td>Model builder</td>
+<td>ML engineer or data scientist</td>
+<td>Train, evaluate and release models</td>
+<td>Trusted, constrained by release gates</td>
+</tr>
+<tr>
+<td>Application owner</td>
+<td>Team shipping an AI-enabled application</td>
+<td>Deliver a feature without breaching policy</td>
+<td>Trusted, monitored</td>
+</tr>
+<tr>
+<td>Security operations</td>
+<td>SOC and incident response</td>
+<td>Detect and contain AI-specific attacks</td>
+<td>Trusted, privileged</td>
+</tr>
+<tr>
+<td>Privacy and compliance officer</td>
+<td>Maps obligations to controls</td>
+<td>Show conformance to NIST, ISO/IEC 42001 and law</td>
+<td>Trusted, read-heavy</td>
+</tr>
+<tr>
+<td>End user</td>
+<td>Person prompting an AI system</td>
+<td>Get a useful answer</td>
+<td>Untrusted input source</td>
+</tr>
+<tr>
+<td>AI agent</td>
+<td>Software acting for a user or process</td>
+<td>Complete tasks using tools and data</td>
+<td>Untrusted by default, least privilege</td>
+</tr>
+<tr>
+<td>Third-party model or tool provider</td>
+<td>External model, API or plugin vendor</td>
+<td>Sell capability</td>
+<td>Untrusted, supply-chain risk <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code></td>
+</tr>
+<tr>
+<td>Auditor or regulator</td>
+<td>External reviewer</td>
+<td>Verify controls and evidence</td>
+<td>External, demands evidence</td>
+</tr>
+</tbody>
+</table>
+<h2>Capabilities</h2>
+<p>C1 to C4 are the four features IBM lists from Gartner guidance released in February 2025 <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>. C5 to C8 are derived from the four pillars <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> and the NIST trustworthiness characteristics <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Capability</th>
+<th>Outcome it delivers</th>
+<th>Actors</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>AI catalog</td>
+<td>One inventory of every model, application and agent in use, including shadow AI</td>
+<td>AI risk owner, application owner</td>
+<td><code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code></td>
+</tr>
+<tr>
+<td>C2</td>
+<td>AI data mapping</td>
+<td>Knowledge of which data each AI system reads, trains on and emits</td>
+<td>Privacy officer, model builder</td>
+<td><code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code></td>
+</tr>
+<tr>
+<td>C3</td>
+<td>Continuous assurance and evaluation</td>
+<td>Repeated testing that systems still meet their approved behavior</td>
+<td>Model builder, security operations</td>
+<td><code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code></td>
+</tr>
+<tr>
+<td>C4</td>
+<td>Runtime inspection and enforcement</td>
+<td>Policy applied to inputs, outputs and actions while the system runs</td>
+<td>Security operations, application owner</td>
+<td><code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code></td>
+</tr>
+<tr>
+<td>C5</td>
+<td>Explainability and monitoring</td>
+<td>Ability to interpret decisions and detect drift, bias and anomalous behavior</td>
+<td>Model builder, auditor</td>
+<td><code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code></td>
+</tr>
+<tr>
+<td>C6</td>
+<td>Model lifecycle governance (ModelOps)</td>
+<td>Controlled deployment, versioning, retraining and retirement</td>
+<td>Model builder, AI risk owner</td>
+<td><code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code></td>
+</tr>
+<tr>
+<td>C7</td>
+<td>Information and privacy governance</td>
+<td>Sensitive data protected in training, prompts, retrieval and outputs</td>
+<td>Privacy officer</td>
+<td><code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code></td>
+</tr>
+<tr>
+<td>C8</td>
+<td>Compliance mapping and evidence</td>
+<td>Controls tied to NIST AI RMF, ISO/IEC 42001 and applicable law, with evidence kept</td>
+<td>Compliance officer, auditor</td>
+<td><code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Key concepts (conceptual data)</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Meaning</th>
+<th>Related to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI asset</td>
+<td>Any model, application, agent or dataset under governance</td>
+<td>C1, C2</td>
+</tr>
+<tr>
+<td>Risk</td>
+<td>Probability of an event and the size of its consequence, as NIST defines it <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code></td>
+<td>C3, C8</td>
+</tr>
+<tr>
+<td>Trustworthiness characteristic</td>
+<td>One of seven NIST properties: valid and reliable, safe, secure and resilient, accountable and transparent, explainable and interpretable, privacy-enhanced, fair with harmful bias managed <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code></td>
+<td>C5, C7, C8</td>
+</tr>
+<tr>
+<td>Policy</td>
+<td>A rule the organization wants enforced on AI use</td>
+<td>C4, C8</td>
+</tr>
+<tr>
+<td>Control</td>
+<td>A mechanism that implements a policy</td>
+<td>C3 to C7</td>
+</tr>
+<tr>
+<td>Evidence</td>
+<td>A record showing a control ran and what it found</td>
+<td>C8</td>
+</tr>
+<tr>
+<td>Agency</td>
+<td>The degree to which an AI system can act on its own through tools <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code></td>
+<td>C4</td>
+</tr>
+</tbody>
+</table>
+<h2>Operational concept (OV-1 style)</h2>
+<pre class="mermaid">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;themeVariables&quot;:{&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryBorderColor&quot;:&quot;#111111&quot;,&quot;lineColor&quot;:&quot;#6b6b6b&quot;,&quot;primaryTextColor&quot;:&quot;#111111&quot;,&quot;textColor&quot;:&quot;#111111&quot;,&quot;clusterBkg&quot;:&quot;#f8f8f8&quot;,&quot;clusterBorder&quot;:&quot;#6b6b6b&quot;,&quot;fontFamily&quot;:&quot;Arial, Helvetica, sans-serif&quot;,&quot;fontSize&quot;:&quot;14px&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;},&quot;flowchart&quot;:{&quot;htmlLabels&quot;:true,&quot;curve&quot;:&quot;basis&quot;}}}%%
+classDiagram direction LR class System[&quot;«system» AI trust risk and security management&quot;] { C1 AI catalog C2 AI data mapping C3 continuous assurance C4 runtime enforcement C5 explainability and monitoring C6 model lifecycle governance C7 information and privacy governance C8 compliance mapping and evidence } class Owner[&quot;«actor» AI risk owner&quot;] class Builder[&quot;«actor» Model builder&quot;] class AppOwner[&quot;«actor» Application owner&quot;] class SecOps[&quot;«actor» Security operations&quot;] class Compliance[&quot;«actor» Compliance officer&quot;] class User[&quot;«actor» End user or AI agent&quot;] class Provider[&quot;«external» Third-party model provider&quot;] class Auditor[&quot;«external» Auditor or regulator&quot;] Owner ..&gt; System : sets policy Builder ..&gt; System : registers and releases models AppOwner ..&gt; System : registers applications SecOps ..&gt; System : monitors and responds Compliance ..&gt; System : maps controls User ..&gt; System : governed by Provider ..&gt; System : supplies models System ..&gt; Auditor : provides evidence
+</pre> <!-- tech_deep_dive:diagram-embed -->
+<p><a href="../assets/diagrams/01-conceptual-1.png" target="_blank"><img class="embed" src="../assets/diagrams/01-conceptual-1.png" alt="01-conceptual-1.png"></a></p>
+<h2>Open questions</h2>
+<ul>
+<li>Which structure does the target organization use, pillars or layers? Resolved by E1B in <a href="claims-debates.html">CLAIMS-AND-DEBATES</a>.</li>
+<li>Do fairness and safety need their own capability? The pillars name neither (Debate 4).</li>
+<li>Is C2 (AI data mapping) a separate capability or part of C7? UNVERIFIED: depends on Gartner's layer definitions, which were not readable.</li>
+</ul>
+<h2>Framework lens</h2>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Maps to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TOGAF</td>
+<td>Architecture Vision (Phase A) · Business Architecture (Phase B)</td>
+</tr>
+<tr>
+<td>DoDAF</td>
+<td>OV-1 High-Level Operational Concept · CV-2 Capability Taxonomy · DIV-1 Conceptual Data Model</td>
+</tr>
+<tr>
+<td>UAF 1.3</td>
+<td>Sm-Ov Summary &amp; Overview · St-Tx Strategic Taxonomy · St-Mv Strategic Motivation · Op-Sr Operational Structure</td>
+</tr>
+<tr>
+<td>Altitude</td>
+<td>Conceptual: capabilities and concepts only, vendor-neutral</td>
+</tr>
+</tbody>
+</table>
+<p>Full EA crosswalk (TOGAF · DoDAF · UAF): <a href="ea-framework-crosswalk.html">ea-framework-crosswalk</a>.</p></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/views/01 - Conceptual View.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><span></span><a href="tdd-view-02-logical.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

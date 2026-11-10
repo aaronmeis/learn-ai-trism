@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logical View — AI-TRISM | Learn AI TRiSM</title>
+<meta name="description" content="Logical view of AI-TRISM: components, data entities, and flows, still vendor-neutral.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Architecture views</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Architecture views</div>
+  <h1 class="doctitle">Logical View — AI-TRISM</h1>
+  <p class="lead">Logical view of AI-TRISM: components, data entities, and flows, still vendor-neutral.</p>
+  
+  <article>
+<p>Pack: <a href="odm-hub.html">00 - AI-TRISM Hub</a> · Block: <a href="tdd-block-03-logical-view.html">Block 3</a> · Prev: <a href="tdd-view-01-conceptual.html">Conceptual</a> · Next: <a href="tdd-view-03-physical.html">Physical</a></p>
+<div class="callout info" markdown="0"><div class="callout-title">Altitude rule</div><p>Logical means <strong>which parts and how they talk</strong>, independent of where they run. Components have responsibilities and interfaces. Data entities have attributes and relationships. Still no regions, SKUs, or hostnames.</p></div> <div class="callout warning" markdown="0"><div class="callout-title">Draft status</div><p>This is the agent's proposed decomposition of capabilities C1 to C8 into components. No source in the ledger prescribes it. Components are marked as proposal throughout. Threat names come from the OWASP 2025 list page <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</p></div> <h2>Logical components</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Responsibility</th>
+<th>Realizes capability</th>
+<th>Inputs</th>
+<th>Outputs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI asset registry</td>
+<td>Hold the inventory of models, applications, agents and datasets, with owners and risk tier</td>
+<td>C1</td>
+<td>Registration events, discovery scans</td>
+<td>Asset records, ownership</td>
+</tr>
+<tr>
+<td>Data map and classifier</td>
+<td>Record which data each asset reads, trains on and emits, with sensitivity labels</td>
+<td>C2, C7</td>
+<td>Asset records, data catalog</td>
+<td>Data lineage, labels</td>
+</tr>
+<tr>
+<td>Policy engine</td>
+<td>Store policies and decide allow, deny or escalate for a request or release</td>
+<td>C4, C6, C8</td>
+<td>Policies, context from requests</td>
+<td>Decisions</td>
+</tr>
+<tr>
+<td>Evaluation and red-team harness</td>
+<td>Run tests for accuracy, bias, robustness and attack resistance on a schedule and before release</td>
+<td>C3</td>
+<td>Model versions, test sets, attack sets</td>
+<td>Evaluation results</td>
+</tr>
+<tr>
+<td>Runtime gateway</td>
+<td>Inspect prompts, retrieved content, outputs and tool calls and apply policy decisions</td>
+<td>C4</td>
+<td>Requests, responses, tool calls</td>
+<td>Allowed or blocked traffic, event logs</td>
+</tr>
+<tr>
+<td>Agent identity and access broker</td>
+<td>Give each agent its own identity and the least privilege its task needs</td>
+<td>C4</td>
+<td>Agent requests, policy</td>
+<td>Scoped credentials</td>
+</tr>
+<tr>
+<td>Monitoring and behavior analytics</td>
+<td>Watch drift, quality, bias and anomalous behavior in production</td>
+<td>C5</td>
+<td>Interaction logs, metrics</td>
+<td>Alerts, drift reports</td>
+</tr>
+<tr>
+<td>Explainability service</td>
+<td>Produce global and local explanations of model outputs</td>
+<td>C5</td>
+<td>Model, inputs, outputs</td>
+<td>Explanations</td>
+</tr>
+<tr>
+<td>Model registry and release pipeline</td>
+<td>Version models, gate releases, retire models</td>
+<td>C6</td>
+<td>Evaluation results, approvals</td>
+<td>Approved releases</td>
+</tr>
+<tr>
+<td>Evidence and audit store</td>
+<td>Keep tamper-evident records of decisions, tests and approvals</td>
+<td>C8</td>
+<td>All components</td>
+<td>Evidence packs</td>
+</tr>
+<tr>
+<td>Incident handler</td>
+<td>Open and track AI incidents and hand off to security operations</td>
+<td>C3, C4, C5</td>
+<td>Alerts, policy violations</td>
+<td>Cases, containment actions</td>
+</tr>
+</tbody>
+</table>
+<h2>Logical data model</h2>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Key attributes</th>
+<th>Relationships</th>
+<th>Classification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI asset</td>
+<td>id, type, owner, risk tier, status</td>
+<td>has versions, uses datasets, subject to policies</td>
+<td>Internal</td>
+</tr>
+<tr>
+<td>Model version</td>
+<td>id, asset id, lineage, approval state</td>
+<td>produced by pipeline, scored by evaluations</td>
+<td>Internal</td>
+</tr>
+<tr>
+<td>Dataset</td>
+<td>id, source, sensitivity label, retention</td>
+<td>feeds model versions and retrieval</td>
+<td>Per label, may be restricted</td>
+</tr>
+<tr>
+<td>Policy</td>
+<td>id, scope, rule, owner</td>
+<td>applies to assets, enforced by gateway</td>
+<td>Internal</td>
+</tr>
+<tr>
+<td>Control</td>
+<td>id, policy id, mechanism, framework mapping</td>
+<td>implements policies, satisfies requirements</td>
+<td>Internal</td>
+</tr>
+<tr>
+<td>Requirement</td>
+<td>id, framework, reference</td>
+<td>mapped to controls</td>
+<td>Public text</td>
+</tr>
+<tr>
+<td>Evaluation result</td>
+<td>id, model version, test set, metrics, date</td>
+<td>evidence for controls</td>
+<td>Internal</td>
+</tr>
+<tr>
+<td>Interaction record</td>
+<td>id, asset id, identity, input hash, output hash, decision</td>
+<td>feeds monitoring and evidence</td>
+<td>Sensitive, may contain personal data</td>
+</tr>
+<tr>
+<td>Incident</td>
+<td>id, asset id, severity, state</td>
+<td>links to interaction records and alerts</td>
+<td>Sensitive</td>
+</tr>
+<tr>
+<td>Evidence item</td>
+<td>id, control id, source, timestamp</td>
+<td>satisfies requirements</td>
+<td>Internal, retained</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid">erDiagram AI_ASSET ||--o{ MODEL_VERSION : has AI_ASSET }o--o{ DATASET : uses AI_ASSET }o--o{ POLICY : &quot;subject to&quot; POLICY ||--o{ CONTROL : &quot;implemented by&quot; CONTROL }o--o{ REQUIREMENT : satisfies MODEL_VERSION ||--o{ EVALUATION_RESULT : &quot;scored by&quot; EVALUATION_RESULT ||--o{ EVIDENCE_ITEM : produces CONTROL ||--o{ EVIDENCE_ITEM : &quot;proved by&quot; AI_ASSET ||--o{ INTERACTION_RECORD : generates INTERACTION_RECORD }o--o| INCIDENT : &quot;may open&quot;
+</pre> <!-- tech_deep_dive:diagram-embed -->
+<p><a href="../assets/diagrams/02-logical-1.png" target="_blank"><img class="embed" src="../assets/diagrams/02-logical-1.png" alt="02-logical-1.png"></a></p>
+<h2>Logical flows</h2>
+<p>Flow 1 is the runtime path for a user or agent request, which is where most OWASP LLM risks land <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Red links mark flows that carry untrusted content.</p>
+<pre class="mermaid">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;themeVariables&quot;:{&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryBorderColor&quot;:&quot;#111111&quot;,&quot;lineColor&quot;:&quot;#6b6b6b&quot;,&quot;primaryTextColor&quot;:&quot;#111111&quot;,&quot;textColor&quot;:&quot;#111111&quot;,&quot;clusterBkg&quot;:&quot;#f8f8f8&quot;,&quot;clusterBorder&quot;:&quot;#6b6b6b&quot;,&quot;fontFamily&quot;:&quot;Arial, Helvetica, sans-serif&quot;,&quot;fontSize&quot;:&quot;14px&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;},&quot;flowchart&quot;:{&quot;htmlLabels&quot;:true,&quot;curve&quot;:&quot;basis&quot;}}}%%
+flowchart LR USER[&quot;User or agent&quot;] --&gt;|&quot;prompt (untrusted)&quot;| GW[&quot;Runtime gateway&quot;] GW --&gt;|&quot;check policy&quot;| PE[&quot;Policy engine&quot;] PE --&gt;|&quot;decision&quot;| GW GW --&gt;|&quot;allowed prompt&quot;| APP[&quot;AI application / model&quot;] APP --&gt;|&quot;retrieve&quot;| RAG[&quot;Retrieval data (untrusted content)&quot;] RAG --&gt;|&quot;retrieved text&quot;| APP APP --&gt;|&quot;tool call&quot;| BROKER[&quot;Agent identity and access broker&quot;] BROKER --&gt;|&quot;scoped action&quot;| TOOLS[&quot;Tools and data&quot;] APP --&gt;|&quot;draft output&quot;| GW GW --&gt;|&quot;checked output&quot;| USER GW --&gt;|&quot;interaction record&quot;| MON[&quot;Monitoring and analytics&quot;] MON --&gt;|&quot;alerts&quot;| IH[&quot;Incident handler&quot;] GW --&gt;|&quot;evidence&quot;| EV[&quot;Evidence and audit store&quot;] linkStyle 0 stroke:#c8102e,stroke-width:2.5px,color:#c8102e linkStyle 5 stroke:#c8102e,stroke-width:2.5px,color:#c8102e
+</pre> <!-- tech_deep_dive:diagram-embed -->
+<p><a href="../assets/diagrams/02-logical-2.png" target="_blank"><img class="embed" src="../assets/diagrams/02-logical-2.png" alt="02-logical-2.png"></a></p>
+<table>
+<thead>
+<tr>
+<th>Flow</th>
+<th>From</th>
+<th>To</th>
+<th>Payload</th>
+<th>Trigger</th>
+<th>Sync/async</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F1 Request check</td>
+<td>User or agent</td>
+<td>Runtime gateway</td>
+<td>Prompt, identity, context</td>
+<td>Each request</td>
+<td>Sync</td>
+</tr>
+<tr>
+<td>F2 Policy decision</td>
+<td>Runtime gateway</td>
+<td>Policy engine</td>
+<td>Request metadata, labels</td>
+<td>Each request</td>
+<td>Sync</td>
+</tr>
+<tr>
+<td>F3 Retrieval</td>
+<td>AI application</td>
+<td>Retrieval data</td>
+<td>Query, returned text</td>
+<td>Each retrieval-augmented request</td>
+<td>Sync</td>
+</tr>
+<tr>
+<td>F4 Tool call</td>
+<td>AI application</td>
+<td>Access broker, tools</td>
+<td>Action, scoped credential</td>
+<td>Agent step</td>
+<td>Sync</td>
+</tr>
+<tr>
+<td>F5 Output check</td>
+<td>AI application</td>
+<td>Runtime gateway</td>
+<td>Draft output</td>
+<td>Each response</td>
+<td>Sync</td>
+</tr>
+<tr>
+<td>F6 Interaction logging</td>
+<td>Runtime gateway</td>
+<td>Monitoring</td>
+<td>Interaction record</td>
+<td>Each request</td>
+<td>Async</td>
+</tr>
+<tr>
+<td>F7 Release gate</td>
+<td>Evaluation harness</td>
+<td>Model registry</td>
+<td>Evaluation results, approval</td>
+<td>Before a model version goes live</td>
+<td>Async</td>
+</tr>
+<tr>
+<td>F8 Evidence capture</td>
+<td>All components</td>
+<td>Evidence store</td>
+<td>Decisions, results, approvals</td>
+<td>On each control run</td>
+<td>Async</td>
+</tr>
+<tr>
+<td>F9 Drift alert</td>
+<td>Monitoring</td>
+<td>Incident handler</td>
+<td>Alert</td>
+<td>Threshold crossed</td>
+<td>Async</td>
+</tr>
+</tbody>
+</table>
+<h2>Design decisions at this level</h2>
+<ul>
+<li><strong>Enforcement point.</strong> The runtime gateway is a single logical choke point for prompts, outputs and tool calls. Debate 3 in <a href="claims-debates.html">CLAIMS-AND-DEBATES</a> questions whether this is enough on its own, so the access broker (F4) is a separate component and does not depend on the gateway working.</li>
+<li><strong>Policy outside the model.</strong> The policy engine decides, and the model is never trusted to enforce policy on itself. This follows the idea of treating the model as an untrusted user <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li><strong>Evidence as a first-class flow.</strong> F8 exists so that compliance mapping (C8) is a by-product of operation rather than a separate project.</li>
+<li><strong>Retrieval data is untrusted.</strong> F3 is marked untrusted because indirect prompt injection arrives through external content <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li><strong>UNVERIFIED:</strong> whether Gartner's layers imply these exact component boundaries. The decomposition is a proposal.</li>
+</ul>
+<h2>Framework lens</h2>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Maps to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TOGAF</td>
+<td>Information Systems Architectures (Phase C: Data and Application)</td>
+</tr>
+<tr>
+<td>DoDAF</td>
+<td>OV-2 Operational Resource Flow · OV-5b Operational Activity Model · SV-1 (logical) · DIV-2 Logical Data Model</td>
+</tr>
+<tr>
+<td>UAF 1.3</td>
+<td>Op-Cn Operational Connectivity · Op-Pr Operational Processes · Sv-Sr Services Structure · Rs-Sr Resources Structure · Op-If / Rs-If Information</td>
+</tr>
+<tr>
+<td>Altitude</td>
+<td>Logical: components, entities, flows; vendor-neutral</td>
+</tr>
+</tbody>
+</table>
+<p>Full EA crosswalk (TOGAF · DoDAF · UAF): <a href="ea-framework-crosswalk.html">ea-framework-crosswalk</a>.</p></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/views/02 - Logical View.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="tdd-view-01-conceptual.html">&larr; Previous</a><a href="tdd-view-03-physical.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

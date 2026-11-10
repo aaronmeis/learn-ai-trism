@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tailored prompts | Learn AI TRiSM</title>
+<meta name="description" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Prompts</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Prompts</div>
+  <h1 class="doctitle">Tailored prompts</h1>
+  
+  
+  <article><h1>Tailored prompts — AI-TRISM</h1>
+<p>Read by <code>w8-prepare</code> (T1-T4). Rewritten 2026-11-09 for a vendor-neutral framework topic. Edit freely; keep the <code>### Tn</code> headings.</p>
+<p>Why these differ from the scaffold: the scaffold T3 asked for named services, licensing tiers and GCC / GCC High / DoD differences, and T4 assumed a copilot product with labels and retention. AI TRiSM is a framework with no single product, so those prompts would return only "the sources are silent".</p>
+<h3>T1</h3>
+<p>Using only the sources, write the CONCEPTUAL architecture view of AI TRiSM (AI Trust, Risk and Security Management). Cover the problem it solves, the actors and their goals, the capabilities it provides, and the key concepts and how they relate. Then state how each source structures AI TRiSM: some describe four pillars and some describe four layers. Attribute each structure to the source that gives it, say whether that source is a vendor or an independent body, and do not merge the two structures. Do not name products, SKUs or regions; this is the capability altitude. End with a table mapping each capability to the source that supports it. Mark where the sources are silent.</p>
+<h3>T2</h3>
+<p>Using only the sources, write the LOGICAL architecture view of AI TRiSM. List the logical components needed to realize its controls across the AI lifecycle, such as an AI inventory, data mapping, policy decision, evaluation and red teaming, runtime inspection, agent identity, monitoring, explainability, model release, and evidence storage. For each, give responsibilities, inputs and outputs, and say which source supports it. List the logical data entities with key attributes and relationships. Describe the main flows, including the path of a user or agent request at runtime, with trigger, payload, and sync or async. Stay vendor-neutral. Mark every component or flow that the sources do not support instead of inventing it.</p>
+<h3>T3</h3>
+<p>Using only the sources, describe how AI TRiSM controls are realized and deployed in practice. Cover where enforcement points sit (inline proxy, API gateway, agent, sidecar, release pipeline), what data stores hold logs and evidence, and which named products, services or open-source tools the sources give as examples. For each named example, state which source names it and whether that source is vendor-authored. Do not infer availability in government, GCC, GCC High or DoD environments; list only what the sources state about government or regulated environments, and otherwise say they are silent. Do not state licensing tiers unless a source does. Mark silence.</p>
+<h3>T4</h3>
+<p>Using only the sources, describe the AI elements and integration surface of AI TRiSM. For LLM applications, retrieval-augmented generation, AI agents, and classical machine learning models, say what each reads and writes, the data path from training data and prompts to outputs and monitoring, and the controls the sources attach at each point. Map the OWASP Top 10 for LLM Applications 2025 risks named in the sources to those controls and say which have no stated mitigation in the sources. Then list the integration surface the sources mention: identity for agents, SIEM and incident tooling, data catalog and data loss prevention, model registries, and third-party model providers. Mark silence.</p></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/prompts/tailored-prompts.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="prompts-debate.html">&larr; Previous</a><a href="prompts-deep-dive-extra.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

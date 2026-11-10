@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 7: Failure modes and security | Learn AI TRiSM</title>
+<meta name="description" content="Block 7 study guide: OWASP LLM risks and talk limits, mapped to flows and control points.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ TDD day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">TDD day blocks</div>
+  <h1 class="doctitle">Block 7: Failure modes and security</h1>
+  <p class="lead">Block 7 study guide: OWASP LLM risks and talk limits, mapped to flows and control points.</p>
+  
+  <article>
+<p><strong>Time:</strong> 45 minutes</p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>A control plane that only looks complete will still fail in specific, nameable ways. This block puts those names on the diagrams from earlier in the day: which flow carries the attack, which control point is supposed to catch it, and which mitigations this pack has actually read. The point is to stop a design review from accepting "we have a guardrail" as a full answer.</p></div> <h2>Goal</h2>
+<p>Place the OWASP 2025 risk names and the two talk warnings onto a flow or a control point. Keep unread mitigation text unread.</p>
+<h2>Required reading</h2>
+<ul>
+<li>Integration risks table in <a href="tdd-view-04-integration-ai.html">Integration and AI</a>.</li>
+<li>Red flows and the "policy outside the model" decision in <a href="tdd-view-02-logical.html">Logical view</a>.</li>
+<li>Debate 3 in <a href="claims-debates.html">CLAIMS-AND-DEBATES</a>, including the E3A count.</li>
+<li>Do not open vendor white papers to fill <code>UNVERIFIED</code> cells.</li>
+</ul>
+<h2>What to learn</h2>
+<p>OWASP's 2025 list is a <strong>threat vocabulary</strong>, not a control framework <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. The pack read the ten names. It read the full LLM01 page <code>[S7b]</code>. LLM02 is an excerpt. LLM03 through LLM09 were not read as entries. LLM10 is the name plus a consumption warning. If you write a mitigation for an unread entry, you are inventing.</p>
+<p>Use this placement. The "read status" column is part of the answer.</p>
+<table>
+<thead>
+<tr>
+<th>Failure</th>
+<th>Where it lands</th>
+<th>What this pack will say</th>
+<th>Read status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM01 Prompt injection</td>
+<td>F1 prompt, F3 retrieved text, CP3 and CP4</td>
+<td>Constrain behavior, validate output shape, filter input and output, least privilege, human approval, segregate external content, adversarial tests. Treat the model as an untrusted user. About two of the seven items are filtering. About five are privilege, architecture, or process <code>[S7b]</code>.</td>
+<td>Full entry read</td>
+</tr>
+<tr>
+<td>LLM02 Sensitive information disclosure</td>
+<td>CP6 output, interaction logs, training data at CP1</td>
+<td>Sanitize before training. A system-prompt ban is bypassable <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</td>
+<td>Excerpt</td>
+</tr>
+<tr>
+<td>LLM03 Supply chain</td>
+<td>TB5 model provider, registry inputs</td>
+<td>Third-party models and plugins are in the inventory. Do not invent the OWASP mitigation paragraph.</td>
+<td>Name only</td>
+</tr>
+<tr>
+<td>LLM04 Data and model poisoning</td>
+<td>CP1 training and fine-tune data</td>
+<td>The data map is the attachment point. Mitigation text not read.</td>
+<td>Name only</td>
+</tr>
+<tr>
+<td>LLM05 Improper output handling</td>
+<td>Systems that consume model output after CP6</td>
+<td>The gateway's output check is necessary and not the same as safe handling downstream. Mitigation text not read.</td>
+<td>Name only</td>
+</tr>
+<tr>
+<td>LLM06 Excessive agency</td>
+<td>F4 and CP5</td>
+<td>Least privilege and human approval, by analogy with LLM01, plus per-agent identity <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>. The LLM06 entry itself was not read.</td>
+<td>Analogy, marked</td>
+</tr>
+<tr>
+<td>LLM07 System prompt leakage</td>
+<td>CP6 output</td>
+<td>Name only. Do not describe an exploit.</td>
+<td>Name only</td>
+</tr>
+<tr>
+<td>LLM08 Vector and embedding weaknesses</td>
+<td>F3, CP4, vector store row</td>
+<td>Retrieval stays untrusted <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Entry not read.</td>
+<td>Name only</td>
+</tr>
+<tr>
+<td>LLM09 Misinformation</td>
+<td>CP6 and C5 monitoring</td>
+<td>Evaluation and monitoring are the attachment points. Entry not read.</td>
+<td>Name only</td>
+</tr>
+<tr>
+<td>LLM10 Unbounded consumption</td>
+<td>Model provider API from TB2</td>
+<td>Quotas and aggregate limits belong on the gateway and the provider contract <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. No numeric quota is in the pack.</td>
+<td>Name plus warning</td>
+</tr>
+<tr>
+<td>Gateway single point of failure</td>
+<td>TB2 runtime zone</td>
+<td>Fail-closed or fail-open is per use case. The broker must not depend on the gateway. Proposal, no measured availability.</td>
+<td>Proposal</td>
+</tr>
+<tr>
+<td>Guardrail-only design</td>
+<td>Debate 3</td>
+<td>An outer AI firewall is rational if the model cannot be fixed, and red teaming comes first <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>. Filters cannot cover an infinite input and output space. Agent identity and over-permissioning still matter <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>. The speaker in <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> sells behavioral detection. No detection rate was measured. E3W unrun.</td>
+<td>Captions read</td>
+</tr>
+<tr>
+<td>Pillar gap as a failure of coverage</td>
+<td>Debate 4</td>
+<td>A design that "implements the four pillars" can still omit safety and fairness <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>.</td>
+<td>Partial</td>
+</tr>
+</tbody>
+</table>
+<p>The teaching point from E3A is the weight, not a slogan. Runtime inspection (C4, the gateway, CP3 and CP6) is the right place for the filtering items. It is the wrong place to stop. Privilege (CP5, the broker), human approval, and content segregation are the rest of LLM01 <code>[S7b]</code>. That is why block 3 refused to hide the broker inside the gateway.</p>
+<p>Do not write attack procedures, payloads, or bypass steps. Naming the risk and the control point is the whole assignment.</p>
+<h2>Actions</h2>
+<ol>
+<li>On a copy of the runtime path, tag LLM01, LLM02, LLM06, and LLM10 onto flows or control points. Four tags are enough.</li>
+<li>Write two sentences you would say if a sponsor says "the firewall covers prompt injection." Use <code>[S7b]</code>, <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>, and <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>. Include the vendor-interest caveat on <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>.</li>
+<li>Star every row whose mitigation you have not read. Those stars are exit criteria, not shame.</li>
+<li>Add one non-OWASP failure: evidence added after go-live, which skips F8. The fix is step 1 of the build order in <a href="tdd-view-05-detailed-design.html">Detailed design</a>.</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">Closed book</div><p>Why are runtime guardrails necessary and not sufficient? Where does indirect prompt injection enter? What will you refuse to invent for LLM03?</p></div> <div class="callout success" markdown="0"><div class="callout-title">Answer</div><p>Guardrails are necessary because the model is not fully fixable, so an outer inspection layer is a real proposal <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code>, and LLM01 includes filtering <code>[S7b]</code>. They are not sufficient because most of the LLM01 mitigations are privilege, architecture, or process, and a talked-through limit is that filters cannot judge every input, output, and agent identity <code>[S7b]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>. Indirect prompt injection enters on retrieval, flow F3 and control point CP4 <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. For LLM03 you will name supply chain and the third-party boundary, and you will not invent the unread mitigation text.</p></div> <h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> A failure table covers prompt injection, sensitive disclosure, excessive agency, supply chain, and unbounded consumption, each tied to <a href="tdd-view-02-logical.html">Logical view</a> or <a href="tdd-view-04-integration-ai.html">Integration and AI</a>.</li>
+<li class="task"><input type="checkbox" disabled> LLM01's mix of filtering versus privilege is stated from <code>[S7b]</code>.</li>
+<li class="task"><input type="checkbox" disabled> Both talks cited, with vendor interest on <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>, and E3W left unrun.</li>
+<li class="task"><input type="checkbox" disabled> Unread OWASP entries stay name-only.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>claude</td>
+<td>Stub pointing at the blocks generator.</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Study guide mapping OWASP 2025 names and the two talks onto flows and control points.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/blocks/07-failure-modes-and-security.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="tdd-block-06-hands-on-lab.html">&larr; Previous</a><a href="tdd-block-08-design-review.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

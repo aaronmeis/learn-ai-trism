@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; media-src 'self' blob:; frame-src https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self'; worker-src 'self'; manifest-src 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Learn AI TRiSM</title>
+<meta name="description" content="Dual ODM+TDD study console for AI Trust, Risk and Security Management (AI TRiSM). Grounded in the Obsidian one-day mastery and tech deep-dive packs.">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/enhance.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="bg-watermark"></div>
+<div class="bg-svg-pattern"></div>
+
+<div class="print-header">
+  <div style="font-size:1.2rem;font-weight:700;color:#0f172a">Learn AI TRiSM</div>
+  <div style="font-size:.8rem;color:#475569;margin-top:2px">One-Day Mastery + Tech Deep Dive</div>
+</div>
+
+<nav class="sidebar">
+  <div class="sidebar-header-box">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:.5rem">
+      <img id="sidebarHeroImg" src="assets/hero.jpg" alt="AI-TRISM study console" style="width:46px;height:46px;border-radius:10px;border:1px solid rgba(56,189,248,0.35);box-shadow:0 0 12px rgba(56,189,248,0.25);object-fit:cover;flex-shrink:0">
+      <div>
+        <div class="sidebar-badge" style="margin-bottom:.1rem">Console v2.0</div>
+        <div class="sidebar-header" style="font-size:1.05rem">Learn AI TRiSM</div>
+      </div>
+    </div>
+    <div class="sidebar-sub">One-Day Mastery + Tech Deep Dive</div>
+  </div>
+  <button type="button" class="nav-search" id="navSearch" aria-label="Search (Ctrl K)"><span>Search views, terms, notes</span><kbd>Ctrl K</kbd></button>
+  <div class="nav-links" id="nav" role="navigation" aria-label="Sections">
+    <div class="nav-group" data-group="today">
+      <a class="nav-item" href="#/today" data-v="today"><span class="ni-ic" aria-hidden="true">▪</span>Today</a>
+    </div>
+    <div class="nav-group" data-group="learn">
+      <div class="nav-group-label">Learn</div>
+      <a class="nav-item" href="#/curriculum" data-v="curriculum"><span class="ni-ic" aria-hidden="true">▪</span>Curriculum</a>
+      <a class="nav-item" href="#/views" data-v="views"><span class="ni-ic" aria-hidden="true">▪</span>Architecture views</a>
+      <a class="nav-item" href="#/shorts" data-v="shorts"><span class="ni-ic" aria-hidden="true">▪</span>Shorts</a>
+      <a class="nav-item" href="#/deck" data-v="deck"><span class="ni-ic" aria-hidden="true">▪</span>Deck and deep-dive cut</a>
+      <a class="nav-item" href="#/library" data-v="library"><span class="ni-ic" aria-hidden="true">▪</span>Library (all notes)</a>
+    </div>
+    <div class="nav-group" data-group="practice">
+      <div class="nav-group-label">Practice</div>
+      <a class="nav-item" href="#/flash" data-v="flash"><span class="ni-ic" aria-hidden="true">▪</span>Flashcards</a>
+      <a class="nav-item" href="#/quiz" data-v="quiz"><span class="ni-ic" aria-hidden="true">▪</span>Quiz</a>
+      <a class="nav-item" href="#/failures" data-v="failures"><span class="ni-ic" aria-hidden="true">▪</span>Failure modes</a>
+      <a class="nav-item" href="#/prompts" data-v="prompts"><span class="ni-ic" aria-hidden="true">▪</span>Prompts</a>
+    </div>
+    <div class="nav-group" data-group="reference">
+      <div class="nav-group-label">Reference</div>
+      <a class="nav-item" href="#/cheat" data-v="cheat"><span class="ni-ic" aria-hidden="true">▪</span>Decision rules</a>
+      <a class="nav-item" href="#/map" data-v="map"><span class="ni-ic" aria-hidden="true">▪</span>Progress map</a>
+      <a class="nav-item" href="#/glossary" data-v="glossary"><span class="ni-ic" aria-hidden="true">▪</span>Glossary</a>
+      <a class="nav-item" href="#/ea" data-v="ea"><span class="ni-ic" aria-hidden="true">▪</span>EA mapping</a>
+      <a class="nav-item" href="#/debates" data-v="debates"><span class="ni-ic" aria-hidden="true">▪</span>Debates</a>
+      <a class="nav-item" href="#/refs" data-v="refs"><span class="ni-ic" aria-hidden="true">▪</span>Source ledger</a>
+      <a class="nav-item" href="#/dashboard" data-v="dashboard"><span class="ni-ic" aria-hidden="true">▪</span>Overview</a>
+    </div>
+  </div>
+  <div class="sidebar-foot">
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:.85rem">
+      <button id="themeToggleBtn" aria-label="Toggle light or dark theme" style="flex:1;background:var(--card-bg);border:1px solid var(--border-color);color:var(--text-primary);padding:.35rem .5rem;border-radius:6px;font-size:.74rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px">
+        <span id="themeToggleIcon">🌙</span> <span id="themeToggleText">Dark</span>
+      </button>
+    </div>
+    Vault-first study console for AI TRiSM (AI Trust, Risk and Security Management). No tenant data, passwords, or API keys on this site.<br><br>
+    Obsidian packs: <code>Learning/one-day-mastery/ai-trism/</code> and <code>Learning/tech-deep-dive/ai-trism/</code>.
+  </div>
+</nav>
+
+<header class="m-topbar" id="mTopbar">
+  <a href="#/today" class="m-brand" aria-label="Today"><img src="assets/hero.jpg" alt="" width="28" height="28"><span>Learn AI TRiSM</span></a>
+  <button type="button" class="m-icon" id="mSearch" aria-label="Search"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+</header>
+
+<nav class="m-tabbar" id="mTabbar" aria-label="Main">
+  <a href="#/today" data-tab="today"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg><span>Today</span></a>
+  <a href="#/shorts" data-tab="shorts"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="3"/><path d="M10.5 9.5v5l4-2.5z" class="fill"/></svg><span>Shorts</span></a>
+  <button type="button" data-tab="practice" data-sheet="practice"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="12" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v10"/></svg><span>Practice</span></button>
+  <button type="button" data-tab="learn" data-sheet="learn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6c3-1.5 6-1.5 9 0v13c-3-1.5-6-1.5-9 0zM21 6c-3-1.5-6-1.5-9 0v13c3-1.5 6-1.5 9 0z"/></svg><span>Learn</span></button>
+  <button type="button" data-tab="more" data-sheet="reference"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.6" class="fill"/><circle cx="12" cy="12" r="1.6" class="fill"/><circle cx="19" cy="12" r="1.6" class="fill"/></svg><span>More</span></button>
+</nav>
+
+<div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
+  <div class="sheet-grip" aria-hidden="true"></div>
+  <h2 id="sheetTitle" class="sheet-title"></h2>
+  <div class="sheet-body" id="sheetBody"></div>
+</div>
+
+<div class="palette-backdrop" id="palette" hidden>
+  <div class="palette" role="dialog" aria-modal="true" aria-label="Search">
+    <input type="search" id="paletteInput" placeholder="Search views, terms, failure modes, notes, sources…" autocomplete="off" aria-controls="paletteList">
+    <ul id="paletteList" role="listbox"></ul>
+    <div class="palette-hint"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</div>
+  </div>
+</div>
+
+<main class="main-content" id="main" tabindex="-1">
+  <section class="view active" id="v-today" aria-live="polite"></section>
+  <section class="view" id="v-dashboard"></section>
+  <section class="view" id="v-curriculum"></section>
+  <section class="view" id="v-views"></section>
+  <section class="view" id="v-map"></section>
+  <section class="view" id="v-flash"></section>
+  <section class="view" id="v-shorts"></section>
+  <section class="view" id="v-deck"></section>
+  <section class="view" id="v-quiz"></section>
+  <section class="view" id="v-glossary"></section>
+  <section class="view" id="v-prompts"></section>
+  <section class="view" id="v-failures"></section>
+  <section class="view" id="v-cheat"></section>
+  <section class="view" id="v-ea"></section>
+  <section class="view" id="v-debates"></section>
+  <section class="view" id="v-library"></section>
+  <section class="view" id="v-refs"></section>
+  <div class="site-disclaimer" style="font-size:.78rem;color:var(--text-dim);border-top:1px solid var(--border-color);padding-top:1rem">
+    Personal study material for AI TRiSM (AI Trust, Risk and Security Management). Gartner layer/pillar <em>names</em> in this pack are secondary unless a Gartner-owned page is cited. Vault views and the source ledger win over NotebookLM. This is study material, not Gartner or NIST official guidance, and not legal advice. Every claim should trace to a row in the source ledger (<span class="cite">S#</span> links open the source).
+  </div>
+  <div class="print-footer">
+    <div>Learning tool only · AI TRiSM one-day mastery and tech deep dive · not legal advice</div>
+    <div>Obsidian packs: <code>Learning/one-day-mastery/ai-trism/</code> and <code>Learning/tech-deep-dive/ai-trism/</code></div>
+  </div>
+</main>
+
+<div class="lightbox" id="lightbox"><img id="lightboxImg" alt=""></div>
+
+<script src="library/manifest.js"></script>
+<script src="shorts-catalog.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/enhance.js"></script>
+</body>
+</html>

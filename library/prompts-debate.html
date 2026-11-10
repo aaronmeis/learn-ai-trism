@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debate prompts | Learn AI TRiSM</title>
+<meta name="description" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Prompts</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Prompts</div>
+  <h1 class="doctitle">Debate prompts</h1>
+  
+  
+  <article><h1>NotebookLM debate prompts — AI-TRISM</h1>
+<p>Created 2026-11-09. These are not injected by <code>w8-prepare</code>: the runner builds its extra reports from code, not from this file. Run them by hand in Studio, Report, Create Your Own, or with <code>nlm report create</code> after the W8 runner has finished (pattern in <code>scripts/OPERATOR-COMMANDS.md</code>, room-craft section). One prompt per debate in <a href="claims-debates.html">CLAIMS-AND-DEBATES</a>.</p>
+<p>Why separate: the debates test NotebookLM's sources against the claims note. A report that only restates sources would not do that. Ask for both sides and for silence.</p>
+<p>Rules for every prompt: use only the notebook sources, attribute every point to a named source, say whether that source is vendor-authored, an independent body, a law, or a talk, and list what the sources do not say. Do not resolve a conflict between sources; show it.</p>
+<h2>D1 Pillars or layers</h2>
+<p>Using only the sources, answer: how is AI TRiSM structured? Report what each source says about four pillars (explainability and model monitoring, ModelOps, AI application security, privacy) and about four layers (AI governance, runtime inspection and enforcement, information governance, infrastructure and stack). Say which source gives which and whether it cites a Gartner document it can be traced to. State whether any source treats the two as the same thing at different levels. Do not choose between them. List what a reader would need from Gartner itself to settle it.</p>
+<h2>D2 Design against AI TRiSM or against standards</h2>
+<p>Using only the sources, compare AI TRiSM, NIST AI RMF, ISO/IEC 42001 and the EU AI Act as things an architect can design against. For each, say what kind of thing it is (market category, voluntary framework, management-system standard, law), whether the sources describe a way to assess conformance, and what the NIST to ISO/IEC 42001 crosswalk maps. Show where sources disagree or are silent, including whether AI TRiSM has any certification.</p>
+<h2>D3 Are runtime guardrails enough</h2>
+<p>Using only the sources, report the case that a runtime inspection or guardrail layer is the practical control point for AI application security, and the case that guardrails are necessary but insufficient. For each side, give the evidence the sources offer, say whether the speaker or author sells a product that benefits from that view, and list any measured results versus assertions. Report which mitigations for prompt injection the sources list that are filters and which are privilege limits, identity or human approval. Do not resolve the dispute.</p>
+<h2>D4 Do the pillars cover NIST's trustworthiness characteristics</h2>
+<p>Using only the sources, list NIST's seven trustworthiness characteristics and the AI TRiSM pillars or layers. For each characteristic, say which pillar or layer the sources connect it to, and flag any characteristic, such as fair with harmful bias managed or safe, that no source connects to a pillar or layer. Separate what the sources state from what is your inference, and label inferences as such.</p></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/prompts/notebooklm-debate-prompts.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="prompts-all.html">&larr; Previous</a><a href="prompts-tailored.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

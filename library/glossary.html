@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glossary | Learn AI TRiSM</title>
+<meta name="description" content="Architecture terms for the AI-TRISM deep dive, each tied to a view.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Reference</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Reference</div>
+  <h1 class="doctitle">Glossary</h1>
+  <p class="lead">Architecture terms for the AI-TRISM deep dive, each tied to a view.</p>
+  
+  <article><h1>Glossary: AI-TRISM</h1>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>Reviewers talk past each other when "layer," "pillar," "control," and "guardrail" mean different things. This list fixes those words for the pack. If a term is a vendor's account of an analyst guide, the definition says so.</p></div> <table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+<th>View</th>
+<th>Block</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI TRiSM</td>
+<td>Gartner's name for technical capabilities that support trust, risk, and security of AI. A market category, not a certification scheme <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>.</td>
+<td>Conceptual</td>
+<td>1, 2</td>
+</tr>
+<tr>
+<td>Four layers (secondary)</td>
+<td>Placement structure secondary sources attribute to a Gartner Market Guide: AI governance, runtime inspection and enforcement, information governance, infrastructure and stack <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>. <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> says "four layers" and does not name them.</td>
+<td>Conceptual</td>
+<td>1, 2</td>
+</tr>
+<tr>
+<td>Four pillars (secondary)</td>
+<td>Crosswalk in vendor explainers: explainability and model monitoring, ModelOps, AI application security, and privacy <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code>. Not read from a Gartner-owned pillar list.</td>
+<td>Conceptual</td>
+<td>1, 2</td>
+</tr>
+<tr>
+<td>C1 to C4</td>
+<td>Catalog, AI data mapping, continuous assurance, and runtime inspection and enforcement. IBM's account of Gartner guidance <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code>.</td>
+<td>Conceptual</td>
+<td>2</td>
+</tr>
+<tr>
+<td>C5 to C8</td>
+<td>Explainability and monitoring, ModelOps lifecycle, information and privacy governance, and compliance evidence. Derived in this pack from pillars and NIST <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code>.</td>
+<td>Conceptual</td>
+<td>2</td>
+</tr>
+<tr>
+<td>AI asset</td>
+<td>Any model, application, agent, or dataset under governance.</td>
+<td>Conceptual, Logical</td>
+<td>2, 3</td>
+</tr>
+<tr>
+<td>Trustworthiness characteristic</td>
+<td>One of seven NIST properties, including safe and fair with harmful bias managed <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>. Those two lack a clearly named pillar here.</td>
+<td>Conceptual</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Policy</td>
+<td>A rule the organization wants enforced. Distinct from the component that decides it.</td>
+<td>Conceptual, Logical</td>
+<td>2, 3</td>
+</tr>
+<tr>
+<td>Control</td>
+<td>A mechanism that implements a policy. Not the same noun as the policy.</td>
+<td>Conceptual, Logical</td>
+<td>2, 3</td>
+</tr>
+<tr>
+<td>Evidence item</td>
+<td>A record that a control ran and what it found. Target of flow F8.</td>
+<td>Logical</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Agency</td>
+<td>How far an AI system can act through tools <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Drives least privilege, not only text filters.</td>
+<td>Conceptual, Integration</td>
+<td>2, 5</td>
+</tr>
+<tr>
+<td>Runtime gateway</td>
+<td>Logical choke point for prompts, outputs, and tool calls. Realizes C4. Not sufficient alone.</td>
+<td>Logical, Physical</td>
+<td>3, 4</td>
+</tr>
+<tr>
+<td>Policy engine</td>
+<td>Decides allow, deny, or escalate outside the model <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Lives in the governance zone.</td>
+<td>Logical, Physical</td>
+<td>3, 4</td>
+</tr>
+<tr>
+<td>Agent identity and access broker</td>
+<td>Gives each agent an identity and a scoped credential. Flow F4. Must not depend on the gateway.</td>
+<td>Logical, Integration</td>
+<td>3, 5</td>
+</tr>
+<tr>
+<td>Untrusted flow</td>
+<td>A link that carries content the organization did not author. Here: user prompts, and retrieved text <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Drawn red.</td>
+<td>Logical, Physical</td>
+<td>3, 4</td>
+</tr>
+<tr>
+<td>TB1 build zone</td>
+<td>Registry, release pipeline, and evaluation harness. Not production traffic.</td>
+<td>Physical</td>
+<td>4</td>
+</tr>
+<tr>
+<td>TB2 runtime zone</td>
+<td>Gateway, model serving, agent identity broker, explainability. Where untrusted input arrives.</td>
+<td>Physical</td>
+<td>4</td>
+</tr>
+<tr>
+<td>TB4 governance zone</td>
+<td>Asset registry, data map, policy engine, evidence store.</td>
+<td>Physical</td>
+<td>4</td>
+</tr>
+<tr>
+<td>TB5 external</td>
+<td>Users, client agents, third-party model providers, and enterprise retrieval stores.</td>
+<td>Physical, Integration</td>
+<td>4, 5</td>
+</tr>
+<tr>
+<td>Control point (CP1 to CP8)</td>
+<td>Numbered place on the AI data path where a capability attaches, from labeling training data through behavior monitoring.</td>
+<td>Integration</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Monitor-only mode</td>
+<td>Gateway logs without blocking so real traffic is understood before enforce mode. A proposal in the build order.</td>
+<td>Detailed design</td>
+<td>6</td>
+</tr>
+<tr>
+<td>ISO/IEC 42001</td>
+<td>AI management-system standard. Certifiable by independent bodies. ISO does not itself certify <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code> <code>[<a class="cite" href="https://anab.ansi.org/accreditation/iso-iec-42001-artificial-intelligence-management-systems/" target="_blank" rel="noopener" title="ANAB accreditation for ISO/IEC 42001 AIMS">S15</a>]</code>.</td>
+<td>Physical</td>
+<td>4, 8</td>
+</tr>
+<tr>
+<td>NIST AI RMF</td>
+<td>Voluntary framework. Functions Govern, Map, Measure, Manage <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>. AI 600-1 is the voluntary generative profile <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code>.</td>
+<td>Physical, Conceptual</td>
+<td>1, 4</td>
+</tr>
+<tr>
+<td>OWASP LLM Top 10 (2025)</td>
+<td>Community threat names for LLM applications <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Full mitigation text in this pack is limited to LLM01 <code>[S7b]</code>.</td>
+<td>Integration</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Honest UNVERIFIED</td>
+<td>A cell left empty because the source was not read. Required for SKUs, regions, and gov-cloud in this pack.</td>
+<td>Physical, Detailed design</td>
+<td>4, 6</td>
+</tr>
+<tr>
+<td>EA framework crosswalk</td>
+<td>Architect overlay that places pack elements into TOGAF ADM, DoDAF viewpoints, and UAF 1.3 grid cells. Separate from the NIST-to-ISO control crosswalk <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code>. See <a href="ea-framework-crosswalk.html">ea-framework-crosswalk</a>.</td>
+<td>All views</td>
+<td>2, 8</td>
+</tr>
+<tr>
+<td>UAF 1.3</td>
+<td>OMG Unified Architecture Framework. Grid is domains × aspects (e.g. Op-Sr = Operational Structure). Architecture literacy for this pack <code>[<a class="cite" href="https://www.omg.org/spec/UAF/1.3" target="_blank" rel="noopener" title="OMG Unified Architecture Framework (UAF) 1.3">S17</a>]</code>. AI-TRISM sources do not prescribe UAF placements.</td>
+<td>Conceptual → Detailed design</td>
+<td>2, 8</td>
+</tr>
+<tr>
+<td>UAF domain-aspect cell</td>
+<td>A filled grid cell such as Sm-Ov, St-Tx, Op-Cn, Sv-Sr, Rs-Cn, Sc-Sr, Sd-Tx, Pj-Rm, Ar-Sr. Teach the pair, not a DoDAF OV number under a UAF label <code>[<a class="cite" href="https://www.omg.org/spec/UAF/1.3" target="_blank" rel="noopener" title="OMG Unified Architecture Framework (UAF) 1.3">S17</a>]</code>.</td>
+<td>All views</td>
+<td>2, 8</td>
+</tr>
+<tr>
+<td>DoDAF (kept alongside UAF)</td>
+<td>Department of Defense Architecture Framework viewpoints (OV/SV/DIV/StdV) still used in briefs. OUSD(R&amp;E) points toward UAF superseding DoDAF over time; no CIO retirement found in the pack's UAF brief <code>[<a class="cite" href="https://ac.cto.mil/wp-content/uploads/2025/01/U-Mission-Architecture-Style-Guide-Final_07Jan2025.pdf" target="_blank" rel="noopener" title="OUSD(R&amp;E) Mission Architecture Style Guide v1.0 (6 Jan 2025)">S18</a>]</code>.</td>
+<td>All views</td>
+<td>2, 8</td>
+</tr>
+<tr>
+<td>TOGAF ADM</td>
+<td>Open Group Architecture Development Method phases A–F used in each view's Framework lens.</td>
+<td>All views</td>
+<td>2, 8</td>
+</tr>
+</tbody>
+</table>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>claude</td>
+<td>Empty glossary table.</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Seeded 25 architecture terms with view and block columns.</td>
+</tr>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Added UAF / EA crosswalk terms (S17–S18).</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/GLOSSARY.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><span></span><a href="cheatsheet.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

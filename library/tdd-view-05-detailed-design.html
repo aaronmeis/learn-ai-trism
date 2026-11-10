@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detailed Design — AI-TRISM | Learn AI TRiSM</title>
+<meta name="description" content="Detailed design of AI-TRISM: a proposed build order for a vendor-neutral reference implementation, with every unconfirmed item marked.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Architecture views</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Architecture views</div>
+  <h1 class="doctitle">Detailed Design — AI-TRISM</h1>
+  <p class="lead">Detailed design of AI-TRISM: a proposed build order for a vendor-neutral reference implementation, with every unconfirmed item marked.</p>
+  
+  <article>
+<p>Pack: <a href="odm-hub.html">00 - AI-TRISM Hub</a> · Block: <a href="tdd-block-06-hands-on-lab.html">Block 6</a> · Prev: <a href="tdd-view-04-integration-ai.html">Integration and AI</a></p>
+<div class="callout info" markdown="0"><div class="callout-title">Altitude rule</div><p>Detailed design means <strong>exactly how it is built</strong>. Name packages, config paths, CLI commands, interfaces, and startup order. Mark every unconfirmed item <code>UNVERIFIED</code>. No "Claude" in labels. Use "Coding agent" / "Agent CLI" or named non-banned tools.</p></div> <div class="callout warning" markdown="0"><div class="callout-title">Draft status: no product is being built</div><p>AI TRiSM is a framework, not a product. The pack is vendor-neutral and has docs-and-desk lab access only, so there are no packages, config paths or commands to document. This view therefore gives a <strong>proposed build order</strong> for a reference implementation, derived from the logical view. Every row is a proposal. Nothing here was run or checked against product documentation.</p></div> <h2>Primary diagram</h2>
+<p>Not authored. The skill calls for <code>assets/diagrams/05-detailed-design.drawio</code> from the <code>tech-diagram-pack</code> emitter. With no concrete packages to draw, a drawing would invent detail. Authoring it waits for a chosen realization (see open items). The build order below is the content that diagram would carry.</p>
+<h2>Packages and owned paths</h2>
+<table>
+<thead>
+<tr>
+<th>Package / path</th>
+<th>Owner</th>
+<th>Notes</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None defined</td>
+<td>n/a</td>
+<td>Vendor-neutral pack. No package names, paths or versions are claimed.</td>
+<td>intake answers</td>
+</tr>
+<tr>
+<td>Policy-as-code repository</td>
+<td>Governance team (proposal)</td>
+<td>Holds policies, versioned, reviewed like code</td>
+<td>Proposal</td>
+</tr>
+<tr>
+<td>Evaluation test sets repository</td>
+<td>Model builders and security (proposal)</td>
+<td>Attack sets and quality sets used by the harness</td>
+<td>Proposal; <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> for threat vocabulary</td>
+</tr>
+</tbody>
+</table>
+<h2>Commands and interfaces</h2>
+<table>
+<thead>
+<tr>
+<th>Command / interface</th>
+<th>Purpose</th>
+<th>Who invokes</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gateway policy query</td>
+<td>Ask the policy engine for allow, deny or escalate</td>
+<td>Runtime gateway, per request</td>
+<td>Logical flow F2</td>
+</tr>
+<tr>
+<td>Asset registration call</td>
+<td>Create or update an asset record</td>
+<td>Release pipeline, application owners</td>
+<td>Logical flow F7</td>
+</tr>
+<tr>
+<td>Evidence export</td>
+<td>Produce an evidence pack for a control set</td>
+<td>Compliance officer</td>
+<td>Logical flow F8</td>
+</tr>
+<tr>
+<td>Evaluation run</td>
+<td>Execute a test set against a model version</td>
+<td>CI pipeline, scheduler</td>
+<td>Logical component</td>
+</tr>
+<tr>
+<td>No CLI commands</td>
+<td>The pack documents none. Concrete commands depend on the chosen realization.</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<h2>Startup / boot order</h2>
+<p>Proposed order for standing up a reference implementation. The order follows dependencies in the logical view: you cannot enforce policy on assets you have not listed, or prove controls without an evidence store.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What runs</th>
+<th>Config / path</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Evidence and audit store</td>
+<td>Append-only store, retention set from the strictest requirement. UNVERIFIED which.</td>
+<td>Proposal</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AI asset registry, then discovery of existing AI use</td>
+<td>Registry plus scans. Catalog first, as in Gartner's feature list as IBM reports it <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code></td>
+<td><code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Data map and classifier</td>
+<td>Link assets to datasets and labels</td>
+<td><code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Policy engine with a small starting policy set</td>
+<td>Policies from NIST Govern and the organization's risk tolerance</td>
+<td><code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Identity and access broker for agents</td>
+<td>Per-agent identity, scoped tokens</td>
+<td><code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Runtime gateway in monitor-only mode</td>
+<td>Log without blocking to learn real traffic</td>
+<td>Proposal</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Evaluation and red-team harness wired into the release pipeline</td>
+<td>Gate releases on results</td>
+<td><code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code> red teaming first</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Monitoring and behavior analytics, then incident handler</td>
+<td>Drift, bias, behavior alerts into existing SOC tooling</td>
+<td><code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Switch the gateway to enforce mode, per use case</td>
+<td>Fail-closed or fail-open decided per use case</td>
+<td>Proposal</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Compliance mapping and first evidence pack</td>
+<td>NIST to ISO/IEC 42001 mapping <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code></td>
+<td><code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code></td>
+</tr>
+</tbody>
+</table>
+<h2>UNVERIFIED open items</h2>
+<ul>
+<li>Gartner's exact layer definitions, which decide whether C2 stands alone. Blocked by access (Debate 1, E1B).</li>
+<li>The chosen realization: build, buy or mix. Nothing in the ledger compares products. All 14 third-party rows in view 04 carry <code>UNVERIFIED</code> gov-cloud support.</li>
+<li>Whether enforce mode adds unacceptable latency or false positives. Needs E3W, a lab-compare test that waits for an install GO.</li>
+<li>Retention periods for the evidence and interaction stores. Depend on applicable EU AI Act obligations (<code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code> now readable for identity/dates; full annex obligations still thin) and on ISO/IEC 42001 clauses. Mark concrete retention numbers UNVERIFIED until counsel sets them.</li>
+<li>The draw.io diagrams for views 01 to 05 follow the house theme and are not yet authored. Mermaid sources are in the view notes.</li>
+</ul>
+<h2>Framework lens</h2>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Maps to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TOGAF</td>
+<td>Phase E Opportunities and Solutions · Phase F Migration Planning (build detail)</td>
+</tr>
+<tr>
+<td>DoDAF</td>
+<td>SV-1/SV-4 detailed · StdV-1 · DIV-3 physical artifacts</td>
+</tr>
+<tr>
+<td>UAF 1.3</td>
+<td>Pj-Sr Projects Structure · Pj-Rm Projects Roadmap · Rs-Rm Resources Roadmap · Ar-Sr Actual Resources · Sd-Tr Standards Traceability</td>
+</tr>
+<tr>
+<td>Altitude</td>
+<td>Build detail: proposed build order only; no packages or commands exist for a vendor-neutral pack</td>
+</tr>
+</tbody>
+</table>
+<p>Full EA crosswalk (TOGAF · DoDAF · UAF): <a href="ea-framework-crosswalk.html">ea-framework-crosswalk</a>.</p></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/views/05 - Detailed Design.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="tdd-view-04-integration-ai.html">&larr; Previous</a><a href="diagram-index.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Credentials never belong in this public repo
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.json
+client_secret*.json
+cookies.txt
+*.cookie
+node_modules/
+.DS_Store
+Thumbs.db
+__pycache__/
+.playwright-mcp/
+

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 7: Application | Learn AI TRiSM</title>
+<meta name="description" content="Block 7: design and defend a vendor-neutral AI TRiSM one-pager.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ ODM day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">ODM day blocks</div>
+  <h1 class="doctitle">Block 7: Application</h1>
+  <p class="lead">Block 7: design and defend a vendor-neutral AI TRiSM one-pager.</p>
+  
+  <article>
+<p><strong>Time:</strong> 60 minutes
+<strong>Goal:</strong> Design and defend a vendor-neutral one-page reference architecture for a named system.
+<strong>Pack:</strong> <a href="odm-hub.html">AI-TRISM hub</a></p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>The one-pager is what the design review keeps. It shows where trust, risk, and security controls sit, which standard or law each control answers to, and which kind of tool does the work. Product names are optional. The defense is not.</p></div> <h2>Sources</h2>
+<ul>
+<li>Layers and grades: <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>. Anchor: <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code> <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code> <code>[<a class="cite" href="https://www.iso.org/standard/81230.html" target="_blank" rel="noopener" title="ISO/IEC 42001:2023 AI management systems (catalogue)">S5</a>]</code> <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code>. Statute limit: <code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code>. Threat names: <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> <code>[S7b]</code>.</li>
+<li>TDD views, compress and do not copy diagrams wholesale:</li>
+<li><a href="tdd-view-01-conceptual.html">conceptual view</a> for capabilities C1 to C8</li>
+<li><a href="tdd-view-02-logical.html">logical view</a> for components</li>
+<li><a href="tdd-view-03-physical.html">physical view</a> for zones</li>
+<li><a href="tdd-view-04-integration-ai.html">integration view</a> for identity and the AI data path</li>
+<li>Rules of the room: <a href="cheatsheet.html">cheatsheet</a>.</li>
+</ul>
+<p>The component list and the five zones are the TDD pack's proposal. Say that on the page. Gartner did not draw those boxes.</p>
+<h2>Actions</h2>
+<ol>
+<li>5 minutes. Pick the system. Default is Handbook Assistant from block 3. You may swap in another internal assistant if you can describe it in four lines. Stay desk-only.</li>
+<li>30 minutes. Fill the one-pager outline below. One page. If it spills, cut SKUs and adjectives first.</li>
+<li>10 minutes. Mark every layer name secondary. Mark every component "proposal" unless a ledger source requires that control.</li>
+<li>10 minutes. Speak the 90-second defense. Then answer one hostile question from block 4 without notes.</li>
+<li>5 minutes. File the page under this block or in your daily note. Point the Progress Log application row at it when you study.</li>
+</ol>
+<h2>One-pager outline</h2>
+<p>Use these headings. The sample under each heading is Handbook Assistant. Replace the sample if you changed the system. Keep the headings.</p>
+<h3>1. System</h3>
+<p>Handbook Assistant answers employee questions from an approved handbook corpus and may draft an IT ticket. It may not change payroll, benefits, or disciplinary records. EU risk tier: unclassified in this pack until the relevant annex is read <code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code>.</p>
+<h3>2. Authorities on one line each</h3>
+<table>
+<thead>
+<tr>
+<th>Authority</th>
+<th>This design uses it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI TRiSM, market <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code></td>
+<td>Placement of controls. Layer count is primary. Layer names are secondary <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code>.</td>
+</tr>
+<tr>
+<td>NIST AI RMF <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code></td>
+<td>Govern, Map, Measure, Manage. Seven characteristics as the trust test.</td>
+</tr>
+<tr>
+<td>NIST AI 600-1 <code>[<a class="cite" href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener" title="NIST AI 600-1 Generative AI Profile">S3</a>]</code></td>
+<td>GenAI profile acknowledged. Specific risk rows not yet assigned.</td>
+</tr>
+<tr>
+<td>ISO/IEC 42001 <code>[<a class="cite" href="https://www.iso.org/standard/81230.html" target="_blank" rel="noopener" title="ISO/IEC 42001:2023 AI management systems (catalogue)">S5</a>]</code> <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code></td>
+<td>AIMS requirements and the evidence a certification body would sample.</td>
+</tr>
+<tr>
+<td>Crosswalk <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code></td>
+<td>Pointer from an RMF subcategory to a 42001 control. Example recorded in the claims note: Govern 6.1 to B.10.2.</td>
+</tr>
+<tr>
+<td>EU AI Act <code>[<a class="cite" href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" target="_blank" rel="noopener" title="EU AI Act Regulation 2024/1689 EUR-Lex">S6</a>]</code></td>
+<td>In scope only if the system is placed on the EU market or used in the EU. Tier not assigned.</td>
+</tr>
+<tr>
+<td>OWASP LLM 2025 <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code></td>
+<td>Threat names. Full mitigations cited only for LLM01 <code>[S7b]</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3>3. Layers and controls</h3>
+<table>
+<thead>
+<tr>
+<th>Layer, name secondary</th>
+<th>Control on this system</th>
+<th>NIST function</th>
+<th>Tool category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI governance</td>
+<td>Catalog entry, owner, risk tier, approval to draft tickets</td>
+<td>Govern</td>
+<td>AI asset registry, policy engine, evidence store</td>
+</tr>
+<tr>
+<td>AI runtime inspection and enforcement</td>
+<td>Check prompt, retrieved passage, answer, and tool call</td>
+<td>Manage, with Measure feeding the rules</td>
+<td>Runtime gateway</td>
+</tr>
+<tr>
+<td>Information governance</td>
+<td>Label the corpus. Treat retrieval as untrusted. Restrict ticket fields</td>
+<td>Map</td>
+<td>Data map and classifier</td>
+</tr>
+<tr>
+<td>Infrastructure and stack</td>
+<td>Separate agent identity. Ticket-draft scope only. Call quotas</td>
+<td>Manage</td>
+<td>Agent identity broker, model hosting, quotas</td>
+</tr>
+</tbody>
+</table>
+<p>Pillar crosswalk, still secondary: explainability sits with sampled answers in Measure. ModelOps sits with the release pipeline in the build zone. Application security sits on the gateway and the broker. Privacy sits on the data map.</p>
+<p>Fairness and safety: listed in NIST's seven and in the Gartner outcome list <code>[<a class="cite" href="https://www.gartner.com/en/newsroom/press-releases/2025-08-05-gartner-hype-cycle-identifies-top-ai-innovations-in-2025" target="_blank" rel="noopener" title="Gartner Hype Cycle 2025 press release (AI TRiSM four layers)">S1</a>]</code> <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code>. No pillar is named for them. Leave the gap visible. Debate 4 is open.</p>
+<h3>4. Zones</h3>
+<p>From the TDD physical view, as a proposal:</p>
+<table>
+<thead>
+<tr>
+<th>Zone</th>
+<th>What runs there for this system</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Build</td>
+<td>Model registry, release gate, evaluation and red-team harness <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code></td>
+</tr>
+<tr>
+<td>Runtime</td>
+<td>Gateway, the assistant, the identity broker</td>
+</tr>
+<tr>
+<td>Observability</td>
+<td>Interaction log, drift and abuse alerts, incident handoff</td>
+</tr>
+<tr>
+<td>Governance</td>
+<td>Catalog, data map, policy, evidence store</td>
+</tr>
+<tr>
+<td>External</td>
+<td>Employees, the handbook store, the ticket system, any hosted model</td>
+</tr>
+</tbody>
+</table>
+<p>Trust boundary that matters: retrieved handbook text and user prompts enter as untrusted <code>[S7b]</code>. The ticket system is a tool behind the broker, not a place the model authenticates with a shared admin account <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>.</p>
+<h3>5. Evidence the reviewer can ask for</h3>
+<table>
+<thead>
+<tr>
+<th>Ask</th>
+<th>You show</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What systems exist?</td>
+<td>Catalog row for the assistant, the index, and the ticket tool <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code></td>
+</tr>
+<tr>
+<td>What data do they touch?</td>
+<td>Data map of the handbook corpus and ticket fields</td>
+</tr>
+<tr>
+<td>Does it still behave?</td>
+<td>Evaluation result before release, plus a red-team note for prompt injection <code>[<a class="cite" href="https://www.youtube.com/watch?v=Qf4jNurEuyo" target="_blank" rel="noopener" title="VIDEO Bo Li UIUC Risk Assessment Safety Alignment and Guardrail Systems for AI Agents (LMSW 2025)">S11</a>]</code></td>
+</tr>
+<tr>
+<td>What stops a bad action?</td>
+<td>Gateway decision log and the broker's scope</td>
+</tr>
+<tr>
+<td>Can an auditor replay it?</td>
+<td>Evidence pack: approvals, tests, decisions <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code></td>
+</tr>
+<tr>
+<td>What standard is that?</td>
+<td>A 42001 clause or control via the crosswalk, not a TRiSM certificate</td>
+</tr>
+</tbody>
+</table>
+<h3>6. Claims this page does not make</h3>
+<ul>
+<li>Layer names are not quoted as free-page Gartner text.</li>
+<li>Pillar names are not a Gartner-owned list in this ledger.</li>
+<li>No TRiSM certification.</li>
+<li>No Ray 2026 finding <code>[<a class="cite" href="https://doi.org/10.36227/techrxiv.174913612.20443736/v1" target="_blank" rel="noopener" title="Ray 2025/26 Review of TRiSM Frameworks in AI Systems (TechXiv open + Wiley DOI)">S13</a>]</code>.</li>
+<li>No guardrail detection rate.</li>
+<li>No gov-cloud SKU. The TDD physical view left that unverified.</li>
+<li>No EU high-risk determination.</li>
+</ul>
+<h2>90-second defense</h2>
+<p>Speak this shape, then use your own system name.</p>
+<ol>
+<li>The system does one job, and the job has a hard stop. Handbook Assistant drafts tickets and does not touch payroll.</li>
+<li>Requirements sit on ISO/IEC 42001. Risk language sits on NIST's four functions. TRiSM only places the tools. Gartner counts four layers and, on the page we read, does not name them.</li>
+<li>Runtime inspection checks prompts, retrieval, answers, and tool calls. A separate identity can draft a ticket and cannot do anything else. Red team comes before we trust the filter.</li>
+<li>Evidence is the catalog, the test result, the decision log, and the approval. That is what a certification body can sample. We are not certifying to a market category.</li>
+<li>Open items: AI 600-1 risk rows, Debate 4 on fairness and safety, EU annex if this system is in scope, and the unread Market Guide PDF.</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">Which three things must appear on the one-pager for the day outcome to count?</div></div> <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>The four layers as a placement map with source grades, the standards anchors with NIST and ISO/IEC 42001 named, and tool categories rather than a mandatory SKU. Risks for the system are mapped, at least LLM01 and excessive agency.</p></div> <div class="callout question" markdown="0"><div class="callout-title">What do you say when a reviewer asks for the product you will buy?</div></div> <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>Name the category and the zone: a runtime gateway in the runtime zone, an identity broker beside it, an evidence store in the governance zone. SKUs are a later selection. Gov-cloud availability is unverified in this pack.</p></div> <div class="callout question" markdown="0"><div class="callout-title">Where does the conformance claim point?</div></div> <div class="callout answer" markdown="0"><div class="callout-title">Answer</div><p>At the AIMS under ISO/IEC 42001, sampled through the evidence pack and tied to NIST subcategories by the crosswalk <code>[<a class="cite" href="https://airc.nist.gov/docs/NIST_AI_RMF_to_ISO_IEC_42001_Crosswalk.pdf" target="_blank" rel="noopener" title="NIST AI RMF to ISO/IEC 42001 crosswalk">S4</a>]</code> <code>[<a class="cite" href="https://www.iso.org/insights/iso-42001-explained" target="_blank" rel="noopener" title="ISO insights: ISO/IEC 42001 explained (certification)">S14</a>]</code>. TRiSM is the map of where those controls live.</p></div> <h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> A one-page design exists for a named system.</li>
+<li class="task"><input type="checkbox" disabled> Layers, standards anchors, and tool categories are all on it.</li>
+<li class="task"><input type="checkbox" disabled> The cannot-claim list is on it.</li>
+<li class="task"><input type="checkbox" disabled> You spoke the 90-second defense once.</li>
+<li class="task"><input type="checkbox" disabled> A hostile question from block 4 was answered without opening the ledger.</li>
+</ul>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-09</td>
+<td>grok</td>
+<td>Added the one-pager outline, Handbook Assistant sample, and 90-second defense from the TDD views and the ledger.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/one-day-mastery/ai-trism/blocks/07-application.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="odm-block-06-spaced-review.html">&larr; Previous</a><span></span></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

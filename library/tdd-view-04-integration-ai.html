@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integration and AI Elements — AI-TRISM | Learn AI TRiSM</title>
+<meta name="description" content="Integration and AI elements of AI-TRISM: third-party and external systems, APIs, identity, AI features and AI data paths.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn AI TRiSM console</a>
+  <span class="crumb">Library ┬╖ Architecture views</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Architecture views</div>
+  <h1 class="doctitle">Integration and AI Elements — AI-TRISM</h1>
+  <p class="lead">Integration and AI elements of AI-TRISM: third-party and external systems, APIs, identity, AI features and AI data paths.</p>
+  
+  <article>
+<p>Pack: <a href="odm-hub.html">00 - AI-TRISM Hub</a> · Block: <a href="tdd-block-05-integration-and-ai.html">Block 5</a> · Prev: <a href="tdd-view-03-physical.html">Physical</a></p>
+<div class="callout warning" markdown="0"><div class="callout-title">Draft status</div><p>The inventory below is organized by <strong>system category</strong>, with an example vendor only where a ledger source names one. Gov-cloud support is <code>UNVERIFIED</code> on every row because no vendor documentation was read. A named vendor is not a recommendation. Vendors seen only in search results and not in the ledger are marked as such.</p></div> <h2>Third-party and external systems</h2>
+<div class="callout important" markdown="0"><div class="callout-title">Required section</div><p>Every system outside the platform boundary that sends data in, receives data out, or is governed by it. Mark gov-cloud support per row; it is often where a design fails.</p></div> <table>
+<thead>
+<tr>
+<th>System</th>
+<th>Vendor</th>
+<th>Direction (in/out/bi)</th>
+<th>Mechanism</th>
+<th>Data exchanged</th>
+<th>Auth</th>
+<th>Owner</th>
+<th>Gov-cloud support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Third-party model provider</td>
+<td>Examples not ledgered; AWS and IBM appear as platforms in <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code> <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code></td>
+<td>bi</td>
+<td>Model API</td>
+<td>Prompts out, completions in</td>
+<td>API key or workload identity</td>
+<td>Platform team</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Model registry and MLOps platform</td>
+<td>Not researched</td>
+<td>bi</td>
+<td>Registry API, CI/CD hooks</td>
+<td>Model versions, lineage, approvals</td>
+<td>Service principal</td>
+<td>Model builders</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>AI guardrail or AI firewall product</td>
+<td>Search result only, not in ledger: Radware LLM Firewall in OWASP's vendor listing <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code></td>
+<td>bi</td>
+<td>Inline proxy or API</td>
+<td>Prompts, outputs, verdicts</td>
+<td>Mutual TLS or token</td>
+<td>Security</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Secure access / security service edge</td>
+<td>Zscaler <code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> (vendor explainer only)</td>
+<td>bi</td>
+<td>Network path and policy API</td>
+<td>Traffic metadata, policy</td>
+<td>Tenant credentials</td>
+<td>Security</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Behavioral detection platform</td>
+<td>Darktrace <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code> (talk speaker's employer)</td>
+<td>in</td>
+<td>Agent or network tap, API</td>
+<td>Telemetry, alerts</td>
+<td>UNVERIFIED</td>
+<td>Security operations</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Cloud security building blocks (KMS, WAF, IAM, DDoS protection)</td>
+<td>AWS <code>[<a class="cite" href="https://builder.aws.com/content/30uj5Q7zyfIYIX18E65VLnZPivM/building-an-ai-trism-posture-using-aws-solutions" target="_blank" rel="noopener" title="AWS Builder AI TRiSM posture on AWS (vendor mapping, secondary)">S10</a>]</code> (community post)</td>
+<td>bi</td>
+<td>Cloud APIs</td>
+<td>Keys, rules, identities</td>
+<td>Cloud IAM</td>
+<td>Platform team</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>AI governance and security suite</td>
+<td>IBM <code>[<a class="cite" href="https://www.ibm.com/think/topics/ai-trism" target="_blank" rel="noopener" title="IBM What is AI TRiSM (vendor, secondary)">S8</a>]</code> (vendor explainer only)</td>
+<td>bi</td>
+<td>UNVERIFIED</td>
+<td>UNVERIFIED</td>
+<td>UNVERIFIED</td>
+<td>Governance</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Red-team and evaluation tooling</td>
+<td>Not researched; open-source options are an Elicit lead <code>[<a class="cite" href="https://doi.org/10.36227/techrxiv.174913612.20443736/v1" target="_blank" rel="noopener" title="Ray 2025/26 Review of TRiSM Frameworks in AI Systems (TechXiv open + Wiley DOI)">S13</a>]</code>, unread</td>
+<td>in</td>
+<td>Batch job, API</td>
+<td>Attack sets, results</td>
+<td>Local</td>
+<td>Security, model builders</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>SIEM and SOAR</td>
+<td>Not researched</td>
+<td>out</td>
+<td>Log shipping, webhooks</td>
+<td>Interaction records, alerts</td>
+<td>Token</td>
+<td>Security operations</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>ITSM and case management</td>
+<td>Not researched</td>
+<td>out</td>
+<td>API</td>
+<td>Incidents, approvals</td>
+<td>Service account</td>
+<td>Operations</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Identity provider</td>
+<td>Not researched</td>
+<td>bi</td>
+<td>OIDC, SAML, workload identity</td>
+<td>Identities, tokens, group claims</td>
+<td>Federated</td>
+<td>Identity team</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Data catalog and DLP</td>
+<td>Search result only, not in ledger: BigID</td>
+<td>bi</td>
+<td>Scanner and API</td>
+<td>Labels, lineage, detections</td>
+<td>Service account</td>
+<td>Privacy, data governance</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Vector store and retrieval sources</td>
+<td>Not researched</td>
+<td>bi</td>
+<td>Query API</td>
+<td>Embeddings, documents</td>
+<td>Scoped token</td>
+<td>Application owner</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Regulator and auditor portals</td>
+<td>Not applicable</td>
+<td>out</td>
+<td>Evidence export</td>
+<td>Evidence packs</td>
+<td>Out of band</td>
+<td>Compliance</td>
+<td>Not applicable</td>
+</tr>
+</tbody>
+</table>
+<h3>Context diagram (platform boundary)</h3>
+<pre class="mermaid">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;themeVariables&quot;:{&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryBorderColor&quot;:&quot;#111111&quot;,&quot;lineColor&quot;:&quot;#6b6b6b&quot;,&quot;primaryTextColor&quot;:&quot;#111111&quot;,&quot;textColor&quot;:&quot;#111111&quot;,&quot;clusterBkg&quot;:&quot;#f8f8f8&quot;,&quot;clusterBorder&quot;:&quot;#6b6b6b&quot;,&quot;fontFamily&quot;:&quot;Arial, Helvetica, sans-serif&quot;,&quot;fontSize&quot;:&quot;14px&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;},&quot;flowchart&quot;:{&quot;htmlLabels&quot;:true,&quot;curve&quot;:&quot;basis&quot;}}}%%
+flowchart LR subgraph TB1[&quot;TB1 · AI TRiSM platform boundary&quot;] CORE[&quot;Governance, gateway, monitoring, evidence&quot;] end MODEL[&quot;Third-party model provider&quot;] &lt;--&gt;|&quot;prompts and completions&quot;| CORE GUARD[&quot;Guardrail / AI firewall product&quot;] &lt;--&gt;|&quot;verdicts&quot;| CORE IDP[&quot;Identity provider&quot;] &lt;--&gt;|&quot;tokens&quot;| CORE CATALOG[&quot;Data catalog and DLP&quot;] &lt;--&gt;|&quot;labels&quot;| CORE VECTOR[&quot;Vector store and retrieval sources&quot;] --&gt;|&quot;retrieved content (untrusted)&quot;| CORE CORE --&gt;|&quot;interaction records&quot;| SIEM[&quot;SIEM and SOAR&quot;] CORE --&gt;|&quot;incidents&quot;| ITSM[&quot;ITSM and case management&quot;] REG[&quot;MLOps registry&quot;] --&gt;|&quot;model versions&quot;| CORE RED[&quot;Red-team tooling&quot;] --&gt;|&quot;attack results&quot;| CORE CORE --&gt;|&quot;evidence packs&quot;| AUD[&quot;Auditor or regulator&quot;] linkStyle 4 stroke:#c8102e,stroke-width:2.5px,color:#c8102e
+</pre> <!-- tech_deep_dive:diagram-embed -->
+<p><a href="../assets/diagrams/04-integration-ai-1.png" target="_blank"><img class="embed" src="../assets/diagrams/04-integration-ai-1.png" alt="04-integration-ai-1.png"></a></p>
+<h2>APIs and extensibility</h2>
+<table>
+<thead>
+<tr>
+<th>API / SDK / connector framework</th>
+<th>Purpose</th>
+<th>Auth model</th>
+<th>Rate limits / quotas</th>
+<th>Gov-cloud endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model provider API</td>
+<td>Call hosted models</td>
+<td>UNVERIFIED</td>
+<td>Unbounded consumption is an OWASP risk, LLM10 <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code></td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Gateway policy API</td>
+<td>Policy query per request</td>
+<td>Mutual TLS or token, proposal</td>
+<td>Must not become a single point of failure</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Registry API</td>
+<td>Register assets and versions</td>
+<td>Service principal, proposal</td>
+<td>UNVERIFIED</td>
+<td>UNVERIFIED</td>
+</tr>
+<tr>
+<td>Evidence export API</td>
+<td>Hand evidence to auditors</td>
+<td>UNVERIFIED</td>
+<td>UNVERIFIED</td>
+<td>UNVERIFIED</td>
+</tr>
+</tbody>
+</table>
+<h2>Identity and access</h2>
+<ul>
+<li>Every AI agent gets its own identity, not a shared service account. A talk in the ledger asks "who is my agent, what can it access" as the starting question <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>.</li>
+<li>Least privilege and just-in-time access apply to agents <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code>. OWASP recommends keeping the model's privileges to the minimum its task needs and handling extended functions in code, not in the model <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li>Human approval for high-risk actions <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>.</li>
+<li>Admin roles for the policy engine and evidence store should be separated from model builders. Proposal.</li>
+<li>UNVERIFIED: how the identity provider federates with each third-party model provider.</li>
+</ul>
+<h2>Event and data flows across the boundary</h2>
+<table>
+<thead>
+<tr>
+<th>Flow</th>
+<th>Source</th>
+<th>Destination</th>
+<th>Data</th>
+<th>Frequency</th>
+<th>Classification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prompt and completion</td>
+<td>Gateway</td>
+<td>Model provider</td>
+<td>Prompts, outputs</td>
+<td>Per request</td>
+<td>Sensitive; may contain personal data</td>
+</tr>
+<tr>
+<td>Retrieved content</td>
+<td>Retrieval sources</td>
+<td>Application</td>
+<td>Documents, embeddings</td>
+<td>Per retrieval</td>
+<td>Per source label; untrusted</td>
+</tr>
+<tr>
+<td>Interaction records</td>
+<td>Gateway</td>
+<td>SIEM</td>
+<td>Hashes, decisions, identities</td>
+<td>Streaming</td>
+<td>Sensitive</td>
+</tr>
+<tr>
+<td>Incident</td>
+<td>Incident handler</td>
+<td>ITSM</td>
+<td>Case data</td>
+<td>Event driven</td>
+<td>Sensitive</td>
+</tr>
+<tr>
+<td>Model version</td>
+<td>MLOps registry</td>
+<td>Asset registry</td>
+<td>Lineage, approval</td>
+<td>On release</td>
+<td>Internal</td>
+</tr>
+<tr>
+<td>Evidence pack</td>
+<td>Evidence store</td>
+<td>Auditor</td>
+<td>Test results, approvals</td>
+<td>On request</td>
+<td>Internal, controlled release</td>
+</tr>
+</tbody>
+</table>
+<h2>AI elements</h2>
+<table>
+<thead>
+<tr>
+<th>AI feature</th>
+<th>What it does</th>
+<th>Data it reads</th>
+<th>Data it writes or emits</th>
+<th>Controls that govern it</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM application</td>
+<td>Answers prompts, drafts content</td>
+<td>User prompts, system prompt</td>
+<td>Completions</td>
+<td>Gateway input and output checks, policy engine</td>
+<td><code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code></td>
+</tr>
+<tr>
+<td>Retrieval-augmented generation</td>
+<td>Adds retrieved documents to prompts</td>
+<td>Enterprise documents, embeddings</td>
+<td>Grounded completions</td>
+<td>Access checks on retrieval, content labeling</td>
+<td><code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> lists vector and embedding weaknesses</td>
+</tr>
+<tr>
+<td>AI agent</td>
+<td>Calls tools to complete tasks</td>
+<td>Tool outputs, credentials</td>
+<td>Actions in external systems</td>
+<td>Agent identity, least privilege, human approval</td>
+<td><code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=LBxiK0ALZvY" target="_blank" rel="noopener" title="VIDEO CSA AI Security Summit 2026 When Guardrails Break Runtime Trust (Darktrace keynote)">S12</a>]</code></td>
+</tr>
+<tr>
+<td>Classical ML model</td>
+<td>Scores or classifies</td>
+<td>Features</td>
+<td>Scores, labels</td>
+<td>Monitoring for drift and bias, explainability</td>
+<td><code>[<a class="cite" href="https://www.zscaler.com/zpedia/ai-trism" target="_blank" rel="noopener" title="Zscaler AI TRiSM pillars vs layers (vendor, secondary)">S9</a>]</code> <code>[<a class="cite" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" target="_blank" rel="noopener" title="NIST AI RMF 1.0 (AI 100-1)">S2</a>]</code></td>
+</tr>
+<tr>
+<td>Third-party model</td>
+<td>Hosted model called through an API</td>
+<td>Prompts</td>
+<td>Completions</td>
+<td>Supply-chain review, data-handling terms</td>
+<td><code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code></td>
+</tr>
+</tbody>
+</table>
+<h3>AI data path</h3>
+<p>Control points are numbered. Each is a place where a control from capabilities C1 to C8 attaches.</p>
+<pre class="mermaid">%%{init: {&quot;theme&quot;:&quot;base&quot;,&quot;themeVariables&quot;:{&quot;primaryColor&quot;:&quot;#ffffff&quot;,&quot;primaryBorderColor&quot;:&quot;#111111&quot;,&quot;lineColor&quot;:&quot;#6b6b6b&quot;,&quot;primaryTextColor&quot;:&quot;#111111&quot;,&quot;textColor&quot;:&quot;#111111&quot;,&quot;clusterBkg&quot;:&quot;#f8f8f8&quot;,&quot;clusterBorder&quot;:&quot;#6b6b6b&quot;,&quot;fontFamily&quot;:&quot;Arial, Helvetica, sans-serif&quot;,&quot;fontSize&quot;:&quot;14px&quot;,&quot;edgeLabelBackground&quot;:&quot;#ffffff&quot;},&quot;flowchart&quot;:{&quot;htmlLabels&quot;:true,&quot;curve&quot;:&quot;basis&quot;}}}%%
+flowchart LR TRAIN[&quot;Training and fine-tune data&quot;] --&gt;|&quot;CP1 label and map data&quot;| MODEL[&quot;Model version&quot;] MODEL --&gt;|&quot;CP2 evaluate before release&quot;| REL[&quot;Approved release&quot;] USER[&quot;User or agent prompt&quot;] --&gt;|&quot;CP3 inspect input&quot;| GW[&quot;Runtime gateway&quot;] GW --&gt; APP[&quot;AI application&quot;] RAG[&quot;Retrieved content&quot;] --&gt;|&quot;CP4 access check and untrusted-content handling&quot;| APP APP --&gt;|&quot;CP5 scoped tool call&quot;| TOOLS[&quot;Tools and data&quot;] APP --&gt;|&quot;CP6 inspect output&quot;| GW GW --&gt; RESP[&quot;Response&quot;] GW --&gt;|&quot;CP7 log interaction&quot;| LOG[&quot;Interaction log&quot;] LOG --&gt;|&quot;CP8 monitor drift and behavior&quot;| MON[&quot;Monitoring&quot;] linkStyle 2 stroke:#c8102e,stroke-width:2.5px,color:#c8102e linkStyle 4 stroke:#c8102e,stroke-width:2.5px,color:#c8102e
+</pre> <!-- tech_deep_dive:diagram-embed -->
+<p><a href="../assets/diagrams/04-integration-ai-2.png" target="_blank"><img class="embed" src="../assets/diagrams/04-integration-ai-2.png" alt="04-integration-ai-2.png"></a></p>
+<h2>Integration risks</h2>
+<p>OWASP 2025 names the ten risks <code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code>. Mitigation text was read only for LLM01, from a search excerpt. Other rows say so.</p>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Where</th>
+<th>Mitigation</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM01 Prompt Injection</td>
+<td>Gateway input, retrieved content</td>
+<td>Constrain behavior, validate output format, filter input and output, least privilege, human approval for high-risk actions, segregate external content</td>
+<td><code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> excerpt</td>
+</tr>
+<tr>
+<td>LLM02 Sensitive Information Disclosure</td>
+<td>Model output, logs</td>
+<td>Data sanitization before training; restrictions in the system prompt can be bypassed</td>
+<td><code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> excerpt</td>
+</tr>
+<tr>
+<td>LLM03 Supply Chain</td>
+<td>Third-party models and plugins</td>
+<td>UNVERIFIED, entry not read</td>
+<td><code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> name only</td>
+</tr>
+<tr>
+<td>LLM04 Data and Model Poisoning</td>
+<td>Training and fine-tune data</td>
+<td>UNVERIFIED, entry not read</td>
+<td><code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> name only</td>
+</tr>
+<tr>
+<td>LLM05 Improper Output Handling</td>
+<td>Downstream systems that consume output</td>
+<td>UNVERIFIED, entry not read</td>
+<td><code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> name only</td>
+</tr>
+<tr>
+<td>LLM06 Excessive Agency</td>
+<td>Agents and tools</td>
+<td>Least privilege and human approval, by analogy with LLM01; entry not read</td>
+<td><code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> name only</td>
+</tr>
+<tr>
+<td>LLM07 System Prompt Leakage</td>
+<td>Model output</td>
+<td>UNVERIFIED, entry not read</td>
+<td><code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> name only</td>
+</tr>
+<tr>
+<td>LLM08 Vector and Embedding Weaknesses</td>
+<td>Retrieval stores</td>
+<td>UNVERIFIED, entry not read</td>
+<td><code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> name only</td>
+</tr>
+<tr>
+<td>LLM09 Misinformation</td>
+<td>Model output</td>
+<td>UNVERIFIED, entry not read</td>
+<td><code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> name only</td>
+</tr>
+<tr>
+<td>LLM10 Unbounded Consumption</td>
+<td>Model provider API, gateway</td>
+<td>Quotas and aggregate resource limits; one talk recommends them to cut agent blast radius</td>
+<td><code>[<a class="cite" href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" target="_blank" rel="noopener" title="OWASP Top 10 for LLM Applications 2025">S7</a>]</code> name; search-excerpt talk not in ledger</td>
+</tr>
+<tr>
+<td>Gateway as single point of failure</td>
+<td>Runtime zone</td>
+<td>Fail-closed or fail-open decision per use case; proposal, no source</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Vendor claims of coverage</td>
+<td>Every third-party row</td>
+<td>Test with E3W before relying on a guardrail product</td>
+<td><a href="claims-debates.html">CLAIMS-AND-DEBATES</a></td>
+</tr>
+</tbody>
+</table>
+<h2>Framework lens</h2>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Maps to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TOGAF</td>
+<td>Phase C Application interfaces · Phase D Technology · Architecture Governance for AI</td>
+</tr>
+<tr>
+<td>DoDAF</td>
+<td>SV-1/SV-2 external interfaces · SV-6 Systems Resource Flow Matrix · OV-3 Operational Resource Flow Matrix · StdV-1 for API/protocol standards</td>
+</tr>
+<tr>
+<td>UAF 1.3</td>
+<td>Sv-Cn Services Connectivity · Op-Cn Operational Connectivity · Sc-Cn Security Connectivity · Sd-Tx Standards Taxonomy · Rs-If Resources Information</td>
+</tr>
+<tr>
+<td>Altitude</td>
+<td>Crosses conceptual (who we trust), logical (interfaces), physical (connectors and endpoints)</td>
+</tr>
+</tbody>
+</table>
+<p>Full EA crosswalk (TOGAF · DoDAF · UAF): <a href="ea-framework-crosswalk.html">ea-framework-crosswalk</a>.</p></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning/tech-deep-dive/ai-trism/views/04 - Integration and AI Elements.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn AI TRiSM source ledger.
+    <div class="prevnext"><a href="tdd-view-03-physical.html">&larr; Previous</a><a href="tdd-view-05-detailed-design.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>
